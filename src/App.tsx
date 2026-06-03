@@ -1,0 +1,294 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { ArrowRight, Menu, X } from 'lucide-react';
+import siteContent from './content/data.json';
+import heroImage from './assets/images/mind_sanctuary_1779384914977.png';
+
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const menuLinks = [
+    { name: 'Philosophy', href: '#philosophy' },
+    { name: 'The Therapist', href: '#therapist' },
+    { name: 'Clinical Focus', href: '#clinical-focus' },
+    { name: 'Rates & FAQ', href: '#rates' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 flex justify-between items-center mix-blend-difference text-white">
+        <div className="text-xs tracking-[0.2em] uppercase font-medium">{siteContent.navigationName}</div>
+        <button 
+          onClick={() => setIsMenuOpen(true)}
+          className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
+        >
+          <span>Menu</span>
+          <Menu size={16} strokeWidth={1.5} />
+        </button>
+      </nav>
+
+      {/* Full-screen Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[60] bg-[var(--color-stone-900)] text-[var(--color-stone-50)] flex flex-col justify-center items-center px-6"
+          >
+            <button 
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute top-6 right-6 md:top-12 md:right-12 flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
+            >
+              <span>Close</span>
+              <X size={16} strokeWidth={1.5} />
+            </button>
+
+            <div className="flex flex-col items-center gap-8 md:gap-12">
+              {menuLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="font-serif text-4xl md:text-6xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] transition-all duration-300"
+                >
+                  {link.name}
+                </a>
+              ))}
+              <a
+                href={siteContent.clientPortalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsMenuOpen(false)}
+                className="font-serif text-4xl md:text-6xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] transition-all duration-300"
+              >
+                Client Portal
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Hero Section */}
+      <section className="relative h-screen w-full flex flex-col justify-center px-6 md:px-12 pt-20 overflow-hidden">
+        <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
+          <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
+            {siteContent.heroLocationLabel}
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div className="lg:col-span-7 flex flex-col justify-center md:pl-12 lg:pl-16 xl:pl-0">
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="font-serif text-5xl md:text-7xl lg:text-[96px] leading-[0.95] tracking-tight font-light"
+            >
+              {siteContent.heroTitleLine1} <br />
+              <span className="italic text-[var(--color-olive-700)] block ml-4 md:ml-6 lg:ml-8">{siteContent.heroTitleLine2}</span>
+            </motion.h1>
+            
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-10 max-w-md text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
+            >
+              {siteContent.heroDescription}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              className="mt-12"
+            >
+              <a href={siteContent.heroCtaUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors">
+                <span>{siteContent.heroCtaText}</span>
+                <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </motion.div>
+          </div>
+
+          <div className="lg:col-span-5 relative h-[50vh] lg:h-[80vh] w-full flex justify-center items-center">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-[400px] h-full max-h-[600px] oval-mask overflow-hidden relative"
+            >
+              <img 
+                src={heroImage}
+                alt="A hyper-realistic photograph of a serene, minimalist sanctuary space bathed in warm, soft, ethereal light." 
+                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
+              />
+              <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section id="philosophy" className="py-32 px-6 md:px-12 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+            <div className="md:col-span-4 flex flex-col justify-between">
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">{siteContent.philosophyLabel}</h3>
+              <div className="w-24 h-[1px] bg-[var(--color-stone-900)]/20 hidden md:block"></div>
+            </div>
+            
+            <div className="md:col-span-8">
+              <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-12">
+                {siteContent.philosophyTitleLine1} <span className="italic text-[var(--color-olive-700)]">{siteContent.philosophyTitleLine2}</span> {siteContent.philosophyTitleLine3}
+              </h2>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
+                <p>
+                  {siteContent.philosophyDescription1}
+                </p>
+                <p>
+                  {siteContent.philosophyDescription2}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="therapist" className="py-32 px-6 md:px-12 bg-[var(--color-stone-50)]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+            <div className="md:col-span-5 relative">
+              <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl">
+                {/* Placeholder for uploaded photo */}
+                <img 
+                  src="/lorne-portrait.jpg" 
+                  alt="Lorne Lieberman, LMFT" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-7 md:pl-12">
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">{siteContent.aboutLabel}</h3>
+              <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
+                {siteContent.aboutTitleLine1} <span className="italic text-[var(--color-olive-700)]">{siteContent.aboutTitleLine2}</span>
+              </h2>
+              <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
+                <p>
+                  {siteContent.aboutParagraph1}
+                </p>
+                <p>
+                  {siteContent.aboutParagraph2}
+                </p>
+                <p>
+                  {siteContent.aboutParagraph3}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section id="clinical-focus" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-16">
+            <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50">{siteContent.clinicalFocusLabel}</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
+            {[
+              { title: siteContent.service1Title, desc: siteContent.service1Description },
+              { title: siteContent.service2Title, desc: siteContent.service2Description },
+              { title: siteContent.service3Title, desc: siteContent.service3Description }
+            ].map((service, i) => (
+              <div key={i} className="group border-b md:border-b-0 md:border-r border-[var(--color-stone-900)]/20 last:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 cursor-pointer flex flex-col">
+                <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-16">0{i + 1}</div>
+                <h4 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">{service.title}</h4>
+                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 mt-auto">{service.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Rates Section */}
+      <section id="rates" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16">
+            <div className="md:col-span-4">
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">{siteContent.ratesLabel}</h3>
+            </div>
+            
+            <div className="md:col-span-8">
+              <div className="max-w-2xl">
+                <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-12">
+                  {siteContent.ratesTitleLine1} <span className="italic text-[var(--color-olive-700)]">{siteContent.ratesTitleLine2}</span>
+                </h2>
+                
+                <div className="space-y-12">
+                  {siteContent.ratesList.map((rate: any, idx: number) => (
+                    <div key={idx} className="flex justify-between items-baseline border-b border-[var(--color-stone-900)]/10 pb-4">
+                      <span className="text-sm tracking-wide uppercase">{rate.serviceName}</span>
+                      <span className="font-serif text-2xl">{rate.price}</span>
+                    </div>
+                  ))}
+                  
+                  <div className="text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light space-y-4">
+                    <p>
+                      {siteContent.ratesDescription1}
+                    </p>
+                    <p>
+                      {siteContent.ratesDescription2}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer / CTA */}
+      <section className="py-32 px-6 md:px-12 bg-[var(--color-stone-900)] text-[var(--color-stone-50)]">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="font-serif text-5xl md:text-7xl font-light leading-tight mb-8">
+              {siteContent.footerTitleLine1} <br />
+              <span className="italic text-[var(--color-olive-700)]/80">{siteContent.footerTitleLine2}</span>
+            </h2>
+            <p className="text-sm text-[var(--color-stone-50)]/60 max-w-sm leading-relaxed mb-12">
+              {siteContent.footerDescription}
+            </p>
+            <a 
+              href={siteContent.footerCtaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[var(--color-stone-50)] text-[var(--color-stone-900)] px-8 py-4 text-xs tracking-[0.15em] uppercase hover:bg-[var(--color-olive-700)] hover:text-white transition-colors duration-300"
+            >
+              {siteContent.footerCtaText}
+            </a>
+          </div>
+          
+          <div className="flex flex-col md:items-end text-xs tracking-[0.1em] text-[var(--color-stone-50)]/50 space-y-4">
+            <p className="uppercase">{siteContent.footerName}</p>
+            <p>{siteContent.footerLicense}</p>
+            <p>{siteContent.footerLocation}</p>
+            <a href={`mailto:${siteContent.footerEmail}`} className="hover:text-white transition-colors mt-8 inline-block">{siteContent.footerEmail}</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
