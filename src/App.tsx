@@ -7,7 +7,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
-import heroImage from './assets/images/mind_sanctuary_1779384914977.png';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,20 +76,20 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex flex-col justify-center px-6 md:px-12 pt-20 overflow-hidden">
+      <section className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden">
         <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
           <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
             {siteContent.heroLocationLabel}
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-          <div className="lg:col-span-7 flex flex-col justify-center md:pl-12 lg:pl-16 xl:pl-0">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10 lg:min-h-[100dvh]">
+          <div className="lg:col-span-7 flex flex-col justify-center md:pl-16 lg:pl-20 xl:pl-24">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-5xl md:text-7xl lg:text-[96px] leading-[0.95] tracking-tight font-light"
+              className="font-serif text-[11vw] sm:text-5xl md:text-7xl lg:text-[96px] leading-[0.95] tracking-tight font-light"
             >
               {siteContent.heroTitleLine1} <br />
               <span className="italic text-[var(--color-olive-700)] block ml-4 md:ml-6 lg:ml-8">{siteContent.heroTitleLine2}</span>
@@ -100,7 +99,7 @@ export default function App() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-10 max-w-md text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
+              className="mt-8 lg:mt-10 max-w-md text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
             >
               {siteContent.heroDescription}
             </motion.p>
@@ -109,7 +108,7 @@ export default function App() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="mt-12"
+              className="mt-8 lg:mt-12"
             >
               <a href={siteContent.heroCtaUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors">
                 <span>{siteContent.heroCtaText}</span>
@@ -118,7 +117,7 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[50vh] lg:h-[80vh] w-full flex justify-center items-center">
+          <div className="lg:col-span-5 relative h-[45vh] lg:h-[80vh] w-full flex justify-center items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -126,10 +125,10 @@ export default function App() {
               className="w-full max-w-[400px] h-full max-h-[600px] oval-mask overflow-hidden relative"
             >
               <img 
-                src={heroImage}
-                alt="A hyper-realistic photograph of a serene, minimalist sanctuary space bathed in warm, soft, ethereal light." 
+                src={siteContent.heroImageUrl}
+                alt={siteContent.heroImageAlt} 
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
+                className="w-full h-full object-cover object-bottom lg:object-center scale-105 hover:scale-100 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
             </motion.div>
