@@ -38,7 +38,7 @@ export default function App() {
             }
           }, 100);
         } else {
-          window.scrollTo(0, 0);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
         }
       } else {
         window.scrollTo(0, 0);
@@ -70,7 +70,16 @@ export default function App() {
             : 'py-6'
         }`}
       >
-        <div className="uppercase font-medium">
+        <a 
+          href="#"
+          onClick={(e) => {
+            if (window.location.hash === '' || window.location.hash === '#') {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
+          className="uppercase font-medium hover:opacity-70 transition-opacity"
+        >
           <div className="md:hidden flex flex-col gap-0.5">
             <span className="text-xs tracking-[0.2em]">{siteContent.navigationNameMobile1}</span>
             <span className="text-[8px] tracking-[0.05em] text-[var(--color-stone-800)]/80 sm:text-[9.5px] sm:tracking-[0.1em]">{siteContent.navigationNameMobile2}</span>
@@ -78,7 +87,7 @@ export default function App() {
           <div className="hidden md:block text-xs tracking-[0.2em]">
             {siteContent.navigationName}
           </div>
-        </div>
+        </a>
         <button 
           onClick={() => setIsMenuOpen(true)}
           className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
