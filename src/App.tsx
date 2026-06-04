@@ -3,13 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuLinks = [
     { name: 'Philosophy', href: '#philosophy' },
@@ -21,8 +30,22 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 flex justify-between items-center mix-blend-difference text-white">
-        <div className="text-xs tracking-[0.2em] uppercase font-medium">{siteContent.navigationName}</div>
+      <nav 
+        className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 flex justify-between items-center transition-all duration-500 text-[var(--color-stone-900)] ${
+          isScrolled 
+            ? 'py-4 bg-[var(--color-stone-100)]/85 backdrop-blur-md border-b border-[var(--color-stone-900)]/5' 
+            : 'py-6'
+        }`}
+      >
+        <div className="uppercase font-medium">
+          <div className="md:hidden flex flex-col gap-0.5">
+            <span className="text-xs tracking-[0.2em]">{siteContent.navigationNameMobile1}</span>
+            <span className="text-[8px] tracking-[0.05em] text-[var(--color-stone-800)]/80 sm:text-[9.5px] sm:tracking-[0.1em]">{siteContent.navigationNameMobile2}</span>
+          </div>
+          <div className="hidden md:block text-xs tracking-[0.2em]">
+            {siteContent.navigationName}
+          </div>
+        </div>
         <button 
           onClick={() => setIsMenuOpen(true)}
           className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
