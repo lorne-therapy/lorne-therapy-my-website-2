@@ -11,6 +11,7 @@ import siteContent from './content/data.json';
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentHash, setCurrentHash] = useState(window.location.hash);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +21,43 @@ export default function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+      
+      if (window.location.hash !== '#schedule') {
+        const id = window.location.hash.replace('#', '');
+        if (id) {
+          setTimeout(() => {
+            const element = document.getElementById(id);
+            if (element) {
+              const offset = 80;
+              const elementPosition = element.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.pageYOffset - offset;
+              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+            }
+          }, 100);
+        } else {
+          window.scrollTo(0, 0);
+        }
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    // Initial check
+    if (window.location.hash === '#schedule') {
+      window.scrollTo(0, 0);
+    }
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const menuLinks = [
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'The Therapist', href: '#therapist' },
     { name: 'Clinical Focus', href: '#clinical-focus' },
     { name: 'Rates & FAQ', href: '#rates' },
+    { name: 'Schedule Consultation', href: '#schedule' },
   ];
 
   return (
@@ -79,7 +112,7 @@ export default function App() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="font-serif text-4xl md:text-6xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] transition-all duration-300"
+                  className="font-serif text-4xl md:text-5xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] text-center transition-all duration-300"
                 >
                   {link.name}
                 </a>
@@ -89,7 +122,7 @@ export default function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsMenuOpen(false)}
-                className="font-serif text-4xl md:text-6xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] transition-all duration-300"
+                className="font-serif text-4xl md:text-5xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] text-center transition-all duration-300 mt-4 md:mt-8"
               >
                 Client Portal
               </a>
@@ -98,7 +131,37 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* Hero Section */}
+      {currentHash === '#schedule' ? (
+        <section className="pt-32 md:pt-40 pb-32 px-6 md:px-12 bg-[var(--color-stone-100)] min-h-screen">
+          <div className="max-w-4xl mx-auto flex flex-col items-center">
+            <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">Client Portal</h3>
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
+              Request a <span className="italic text-[var(--color-olive-700)]">Consultation</span>
+            </h2>
+            <p className="max-w-xl mx-auto text-center text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light mb-16">
+              Select a time for a complimentary phone consultation to discuss your specific needs and see if we might be a good fit.
+            </p>
+            
+            <div className="w-full bg-white border border-[var(--color-stone-900)]/5 rounded-2xl overflow-hidden h-[750px] relative shadow-sm ring-1 ring-black/5 ring-inset">
+              <div className="w-full h-full relative">
+                <div className="absolute inset-0 flex items-center justify-center -z-10">
+                  <div className="w-8 h-8 rounded-full border-2 border-[var(--color-stone-900)]/10 border-t-[var(--color-olive-700)] animate-spin"></div>
+                </div>
+                <iframe 
+                  src={siteContent.clientPortalUrl} 
+                  style={{ border: 0 }}
+                  width="100%"
+                  height="100%"
+                  className="w-full h-full absolute inset-0 z-10"
+                  title="Google Calendar Scheduling"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <>
+          {/* Hero Section */}
       <section className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden">
         <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
           <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
@@ -133,7 +196,7 @@ export default function App() {
               transition={{ duration: 1, delay: 0.4 }}
               className="mt-8 lg:mt-12"
             >
-              <a href={siteContent.heroCtaUrl} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors">
+              <a href={siteContent.heroCtaUrl} className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors">
                 <span>{siteContent.heroCtaText}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </a>
@@ -295,8 +358,6 @@ export default function App() {
             </p>
             <a 
               href={siteContent.footerCtaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-block bg-[var(--color-stone-50)] text-[var(--color-stone-900)] px-8 py-4 text-xs tracking-[0.15em] uppercase hover:bg-[var(--color-olive-700)] hover:text-white transition-colors duration-300"
             >
               {siteContent.footerCtaText}
@@ -311,6 +372,8 @@ export default function App() {
           </div>
         </div>
       </section>
+      </>
+      )}
     </div>
   );
 }
