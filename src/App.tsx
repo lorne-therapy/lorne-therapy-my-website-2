@@ -11,7 +11,7 @@ import siteContent from './content/data.json';
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [currentHash, setCurrentHash] = useState(window.location.hash);
+  const [currentHash, setCurrentHash] = useState(typeof window !== 'undefined' ? window.location.hash : '');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -266,7 +266,7 @@ export default function App() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl">
                 {/* Placeholder for uploaded photo */}
                 <img 
-                  src="/lorne-portrait.jpg" 
+                  src="lorne-portrait.jpg" 
                   alt="Lorne Lieberman, LMFT" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"

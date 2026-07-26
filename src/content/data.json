@@ -3,7 +3,7 @@
   "navigationNameMobile1": "DEPTH.LA",
   "navigationNameMobile2": "LORNE LIEBERMAN PSYCHOTHERAPY",
   "clientPortalUrl": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0MALp2qJvjD6G2HnU2jvLe-Ad05CDGTJRwDmb-nW9ny5-PwAJT9x4oRF8M4YO180VUhcfrFsZa?gv=true",
-  "heroImageUrl": "/hero-image.png",
+  "heroImageUrl": "hero-image.png",
   "heroImageAlt": "A beautiful sunset over the glowing ocean.",
   "heroLocationLabel": "Private Practice • East LA",
   "heroTitleLine1": "A Sanctuary",
@@ -57,5 +57,5 @@
   "footerName": "Lorne Lieberman, LMFT",
   "footerLicense": "Lic. #159526",
   "footerLocation": "East LA, CA",
-  "footerEmail": "info@nowheretherapy.com"
+  "footerEmail": "Lorne@depth.la"
 }
