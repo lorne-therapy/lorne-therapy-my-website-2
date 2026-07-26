@@ -1,11 +1,11 @@
 {
-  "navigationName": "DEPTH.LA  •  LORNE LIEBERMAN PSYCHOTHERAPY",
-  "navigationNameMobile1": "DEPTH.LA",
+  "navigationName": "DEPTH  •  LORNE LIEBERMAN PSYCHOTHERAPY",
+  "navigationNameMobile1": "DEPTH",
   "navigationNameMobile2": "LORNE LIEBERMAN PSYCHOTHERAPY",
   "clientPortalUrl": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ0MALp2qJvjD6G2HnU2jvLe-Ad05CDGTJRwDmb-nW9ny5-PwAJT9x4oRF8M4YO180VUhcfrFsZa?gv=true",
   "heroImageUrl": "hero-image.png",
   "heroImageAlt": "A beautiful sunset over the glowing ocean.",
-  "heroLocationLabel": "Private Practice • East LA",
+  "heroLocationLabel": "Private Practice • Los Angeles",
   "heroTitleLine1": "A Sanctuary",
   "heroTitleLine2": "for the Mind.",
   "heroDescription": "Lorne Lieberman, LMFT provides high-end, bespoke psychotherapy for individuals and couples seeking real and lasting change in their lives.",
@@ -56,6 +56,12 @@
   "footerCtaUrl": "#schedule",
   "footerName": "Lorne Lieberman, LMFT",
   "footerLicense": "Lic. #159526",
-  "footerLocation": "East LA, CA",
+  "footerLocation": "Los Angeles, California",
+  "footerInPersonHeading": "In-person sessions:",
+  "footerNeighborhoods": [
+    "Los Feliz",
+    "Silver Lake",
+    "Echo Park"
+  ],
   "footerEmail": "Lorne@depth.la"
 }

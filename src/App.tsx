@@ -373,11 +373,25 @@ export default function App() {
             </a>
           </div>
           
-          <div className="flex flex-col md:items-end text-xs tracking-[0.1em] text-[var(--color-stone-50)]/50 space-y-4">
-            <p className="uppercase">{siteContent.footerName}</p>
+          <div className="flex flex-col md:items-end text-xs tracking-[0.1em] text-[var(--color-stone-50)]/60 space-y-3">
+            <p className="uppercase font-medium text-white/90">{siteContent.footerName}</p>
             <p>{siteContent.footerLicense}</p>
-            <p>{siteContent.footerLocation}</p>
-            <a href={`mailto:${siteContent.footerEmail}`} className="hover:text-white transition-colors mt-8 inline-block">{siteContent.footerEmail}</a>
+            <p className="text-white/80">{siteContent.footerLocation}</p>
+            
+            <div className="pt-2 text-left md:text-right space-y-1">
+              <p className="normal-case font-medium text-stone-300 text-xs tracking-normal">
+                {siteContent.footerInPersonHeading || "In-person sessions:"}
+              </p>
+              {siteContent.footerNeighborhoods && siteContent.footerNeighborhoods.length > 0 && (
+                <ul className="normal-case tracking-normal text-[var(--color-stone-50)]/70 text-xs space-y-0.5">
+                  {siteContent.footerNeighborhoods.map((hood: string, index: number) => (
+                    <li key={index}>{hood}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+
+            <a href={`mailto:${siteContent.footerEmail}`} className="hover:text-white transition-colors pt-2 inline-block text-stone-300 normal-case">{siteContent.footerEmail}</a>
           </div>
         </div>
       </section>
