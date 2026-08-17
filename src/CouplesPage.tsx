@@ -58,6 +58,11 @@ const feeItems = [
   "Free 15-minute phone consultation",
 ];
 
+const heroImage = {
+  src: "/couples-hero.png",
+  alt: "Sunlit interior with a ceramic vase and olive branch",
+};
+
 const label =
   "text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50";
 const sectionTitle = "font-serif text-3xl md:text-5xl leading-tight font-light";
@@ -119,12 +124,12 @@ function GhostButton({
 export default function CouplesTherapyPage() {
   return (
     <main className="min-h-screen bg-[var(--color-stone-50)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-5 md:py-7 bg-[var(--color-stone-50)]/90 backdrop-blur-md border-b border-[var(--color-stone-900)]/5 flex items-center justify-between gap-6">
+      <nav className="fixed top-0 left-0 right-0 z-50 px-5 md:px-12 py-4 md:py-7 bg-[var(--color-stone-50)]/90 backdrop-blur-md border-b border-[var(--color-stone-900)]/5 flex items-center justify-between gap-4">
         <a href="/" className="uppercase hover:opacity-70 transition-opacity">
-          <span className="block text-xs tracking-[0.2em] font-medium">
+          <span className="block text-[10px] sm:text-xs tracking-[0.18em] sm:tracking-[0.2em] font-medium whitespace-nowrap">
             Depth Psychotherapy
           </span>
-          <span className="block mt-1 text-[9px] sm:text-[10px] tracking-[0.14em] text-[var(--color-stone-800)]/60">
+          <span className="block mt-1 text-[9px] sm:text-[10px] tracking-[0.12em] sm:tracking-[0.14em] text-[var(--color-stone-800)]/60 whitespace-nowrap">
             Lorne Lieberman, LMFT
           </span>
         </a>
@@ -143,22 +148,23 @@ export default function CouplesTherapyPage() {
           </div>
           <a
             href="/#schedule"
-            className="text-[11px] tracking-[0.14em] uppercase border border-[var(--color-stone-900)]/25 px-4 py-2.5 hover:bg-[var(--color-stone-900)] hover:text-white transition-colors"
+            className="text-[10px] sm:text-[11px] tracking-[0.12em] sm:tracking-[0.14em] uppercase whitespace-nowrap border border-[var(--color-stone-900)]/25 px-3.5 sm:px-4 py-2 sm:py-2.5 hover:bg-[var(--color-stone-900)] hover:text-white transition-colors"
           >
-            Schedule Consultation
+            <span className="sm:hidden">Consultation</span>
+            <span className="hidden sm:inline">Schedule Consultation</span>
           </a>
         </div>
       </nav>
 
       {/* HERO */}
-      <section className="px-6 md:px-12 pt-32 md:pt-40 pb-20 md:pb-24">
+      <section className="px-6 md:px-12 pt-28 md:pt-40 pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
-          <div className="order-2 lg:order-1 lg:col-span-7">
+          <div className="lg:col-span-7">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className={`${label} mb-7`}
+              className={`${label} mb-5 md:mb-7`}
             >
               Couples Therapy in Los Angeles
             </motion.p>
@@ -167,7 +173,7 @@ export default function CouplesTherapyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-[11vw] sm:text-5xl md:text-6xl leading-[1.05] tracking-tight font-light"
+              className="font-serif text-[clamp(2.4rem,10vw,3.25rem)] sm:text-5xl md:text-6xl leading-[1.05] tracking-tight font-light text-balance"
             >
               Therapy for Relationships
               <span className="block italic text-[var(--color-olive-700)]">
@@ -183,12 +189,26 @@ export default function CouplesTherapyPage() {
                 delay: 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className={`mt-9 max-w-md ${bodyText}`}
+              className={`mt-6 md:mt-9 max-w-md ${bodyText}`}
             >
               Depth-oriented couples therapy for partners who want to understand
               each other more deeply, communicate more clearly, and build a
               stronger, more secure connection.
             </motion.p>
+
+            {/* Mobile-only band: the oval in the side column would push the headline below the fold. */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:hidden mt-9 -mx-6 sm:mx-0"
+            >
+              <img
+                src={heroImage.src}
+                alt={heroImage.alt}
+                className="w-full h-[30vh] max-h-[240px] object-cover object-center sm:rounded-3xl"
+              />
+            </motion.div>
 
             <motion.ul
               initial={{ opacity: 0, y: 16 }}
@@ -198,7 +218,7 @@ export default function CouplesTherapyPage() {
                 delay: 0.25,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="mt-12 space-y-5"
+              className="mt-9 md:mt-12 space-y-4 md:space-y-5"
             >
               {heroHighlights.map(({ icon: Icon, text }) => (
                 <li
@@ -219,7 +239,7 @@ export default function CouplesTherapyPage() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, delay: 0.4 }}
-              className="mt-10"
+              className="mt-9 md:mt-10"
             >
               <PrimaryButton href="/#schedule">
                 Request a Free Consultation
@@ -227,7 +247,7 @@ export default function CouplesTherapyPage() {
             </motion.div>
           </div>
 
-          <div className="order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end">
+          <div className="hidden lg:col-span-5 lg:flex lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -235,8 +255,8 @@ export default function CouplesTherapyPage() {
               className="w-[min(80vw,400px)] aspect-[4/5] rounded-[50%] overflow-hidden"
             >
               <img
-                src="/couples-hero.png"
-                alt="Sunlit interior with a ceramic vase and olive branch"
+                src={heroImage.src}
+                alt={heroImage.alt}
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -291,7 +311,7 @@ export default function CouplesTherapyPage() {
       <section className="py-12 md:py-5 px-6 md:px-12 bg-[var(--color-stone-100)]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-12 items-center">
           <div className="lg:col-span-5 flex justify-center lg:justify-start">
-            <div className="w-[min(80vw,400px)] aspect-square rounded-full overflow-hidden">
+            <div className="w-[min(62vw,400px)] aspect-square rounded-full overflow-hidden">
               <img
                 src="/couples-approach.png"
                 alt="Two people holding hands in a warmly lit room"
