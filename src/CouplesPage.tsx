@@ -67,7 +67,7 @@ const label =
   "text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50";
 const sectionTitle = "font-serif text-3xl md:text-5xl leading-tight font-light";
 const bodyText =
-  "text-[13px] md:text-sm leading-[1.85] text-[var(--color-stone-800)]/80 font-light";
+  "text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light";
 
 function StarDivider() {
   return (
@@ -159,7 +159,7 @@ export default function CouplesTherapyPage() {
       {/* HERO */}
       <section className="px-6 md:px-12 pt-28 md:pt-40 pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10 items-center">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-8">
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -173,7 +173,7 @@ export default function CouplesTherapyPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif text-[clamp(2.4rem,10vw,3.25rem)] sm:text-5xl md:text-6xl leading-[1.05] tracking-tight font-light text-balance"
+              className="font-serif text-[11vw] sm:text-5xl md:text-7xl lg:text-[86px] leading-[0.95] tracking-tight font-light"
             >
               Therapy for Relationships
               <span className="block italic text-[var(--color-olive-700)]">
@@ -189,7 +189,7 @@ export default function CouplesTherapyPage() {
                 delay: 0.15,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className={`mt-6 md:mt-9 max-w-md ${bodyText}`}
+              className={`mt-6 md:mt-9 max-w-2xl ${bodyText}`}
             >
               Depth-oriented couples therapy for partners who want to understand
               each other more deeply, communicate more clearly, and build a
@@ -223,7 +223,7 @@ export default function CouplesTherapyPage() {
               {heroHighlights.map(({ icon: Icon, text }) => (
                 <li
                   key={text}
-                  className="flex items-center gap-4 text-[13px] font-light text-[var(--color-stone-800)]/85"
+                  className="flex items-center gap-4 text-base font-light text-[var(--color-stone-800)]/85"
                 >
                   <Icon
                     size={16}
@@ -247,7 +247,7 @@ export default function CouplesTherapyPage() {
             </motion.div>
           </div>
 
-          <div className="hidden lg:col-span-5 lg:flex lg:justify-end">
+          <div className="hidden lg:col-span-4 lg:flex lg:justify-end">
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -293,7 +293,7 @@ export default function CouplesTherapyPage() {
                 {checklistItems.map((item) => (
                   <li
                     key={item}
-                    className="flex items-start gap-3 text-[13px] leading-relaxed text-[var(--color-stone-800)]/80 font-light"
+                    className="flex items-start gap-3 text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
                   >
                     <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-[var(--color-olive-700)]/45 text-[var(--color-olive-700)]">
                       <Check size={9} strokeWidth={2.5} />
@@ -385,7 +385,7 @@ export default function CouplesTherapyPage() {
               I help couples move from disconnection and conflict toward deeper
               understanding, trust, and intimacy.
             </h2>
-            <p className="mt-7 text-[12px] tracking-[0.04em] font-medium">
+            <p className="mt-7 text-base tracking-[0.04em] font-medium">
               Licensed Marriage and Family Therapist
             </p>
             <p className={`mt-3 max-w-md ${bodyText}`}>
@@ -423,7 +423,7 @@ export default function CouplesTherapyPage() {
               {feeItems.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-[13px] leading-relaxed text-[var(--color-stone-800)]/80 font-light"
+                  className="flex items-start gap-3 text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
                 >
                   <span className="mt-[9px] w-1 h-1 rounded-full bg-[var(--color-olive-700)]/70 shrink-0" />
                   <span>{item}</span>
