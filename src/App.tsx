@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
+import CouplesPage from './CouplesPage';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,7 +26,7 @@ export default function App() {
     const handleHashChange = () => {
       setCurrentHash(window.location.hash);
       
-      if (window.location.hash !== '#schedule') {
+      if (window.location.hash !== '#schedule' && window.location.hash !== '#couples-therapy') {
         const id = window.location.hash.replace('#', '');
         if (id) {
           setTimeout(() => {
@@ -46,11 +47,15 @@ export default function App() {
     };
     window.addEventListener('hashchange', handleHashChange);
     // Initial check
-    if (window.location.hash === '#schedule') {
+    if (window.location.hash === '#schedule' || window.location.hash === '#couples-therapy') {
       window.scrollTo(0, 0);
     }
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
+
+  if (currentHash === '#couples-therapy') {
+    return <CouplesPage />;
+  }
 
   const menuLinks = [
     { name: 'Philosophy', href: '#philosophy' },
