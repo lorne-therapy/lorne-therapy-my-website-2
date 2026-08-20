@@ -2,6 +2,9 @@ import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import siteContent from "./content/data.json";
+import heartHandsImage from "./assets/couples-heart-hands.jpeg";
+import therapySeatingImage from "./assets/couples-therapy-seating.jpeg";
+import lornePortrait from "./assets/lorne-portrait.jpeg";
 
 export default function CouplesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -375,23 +378,19 @@ export default function CouplesPage() {
               className="w-full max-w-[420px] h-full max-h-[600px] oval-mask overflow-hidden relative shadow-2xl"
             >
               <img
-                src="/couples-heart-hands.jpeg"
+                src={heartHandsImage}
                 onError={(e) => {
                   const target = e.currentTarget;
-                  const step = Number(target.dataset.step || 0);
-                  if (step === 0) {
-                    target.dataset.step = "1";
+                  if (!target.dataset.tried) {
+                    target.dataset.tried = "1";
+                    target.src = "/couples-heart-hands.jpeg";
+                  } else if (target.dataset.tried === "1") {
+                    target.dataset.tried = "2";
                     target.src = "/couples-heart-hands.jpg";
-                  } else if (step === 1) {
-                    target.dataset.step = "2";
-                    target.src = "/real-heart-hands.jpeg";
-                  } else if (step === 2) {
-                    target.dataset.step = "3";
-                    target.src = "/real-heart-hands.jpg";
                   }
                 }}
                 alt="Silhouetted hands forming a heart shape with the warm golden sun shining through the center"
-                referrerPolicy="no-referrer"
+                loading="eager"
                 className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
@@ -477,23 +476,19 @@ export default function CouplesPage() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/couples-therapy-seating.jpeg"
+                  src={therapySeatingImage}
                   onError={(e) => {
                     const target = e.currentTarget;
-                    const step = Number(target.dataset.step || 0);
-                    if (step === 0) {
-                      target.dataset.step = "1";
+                    if (!target.dataset.tried) {
+                      target.dataset.tried = "1";
+                      target.src = "/couples-therapy-seating.jpeg";
+                    } else if (target.dataset.tried === "1") {
+                      target.dataset.tried = "2";
                       target.src = "/couples-therapy-seating.jpg";
-                    } else if (step === 1) {
-                      target.dataset.step = "2";
-                      target.src = "/real-therapy-couch-sanctuary.jpeg";
-                    } else if (step === 2) {
-                      target.dataset.step = "3";
-                      target.src = "/real-therapy-couch-sanctuary.jpg";
                     }
                   }}
                   alt="A peaceful, comfortable psychotherapy consulting couch prepared for couples therapy"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -614,16 +609,19 @@ export default function CouplesPage() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/lorne-portrait.jpeg"
+                  src={lornePortrait}
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.tried) {
                       target.dataset.tried = "1";
+                      target.src = "/lorne-portrait.jpeg";
+                    } else if (target.dataset.tried === "1") {
+                      target.dataset.tried = "2";
                       target.src = "/lorne-portrait.jpg";
                     }
                   }}
                   alt="Lorne Lieberman, LMFT"
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>

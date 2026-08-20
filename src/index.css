@@ -29,8 +29,6 @@ body {
 .oval-mask {
   border-radius: 9999px;
   overflow: hidden;
-  clip-path: ellipse(50% 50% at 50% 50%);
-  -webkit-clip-path: ellipse(50% 50% at 50% 50%);
 }
 
 .vertical-text {

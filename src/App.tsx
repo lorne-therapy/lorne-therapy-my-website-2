@@ -7,6 +7,8 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
+import heroImage from './assets/hero-image.jpeg';
+import lornePortrait from './assets/lorne-portrait.jpeg';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -262,7 +264,7 @@ export default function App() {
               className="w-full max-w-[400px] h-full max-h-[600px] oval-mask overflow-hidden relative"
             >
               <img 
-                src={siteContent.heroImageUrl}
+                src={heroImage}
                 onError={(e) => {
                   const target = e.currentTarget;
                   if (!target.dataset.tried) {
@@ -271,10 +273,13 @@ export default function App() {
                   } else if (target.dataset.tried === "1") {
                     target.dataset.tried = "2";
                     target.src = "/hero-image.jpg";
+                  } else if (target.dataset.tried === "2") {
+                    target.dataset.tried = "3";
+                    target.src = "/hero-image.png";
                   }
                 }}
                 alt={siteContent.heroImageAlt} 
-                referrerPolicy="no-referrer"
+                loading="eager"
                 className="w-full h-full object-cover object-bottom lg:object-center scale-105 hover:scale-100 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
@@ -318,16 +323,19 @@ export default function App() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl">
                 {/* Placeholder for uploaded photo */}
                 <img 
-                  src="/lorne-portrait.jpeg" 
+                  src={lornePortrait} 
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.tried) {
                       target.dataset.tried = "1";
+                      target.src = "/lorne-portrait.jpeg";
+                    } else if (target.dataset.tried === "1") {
+                      target.dataset.tried = "2";
                       target.src = "/lorne-portrait.jpg";
                     }
                   }}
                   alt="Lorne Lieberman, LMFT" 
-                  referrerPolicy="no-referrer"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </div>
