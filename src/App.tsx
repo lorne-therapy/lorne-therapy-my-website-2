@@ -267,7 +267,10 @@ export default function App() {
                   const target = e.currentTarget;
                   if (!target.dataset.tried) {
                     target.dataset.tried = "1";
-                    target.src = "hero-image.png";
+                    target.src = "/hero-image.jpeg";
+                  } else if (target.dataset.tried === "1") {
+                    target.dataset.tried = "2";
+                    target.src = "/hero-image.jpg";
                   }
                 }}
                 alt={siteContent.heroImageAlt} 
@@ -315,12 +318,12 @@ export default function App() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl">
                 {/* Placeholder for uploaded photo */}
                 <img 
-                  src="/lorne-portrait.jpg" 
+                  src="/lorne-portrait.jpeg" 
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.tried) {
                       target.dataset.tried = "1";
-                      target.src = "lorne-portrait.jpg";
+                      target.src = "/lorne-portrait.jpg";
                     }
                   }}
                   alt="Lorne Lieberman, LMFT" 

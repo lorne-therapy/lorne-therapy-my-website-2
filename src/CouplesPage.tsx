@@ -375,19 +375,19 @@ export default function CouplesPage() {
               className="w-full max-w-[420px] h-full max-h-[600px] oval-mask overflow-hidden relative shadow-2xl"
             >
               <img
-                src="/couples-heart-hands.jpg"
+                src="/couples-heart-hands.jpeg"
                 onError={(e) => {
                   const target = e.currentTarget;
                   const step = Number(target.dataset.step || 0);
                   if (step === 0) {
                     target.dataset.step = "1";
-                    target.src = "couples-heart-hands.jpg";
+                    target.src = "/couples-heart-hands.jpg";
                   } else if (step === 1) {
                     target.dataset.step = "2";
-                    target.src = "/real-heart-hands.jpg";
+                    target.src = "/real-heart-hands.jpeg";
                   } else if (step === 2) {
                     target.dataset.step = "3";
-                    target.src = "real-heart-hands.jpg";
+                    target.src = "/real-heart-hands.jpg";
                   }
                 }}
                 alt="Silhouetted hands forming a heart shape with the warm golden sun shining through the center"
@@ -477,19 +477,19 @@ export default function CouplesPage() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/couples-therapy-seating.jpg"
+                  src="/couples-therapy-seating.jpeg"
                   onError={(e) => {
                     const target = e.currentTarget;
                     const step = Number(target.dataset.step || 0);
                     if (step === 0) {
                       target.dataset.step = "1";
-                      target.src = "couples-therapy-seating.jpg";
+                      target.src = "/couples-therapy-seating.jpg";
                     } else if (step === 1) {
                       target.dataset.step = "2";
-                      target.src = "/real-therapy-couch-sanctuary.jpg";
+                      target.src = "/real-therapy-couch-sanctuary.jpeg";
                     } else if (step === 2) {
                       target.dataset.step = "3";
-                      target.src = "real-therapy-couch-sanctuary.jpg";
+                      target.src = "/real-therapy-couch-sanctuary.jpg";
                     }
                   }}
                   alt="A peaceful, comfortable psychotherapy consulting couch prepared for couples therapy"
@@ -614,12 +614,12 @@ export default function CouplesPage() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/lorne-portrait.jpg"
+                  src="/lorne-portrait.jpeg"
                   onError={(e) => {
                     const target = e.currentTarget;
                     if (!target.dataset.tried) {
                       target.dataset.tried = "1";
-                      target.src = "lorne-portrait.jpg";
+                      target.src = "/lorne-portrait.jpg";
                     }
                   }}
                   alt="Lorne Lieberman, LMFT"
