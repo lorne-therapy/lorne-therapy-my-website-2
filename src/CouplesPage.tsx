@@ -376,6 +376,20 @@ export default function CouplesPage() {
             >
               <img
                 src="/couples-heart-hands.jpg"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  const step = Number(target.dataset.step || 0);
+                  if (step === 0) {
+                    target.dataset.step = "1";
+                    target.src = "couples-heart-hands.jpg";
+                  } else if (step === 1) {
+                    target.dataset.step = "2";
+                    target.src = "/real-heart-hands.jpg";
+                  } else if (step === 2) {
+                    target.dataset.step = "3";
+                    target.src = "real-heart-hands.jpg";
+                  }
+                }}
                 alt="Silhouetted hands forming a heart shape with the warm golden sun shining through the center"
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
@@ -464,6 +478,20 @@ export default function CouplesPage() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
                   src="/couples-therapy-seating.jpg"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    const step = Number(target.dataset.step || 0);
+                    if (step === 0) {
+                      target.dataset.step = "1";
+                      target.src = "couples-therapy-seating.jpg";
+                    } else if (step === 1) {
+                      target.dataset.step = "2";
+                      target.src = "/real-therapy-couch-sanctuary.jpg";
+                    } else if (step === 2) {
+                      target.dataset.step = "3";
+                      target.src = "real-therapy-couch-sanctuary.jpg";
+                    }
+                  }}
                   alt="A peaceful, comfortable psychotherapy consulting couch prepared for couples therapy"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -587,6 +615,13 @@ export default function CouplesPage() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
                   src="/lorne-portrait.jpg"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.tried) {
+                      target.dataset.tried = "1";
+                      target.src = "lorne-portrait.jpg";
+                    }
+                  }}
                   alt="Lorne Lieberman, LMFT"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
