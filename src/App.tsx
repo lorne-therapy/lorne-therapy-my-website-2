@@ -7,7 +7,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
-import CouplesPage from './CouplesPage';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +25,7 @@ export default function App() {
     const handleHashChange = () => {
       setCurrentHash(window.location.hash);
       
-      if (window.location.hash !== '#schedule' && window.location.hash !== '#couples-therapy') {
+      if (window.location.hash !== '#schedule') {
         const id = window.location.hash.replace('#', '');
         if (id) {
           setTimeout(() => {
@@ -47,20 +46,17 @@ export default function App() {
     };
     window.addEventListener('hashchange', handleHashChange);
     // Initial check
-    if (window.location.hash === '#schedule' || window.location.hash === '#couples-therapy') {
+    if (window.location.hash === '#schedule') {
       window.scrollTo(0, 0);
     }
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (currentHash === '#couples-therapy') {
-    return <CouplesPage />;
-  }
-
   const menuLinks = [
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'The Therapist', href: '#therapist' },
     { name: 'Clinical Focus', href: '#clinical-focus' },
+    { name: 'Couples Therapy', href: '#couples-therapy' },
     { name: 'Rates & FAQ', href: '#rates' },
     { name: 'Schedule Consultation', href: '#schedule' },
   ];
@@ -71,8 +67,8 @@ export default function App() {
       <nav 
         className={`fixed top-0 left-0 right-0 z-50 px-6 md:px-12 flex justify-between items-center transition-all duration-500 text-[var(--color-stone-900)] ${
           isScrolled 
-            ? 'py-4 bg-[var(--color-stone-100)]/85 backdrop-blur-md border-b border-[var(--color-stone-900)]/5' 
-            : 'py-6'
+            ? 'py-4 bg-[var(--color-stone-100)]/90 backdrop-blur-md border-b border-[var(--color-stone-900)]/5 shadow-xs' 
+            : 'py-6 bg-[var(--color-stone-100)]/80 backdrop-blur-xs'
         }`}
       >
         <a 
@@ -83,19 +79,60 @@ export default function App() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }
           }}
-          className="uppercase font-medium hover:opacity-70 transition-opacity"
+          className="flex flex-col text-left group hover:opacity-80 transition-opacity"
         >
-          <div className="md:hidden flex flex-col gap-0.5">
-            <span className="text-xs tracking-[0.2em]">{siteContent.navigationNameMobile1}</span>
-            <span className="text-[8px] tracking-[0.05em] text-[var(--color-stone-800)]/80 sm:text-[9.5px] sm:tracking-[0.1em]">{siteContent.navigationNameMobile2}</span>
-          </div>
-          <div className="hidden md:block text-xs tracking-[0.2em]">
-            {siteContent.navigationName}
-          </div>
+          <span className="text-[12px] sm:text-[13px] md:text-[14px] tracking-[0.22em] font-medium uppercase text-[var(--color-stone-900)] leading-tight">
+            DEPTH PSYCHOTHERAPY
+          </span>
+          <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase text-[var(--color-stone-800)]/60 font-light mt-0.5">
+            LORNE LIEBERMAN, LMFT
+          </span>
         </a>
+
+        {/* Desktop Horizontal Navigation matching header layout */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-[11px] xl:text-[12px] tracking-[0.18em] uppercase font-medium text-[var(--color-stone-800)]/80">
+          <a 
+            href="#philosophy" 
+            className="hover:text-[var(--color-stone-900)] hover:opacity-100 transition-colors"
+          >
+            Philosophy
+          </a>
+          <a 
+            href="#therapist" 
+            className="hover:text-[var(--color-stone-900)] hover:opacity-100 transition-colors"
+          >
+            Therapist
+          </a>
+          <a 
+            href="#clinical-focus" 
+            className="hover:text-[var(--color-stone-900)] hover:opacity-100 transition-colors"
+          >
+            Clinical Focus
+          </a>
+          <a 
+            href="#couples-therapy" 
+            className="hover:text-[var(--color-olive-700)] hover:opacity-100 transition-colors"
+          >
+            Couples Therapy
+          </a>
+          <a 
+            href="#rates" 
+            className="hover:text-[var(--color-stone-900)] hover:opacity-100 transition-colors"
+          >
+            Rates &amp; FAQ
+          </a>
+          <a 
+            href="#schedule" 
+            className="ml-2 px-4 py-2 border border-[var(--color-stone-900)]/70 text-[var(--color-stone-900)] hover:bg-[var(--color-stone-900)] hover:text-white transition-all duration-200"
+          >
+            Schedule Consultation
+          </a>
+        </div>
+
+        {/* Mobile Menu Trigger */}
         <button 
           onClick={() => setIsMenuOpen(true)}
-          className="flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity"
+          className="lg:hidden flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity cursor-pointer"
         >
           <span>Menu</span>
           <Menu size={16} strokeWidth={1.5} />
@@ -308,16 +345,38 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
             {[
-              { title: siteContent.service1Title, desc: siteContent.service1Description },
-              { title: siteContent.service2Title, desc: siteContent.service2Description },
-              { title: siteContent.service3Title, desc: siteContent.service3Description }
-            ].map((service, i) => (
-              <div key={i} className="group border-b md:border-b-0 md:border-r border-[var(--color-stone-900)]/20 last:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 cursor-pointer flex flex-col">
-                <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-16">0{i + 1}</div>
-                <h4 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">{service.title}</h4>
-                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 mt-auto">{service.desc}</p>
-              </div>
-            ))}
+              { title: siteContent.service1Title, desc: siteContent.service1Description, href: undefined, cta: undefined },
+              { title: siteContent.service2Title, desc: siteContent.service2Description, href: '#couples-therapy', cta: 'Explore Couples Therapy' },
+              { title: siteContent.service3Title, desc: siteContent.service3Description, href: undefined, cta: undefined }
+            ].map((service, i) => {
+              const ContentWrapper = service.href ? 'a' : 'div';
+              return (
+                <ContentWrapper 
+                  key={i} 
+                  href={service.href}
+                  className="group border-b md:border-b-0 md:border-r border-[var(--color-stone-900)]/20 last:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 cursor-pointer flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-16 flex items-center justify-between">
+                      <span>0{i + 1}</span>
+                      {service.cta && (
+                        <span className="text-[9px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] font-medium">
+                          Dedicated Page
+                        </span>
+                      )}
+                    </div>
+                    <h4 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">{service.title}</h4>
+                    <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70">{service.desc}</p>
+                  </div>
+                  {service.cta && (
+                    <div className="mt-8 pt-4 border-t border-[var(--color-stone-900)]/10 flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] group-hover:translate-x-1 transition-all">
+                      <span>{service.cta}</span>
+                      <ArrowRight size={12} />
+                    </div>
+                  )}
+                </ContentWrapper>
+              );
+            })}
           </div>
         </div>
       </section>

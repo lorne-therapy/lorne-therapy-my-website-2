@@ -1,5 +1,8 @@
 {
   "name": "Lorne Lieberman, LMFT - Clinical Boutique",
   "description": "High-end mental health therapist landing page for Lorne Lieberman, LMFT. Private practice in East LA, CA.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
