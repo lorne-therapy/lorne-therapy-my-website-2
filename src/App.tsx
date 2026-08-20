@@ -308,7 +308,7 @@ export default function App() {
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl">
                 {/* Placeholder for uploaded photo */}
                 <img 
-                  src="lorne-portrait.jpg" 
+                  src="/lorne-portrait.jpg" 
                   alt="Lorne Lieberman, LMFT" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover"
