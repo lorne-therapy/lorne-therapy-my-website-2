@@ -7,8 +7,9 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
-import heroImage from './assets/hero-image.jpeg';
-import lornePortrait from './assets/lorne-portrait.jpeg';
+
+const heroImage = '/hero-image.jpeg';
+const lornePortrait = '/lorne-portrait.jpeg';
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -261,7 +262,7 @@ export default function App() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-[400px] h-full max-h-[600px] oval-mask overflow-hidden relative"
+              className="w-full max-w-[360px] sm:max-w-[400px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
             >
               <img 
                 src={heroImage}

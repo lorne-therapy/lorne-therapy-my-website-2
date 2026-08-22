@@ -2,9 +2,10 @@ import { useState, useEffect, type MouseEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, Menu, X, ChevronDown } from "lucide-react";
 import siteContent from "./content/data.json";
-import heartHandsImage from "./assets/couples-heart-hands.jpeg";
-import therapySeatingImage from "./assets/couples-therapy-seating.jpeg";
-import lornePortrait from "./assets/lorne-portrait.jpeg";
+
+const heartHandsImage = "/couples-heart-hands.jpeg";
+const therapySeatingImage = "/couples-therapy-seating.jpeg";
+const lornePortrait = "/lorne-portrait.jpeg";
 
 export default function CouplesPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -375,7 +376,7 @@ export default function CouplesPage() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-[420px] h-full max-h-[600px] oval-mask overflow-hidden relative shadow-2xl"
+              className="w-full max-w-[360px] sm:max-w-[420px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
             >
               <img
                 src={heartHandsImage}
