@@ -257,12 +257,12 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[45vh] lg:h-[80vh] w-full flex justify-center items-center">
+          <div className="lg:col-span-5 relative h-[55vh] lg:h-[90vh] w-full flex justify-center items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-[360px] sm:max-w-[400px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
+              className="w-full max-w-[455px] sm:max-w-[506px] h-full max-h-[734px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
             >
               <img 
                 src={heroImage}
@@ -281,7 +281,7 @@ export default function App() {
                 }}
                 alt={siteContent.heroImageAlt} 
                 loading="eager"
-                className="w-full h-full object-cover object-bottom lg:object-center scale-105 hover:scale-100 transition-transform duration-1000"
+                className="w-full h-full object-cover object-[center_18%] scale-[1.26] hover:scale-[1.20] transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
             </motion.div>
