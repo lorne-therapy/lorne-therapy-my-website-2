@@ -20,16 +20,30 @@ export default function CouplesPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navigateToMain = (e: MouseEvent, targetHash = "") => {
+  useEffect(() => {
+    document.title = "Couples Therapy & Relationship Counseling | Lorne Lieberman, LMFT";
+  }, []);
+
+  const navigateToMain = (e?: MouseEvent, targetHash = "") => {
     if (e) e.preventDefault();
     setIsMenuOpen(false);
 
     window.history.pushState(null, "", "/" + targetHash);
     window.dispatchEvent(new PopStateEvent("popstate"));
-    window.dispatchEvent(new HashChangeEvent("hashchange"));
 
     if (!targetHash || targetHash === "#") {
       window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      setTimeout(() => {
+        const id = targetHash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -431,42 +445,32 @@ export default function CouplesPage() {
       </section>
 
       {/* ─── Section 3: Relational Challenges We Address ─── */}
-      <section id="challenges" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+      <section id="challenges" className="py-16 md:py-20 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
         <div className="max-w-7xl mx-auto">
-          <div className="flex justify-between items-end mb-16">
-            <div>
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">
-                Common Dynamics
-              </h3>
-              <h2 className="font-serif text-3xl md:text-4xl font-light">
-                What Brings Couples to Therapy
-              </h2>
-            </div>
+          <div className="mb-8 md:mb-10">
+            <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">
+              Common Dynamics
+            </h3>
+            <h2 className="font-serif text-3xl md:text-4xl font-light">
+              What Brings Couples to Therapy
+            </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-12 lg:gap-x-16 gap-y-7 md:gap-y-8 list-none p-0 m-0">
             {commonChallenges.map((challenge, i) => (
-              <div
-                key={i}
-                className="group border-b border-[var(--color-stone-900)]/20 md:border-r last:border-r-0 [&:nth-child(2n)]:md:border-r-0 lg:[&:nth-child(2n)]:md:border-r lg:[&:nth-child(3n)]:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 flex flex-col justify-between"
-              >
-                <div>
-                  <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-12 flex items-center justify-between">
-                    <span>{challenge.number}</span>
-                    <span className="text-[9px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] font-medium">
-                      FOCUS
-                    </span>
-                  </div>
-                  <h4 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">
+              <li key={i} className="flex items-start gap-4 text-left">
+                <span className="mt-2.5 w-2 h-2 rounded-full bg-[var(--color-olive-700)] shrink-0" aria-hidden="true" />
+                <div className="space-y-1.5">
+                  <h4 className="font-serif text-xl lg:text-[22px] font-medium text-[var(--color-stone-900)] leading-snug">
                     {challenge.title}
                   </h4>
-                  <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 font-light">
+                  <p className="text-xs md:text-[13.5px] leading-relaxed text-[var(--color-stone-800)]/80 font-light">
                     {challenge.desc}
                   </p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type MouseEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import siteContent from './content/data.json';
@@ -55,11 +55,23 @@ export default function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  useEffect(() => {
+    document.title = "Lorne Lieberman, LMFT | Psychotherapy in Los Angeles, California";
+  }, []);
+
+  const navigateToCouples = (e?: MouseEvent) => {
+    if (e) e.preventDefault();
+    setIsMenuOpen(false);
+    window.history.pushState(null, '', '/couples-therapy');
+    window.dispatchEvent(new PopStateEvent('popstate'));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const menuLinks = [
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'The Therapist', href: '#therapist' },
     { name: 'Clinical Focus', href: '#clinical-focus' },
-    { name: 'Couples Therapy', href: '#couples-therapy' },
+    { name: 'Couples Therapy', href: '/couples-therapy', isCouplesPage: true },
     { name: 'Rates & FAQ', href: '#rates' },
     { name: 'Schedule Consultation', href: '#schedule' },
   ];
@@ -113,7 +125,8 @@ export default function App() {
             Clinical Focus
           </a>
           <a 
-            href="#couples-therapy" 
+            href="/couples-therapy" 
+            onClick={navigateToCouples}
             className="hover:text-[var(--color-olive-700)] hover:opacity-100 transition-colors"
           >
             Couples Therapy
@@ -165,7 +178,13 @@ export default function App() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    if (link.isCouplesPage) {
+                      navigateToCouples(e);
+                    } else {
+                      setIsMenuOpen(false);
+                    }
+                  }}
                   className="font-serif text-4xl md:text-5xl lg:text-7xl font-light hover:italic hover:text-[var(--color-olive-700)] text-center transition-all duration-300"
                 >
                   {link.name}
@@ -257,12 +276,12 @@ export default function App() {
             </motion.div>
           </div>
 
-          <div className="lg:col-span-5 relative h-[55vh] lg:h-[90vh] w-full flex justify-center items-center">
+          <div className="lg:col-span-5 relative h-[45vh] lg:h-[75vh] w-full flex justify-center items-center">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full max-w-[455px] sm:max-w-[506px] h-full max-h-[734px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
+              className="w-full max-w-[360px] sm:max-w-[400px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl"
             >
               <img 
                 src={heroImage}
@@ -281,7 +300,7 @@ export default function App() {
                 }}
                 alt={siteContent.heroImageAlt} 
                 loading="eager"
-                className="w-full h-full object-cover object-[center_18%] scale-[1.26] hover:scale-[1.20] transition-transform duration-1000"
+                className="w-full h-full object-cover object-center scale-105 hover:scale-100 transition-transform duration-1000"
               />
               <div className="absolute inset-0 bg-[var(--color-olive-700)]/10 mix-blend-overlay"></div>
             </motion.div>
@@ -371,15 +390,16 @@ export default function App() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
             {[
-              { title: siteContent.service1Title, desc: siteContent.service1Description, href: undefined, cta: undefined },
-              { title: siteContent.service2Title, desc: siteContent.service2Description, href: '#couples-therapy', cta: 'Explore Couples Therapy' },
-              { title: siteContent.service3Title, desc: siteContent.service3Description, href: undefined, cta: undefined }
+              { title: siteContent.service1Title, desc: siteContent.service1Description, href: undefined, isCouplesPage: false, cta: undefined },
+              { title: siteContent.service2Title, desc: siteContent.service2Description, href: '/couples-therapy', isCouplesPage: true, cta: 'Explore Couples Therapy' },
+              { title: siteContent.service3Title, desc: siteContent.service3Description, href: undefined, isCouplesPage: false, cta: undefined }
             ].map((service, i) => {
               const ContentWrapper = service.href ? 'a' : 'div';
               return (
                 <ContentWrapper 
                   key={i} 
                   href={service.href}
+                  onClick={service.isCouplesPage ? navigateToCouples : undefined}
                   className="group border-b md:border-b-0 md:border-r border-[var(--color-stone-900)]/20 last:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 cursor-pointer flex flex-col justify-between"
                 >
                   <div>

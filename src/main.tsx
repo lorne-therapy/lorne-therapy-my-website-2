@@ -10,12 +10,15 @@ function isCouplesView() {
   if (typeof window === "undefined") return false;
   const path = window.location.pathname.replace(/\/$/, "") || "/";
   const hash = window.location.hash || "";
-  return (
-    path === COUPLES_PATH ||
-    path.endsWith(COUPLES_PATH) ||
-    hash === "#couples-therapy" ||
-    hash.startsWith("#couples-therapy")
-  );
+
+  if (hash === "#couples-therapy" || hash.startsWith("#couples-therapy")) {
+    try {
+      window.history.replaceState(null, "", COUPLES_PATH);
+    } catch {}
+    return true;
+  }
+
+  return path === COUPLES_PATH || path.endsWith(COUPLES_PATH);
 }
 
 function Root() {
@@ -28,6 +31,14 @@ function Root() {
 
     window.addEventListener("popstate", updateRoute);
     window.addEventListener("hashchange", updateRoute);
+
+    // Initial check to clean up legacy hash if present
+    if (window.location.hash === "#couples-therapy" || window.location.hash.startsWith("#couples-therapy")) {
+      try {
+        window.history.replaceState(null, "", COUPLES_PATH);
+      } catch {}
+    }
+
     return () => {
       window.removeEventListener("popstate", updateRoute);
       window.removeEventListener("hashchange", updateRoute);
