@@ -21,7 +21,7 @@ export default function CouplesPage() {
   }, []);
 
   useEffect(() => {
-    document.title = "Couples Therapy & Relationship Counseling | Lorne Lieberman, LMFT";
+    document.title = "Couples Therapy Los Angeles | Gottman Marriage Counseling | Lorne Lieberman, LMFT";
   }, []);
 
   const navigateToMain = (e?: MouseEvent, targetHash = "") => {

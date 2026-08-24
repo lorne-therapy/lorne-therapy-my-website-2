@@ -8,8 +8,8 @@ const COUPLES_PATH = "/couples-therapy";
 
 function isCouplesView() {
   if (typeof window === "undefined") return false;
-  const path = window.location.pathname.replace(/\/$/, "") || "/";
-  const hash = window.location.hash || "";
+  const path = window.location.pathname.toLowerCase().replace(/\/$/, "") || "/";
+  const hash = window.location.hash.toLowerCase() || "";
 
   if (hash === "#couples-therapy" || hash.startsWith("#couples-therapy")) {
     try {
@@ -18,7 +18,11 @@ function isCouplesView() {
     return true;
   }
 
-  return path === COUPLES_PATH || path.endsWith(COUPLES_PATH);
+  return (
+    path === COUPLES_PATH ||
+    path.endsWith(COUPLES_PATH) ||
+    path.includes("couples-therapy")
+  );
 }
 
 function Root() {
