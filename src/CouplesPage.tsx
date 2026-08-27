@@ -25,14 +25,27 @@ export default function CouplesPage() {
   }, []);
 
   const navigateToMain = (e?: MouseEvent, targetHash = "") => {
-    if (e) e.preventDefault();
+    if (e) {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+      e.preventDefault();
+    }
     setIsMenuOpen(false);
 
-    window.history.pushState(null, "", "/" + targetHash);
+    const targetUrl = targetHash ? "/" + targetHash : "/";
+    window.history.pushState(null, "", targetUrl);
     window.dispatchEvent(new PopStateEvent("popstate"));
 
     if (!targetHash || targetHash === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      requestAnimationFrame(() => {
+        window.scrollTo(0, 0);
+      });
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 50);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 150);
     } else {
       setTimeout(() => {
         const id = targetHash.replace("#", "");

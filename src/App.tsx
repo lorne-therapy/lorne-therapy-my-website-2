@@ -17,18 +17,26 @@ export default function App() {
   const [currentHash, setCurrentHash] = useState(typeof window !== 'undefined' ? window.location.hash : '');
 
   useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+
+    const scrollToTopImmediate = () => {
+      window.scrollTo(0, 0);
+      requestAnimationFrame(() => window.scrollTo(0, 0));
+      setTimeout(() => window.scrollTo(0, 0), 50);
+      setTimeout(() => window.scrollTo(0, 0), 150);
+    };
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
-  useEffect(() => {
-    const handleHashChange = () => {
+    const handleHashOrPopState = () => {
       setCurrentHash(window.location.hash);
       
-      if (window.location.hash !== '#schedule') {
+      if (window.location.hash && window.location.hash !== '#' && window.location.hash !== '#schedule') {
         const id = window.location.hash.replace('#', '');
         if (id) {
           setTimeout(() => {
@@ -41,18 +49,28 @@ export default function App() {
             }
           }, 100);
         } else {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          scrollToTopImmediate();
         }
       } else {
-        window.scrollTo(0, 0);
+        scrollToTopImmediate();
       }
     };
-    window.addEventListener('hashchange', handleHashChange);
-    // Initial check
-    if (window.location.hash === '#schedule') {
-      window.scrollTo(0, 0);
+
+    window.addEventListener('hashchange', handleHashOrPopState);
+    window.addEventListener('popstate', handleHashOrPopState);
+
+    // Initial check on mount
+    if (!window.location.hash || window.location.hash === '#' || window.location.hash === '#schedule') {
+      scrollToTopImmediate();
+    } else {
+      handleHashOrPopState();
     }
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('hashchange', handleHashOrPopState);
+      window.removeEventListener('popstate', handleHashOrPopState);
+    };
   }, []);
 
   useEffect(() => {
