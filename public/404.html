@@ -9,7 +9,9 @@
       // Redirect 404 to corresponding route
       var pathSegmentsToKeep = 0;
       var l = window.location;
-      if (l.pathname.includes('/couples-therapy')) {
+      if (l.pathname.includes('/trauma-emdr-therapy')) {
+        l.replace('/trauma-emdr-therapy' + l.search + l.hash);
+      } else if (l.pathname.includes('/couples-therapy')) {
         l.replace('/couples-therapy' + l.search + l.hash);
       } else {
         l.replace('/' + (l.search ? l.search : '') + (l.hash ? l.hash : ''));
