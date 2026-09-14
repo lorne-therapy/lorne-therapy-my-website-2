@@ -21,6 +21,7 @@ export default defineConfig(({mode}) => {
         input: {
           main: path.resolve(__dirname, 'index.html'),
           couplesTherapy: path.resolve(__dirname, 'couples-therapy/index.html'),
+          traumaEmdrTherapy: path.resolve(__dirname, 'trauma-emdr-therapy/index.html'),
         },
       },
     },
