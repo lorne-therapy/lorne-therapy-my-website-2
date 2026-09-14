@@ -432,7 +432,6 @@ export default function TraumaEMDRPage() {
               <span>In Person · Los Angeles</span>
               <span>Telehealth · California</span>
               <span>$250 / Session</span>
-              <span>Free 15-Min Consultation</span>
             </div>
           </div>
 
@@ -743,13 +742,6 @@ export default function TraumaEMDRPage() {
           </div>
         </div>
       </section>
-
-      {/* Mobile sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[var(--color-stone-900)] p-3 border-t border-white/10">
-        <button onClick={(e) => scrollToAnchor(e, "schedule", "mobile_sticky")} className="w-full bg-[var(--color-olive-700)] text-white px-5 py-4 text-[11px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-3">
-          Free 15-Min Consultation <ArrowRight size={14} />
-        </button>
-      </div>
     </div>
   );
 }
