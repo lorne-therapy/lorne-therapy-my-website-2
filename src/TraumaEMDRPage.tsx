@@ -49,45 +49,57 @@ export default function TraumaEMDRPage() {
     const description = document.querySelector('meta[name="description"]');
     const oldDescription = description?.getAttribute("content") || "";
 
-    document.title = "Trauma & EMDR Therapy Los Angeles | Lorne Lieberman, LMFT";
+    document.title =
+      "Trauma & EMDR Therapy Los Angeles | Lorne Lieberman, LMFT";
     description?.setAttribute(
       "content",
-      "Trauma therapy and EMDR in Los Angeles with Lorne Lieberman, LMFT. In-person psychotherapy in Los Angeles and secure telehealth throughout California. Free 15-minute consultation."
+      "Trauma therapy and EMDR in Los Angeles with Lorne Lieberman, LMFT. In-person psychotherapy in Los Angeles and secure telehealth throughout California. Free 15-minute consultation.",
     );
 
     trackEvent("landing_page_view", {
       page_title: document.title,
-      traffic_source: new URLSearchParams(window.location.search).get("utm_source") || "direct_or_unset",
+      traffic_source:
+        new URLSearchParams(window.location.search).get("utm_source") ||
+        "direct_or_unset",
     });
 
     const sectionObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
-          const sectionName = (entry.target as HTMLElement).dataset.analyticsSection;
+          const sectionName = (entry.target as HTMLElement).dataset
+            .analyticsSection;
           if (!sectionName || observedSections.current.has(sectionName)) return;
 
           observedSections.current.add(sectionName);
           trackEvent("section_view", { section_name: sectionName });
           if (sectionName === "schedule") {
-            trackEvent("scheduler_view", { scheduler_provider: "google_calendar" });
+            trackEvent("scheduler_view", {
+              scheduler_provider: "google_calendar",
+            });
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
 
-    document.querySelectorAll<HTMLElement>("[data-analytics-section]").forEach((section) => {
-      sectionObserver.observe(section);
-    });
+    document
+      .querySelectorAll<HTMLElement>("[data-analytics-section]")
+      .forEach((section) => {
+        sectionObserver.observe(section);
+      });
 
     const trackScrollDepth = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollable =
+        document.documentElement.scrollHeight - window.innerHeight;
       if (scrollable <= 0) return;
       const percent = Math.round((window.scrollY / scrollable) * 100);
 
       [25, 50, 75, 90].forEach((threshold) => {
-        if (percent >= threshold && !observedScrollDepths.current.has(threshold)) {
+        if (
+          percent >= threshold &&
+          !observedScrollDepths.current.has(threshold)
+        ) {
           observedScrollDepths.current.add(threshold);
           trackEvent("landing_scroll_depth", { percent_scrolled: threshold });
         }
@@ -116,7 +128,11 @@ export default function TraumaEMDRPage() {
     }
   };
 
-  const scrollToAnchor = (e: MouseEvent, id: string, analyticsLocation?: string) => {
+  const scrollToAnchor = (
+    e: MouseEvent,
+    id: string,
+    analyticsLocation?: string,
+  ) => {
     e.preventDefault();
     setIsMenuOpen(false);
     if (analyticsLocation) {
@@ -128,27 +144,82 @@ export default function TraumaEMDRPage() {
     const element = document.getElementById(id);
     if (!element) return;
     const offset = 82;
-    const top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    const top =
+      element.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top, behavior: "smooth" });
   };
 
   const menuLinks = [
-    { name: "Philosophy", onClick: (e: MouseEvent) => { trackEvent("navigation_click", { link_name: "philosophy", navigation_location: "menu" }); navigateToMain(e, "#philosophy"); } },
-    { name: "The Therapist", onClick: (e: MouseEvent) => { trackEvent("navigation_click", { link_name: "therapist", navigation_location: "menu" }); navigateToMain(e, "#therapist"); } },
-    { name: "Clinical Focus", onClick: (e: MouseEvent) => { trackEvent("navigation_click", { link_name: "clinical_focus", navigation_location: "menu" }); navigateToMain(e, "#clinical-focus"); } },
-    { name: "Couples Therapy", onClick: (e: MouseEvent) => { e.preventDefault(); trackEvent("navigation_click", { link_name: "couples_therapy", navigation_location: "menu" }); window.history.pushState(null, "", "/couples-therapy"); window.dispatchEvent(new PopStateEvent("popstate")); setIsMenuOpen(false); } },
+    {
+      name: "Philosophy",
+      onClick: (e: MouseEvent) => {
+        trackEvent("navigation_click", {
+          link_name: "philosophy",
+          navigation_location: "menu",
+        });
+        navigateToMain(e, "#philosophy");
+      },
+    },
+    {
+      name: "The Therapist",
+      onClick: (e: MouseEvent) => {
+        trackEvent("navigation_click", {
+          link_name: "therapist",
+          navigation_location: "menu",
+        });
+        navigateToMain(e, "#therapist");
+      },
+    },
+    {
+      name: "Clinical Focus",
+      onClick: (e: MouseEvent) => {
+        trackEvent("navigation_click", {
+          link_name: "clinical_focus",
+          navigation_location: "menu",
+        });
+        navigateToMain(e, "#clinical-focus");
+      },
+    },
+    {
+      name: "Couples Therapy",
+      onClick: (e: MouseEvent) => {
+        e.preventDefault();
+        trackEvent("navigation_click", {
+          link_name: "couples_therapy",
+          navigation_location: "menu",
+        });
+        window.history.pushState(null, "", "/couples-therapy");
+        window.dispatchEvent(new PopStateEvent("popstate"));
+        setIsMenuOpen(false);
+      },
+    },
     {
       name: "Trauma & EMDR",
       isActive: true,
       onClick: (e: MouseEvent) => {
         e.preventDefault();
         setIsMenuOpen(false);
-        trackEvent("navigation_click", { link_name: "trauma_emdr", navigation_location: "menu" });
+        trackEvent("navigation_click", {
+          link_name: "trauma_emdr",
+          navigation_location: "menu",
+        });
         window.scrollTo({ top: 0, behavior: "smooth" });
       },
     },
-    { name: "Rates & FAQ", onClick: (e: MouseEvent) => { trackEvent("navigation_click", { link_name: "rates_faq", navigation_location: "menu" }); scrollToAnchor(e, "rates"); } },
-    { name: "Schedule Consultation", onClick: (e: MouseEvent) => scrollToAnchor(e, "schedule", "menu") },
+    {
+      name: "Rates & FAQ",
+      onClick: (e: MouseEvent) => {
+        trackEvent("navigation_click", {
+          link_name: "rates_faq",
+          navigation_location: "menu",
+        });
+        scrollToAnchor(e, "rates");
+      },
+    },
+    {
+      name: "Schedule Consultation",
+      onClick: (e: MouseEvent) => scrollToAnchor(e, "schedule", "menu"),
+    },
   ];
 
   const focusAreas = [
@@ -259,8 +330,14 @@ export default function TraumaEMDRPage() {
   ];
 
   const ratesList = [
-    { serviceName: "Individual Trauma / EMDR Therapy", price: "$250 / session" },
-    { serviceName: "Initial Phone Consultation", price: "Complimentary (15 min)" },
+    {
+      serviceName: "Individual Trauma / EMDR Therapy",
+      price: "$250 / session",
+    },
+    {
+      serviceName: "Initial Phone Consultation",
+      price: "Complimentary (15 min)",
+    },
     { serviceName: "Insurance Billing", price: "Private Pay / Out-of-Network" },
   ];
 
@@ -284,7 +361,10 @@ export default function TraumaEMDRPage() {
       }`}
     >
       <span>Schedule a Free 15-Min Consultation</span>
-      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+      <ArrowRight
+        size={14}
+        className="group-hover:translate-x-1 transition-transform"
+      />
     </button>
   );
 
@@ -298,14 +378,28 @@ export default function TraumaEMDRPage() {
             : "py-5 md:py-6"
         }`}
       >
-        <a href="/" onClick={(e) => { trackEvent("navigation_click", { link_name: "brand_home", navigation_location: "header" }); navigateToMain(e, ""); }} className="uppercase font-medium hover:opacity-70 transition-opacity">
+        <a
+          href="/"
+          onClick={(e) => {
+            trackEvent("navigation_click", {
+              link_name: "brand_home",
+              navigation_location: "header",
+            });
+            navigateToMain(e, "");
+          }}
+          className="uppercase font-medium hover:opacity-70 transition-opacity"
+        >
           <div className="md:hidden flex flex-col gap-0.5">
-            <span className="text-xs tracking-[0.2em]">{siteContent.navigationNameMobile1}</span>
+            <span className="text-xs tracking-[0.2em]">
+              {siteContent.navigationNameMobile1}
+            </span>
             <span className="text-[8px] tracking-[0.05em] text-[var(--color-stone-800)]/80 sm:text-[9.5px] sm:tracking-[0.1em]">
               {siteContent.navigationNameMobile2}
             </span>
           </div>
-          <div className="hidden md:block text-xs tracking-[0.2em]">{siteContent.navigationName}</div>
+          <div className="hidden md:block text-xs tracking-[0.2em]">
+            {siteContent.navigationName}
+          </div>
         </a>
 
         <div className="flex items-center gap-6">
@@ -339,7 +433,9 @@ export default function TraumaEMDRPage() {
           >
             <button
               onClick={() => {
-                trackEvent("menu_close", { navigation_location: "menu_overlay" });
+                trackEvent("menu_close", {
+                  navigation_location: "menu_overlay",
+                });
                 setIsMenuOpen(false);
               }}
               className="absolute top-6 right-6 md:top-12 md:right-12 flex items-center gap-2 text-xs tracking-[0.2em] uppercase font-medium hover:opacity-70 transition-opacity cursor-pointer"
@@ -378,7 +474,10 @@ export default function TraumaEMDRPage() {
       </AnimatePresence>
 
       {/* Hero: exact ad-to-page message match */}
-      <section data-analytics-section="hero" className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-28 md:pt-32 pb-16 overflow-hidden">
+      <section
+        data-analytics-section="hero"
+        className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-28 md:pt-32 pb-16 overflow-hidden"
+      >
         <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
           <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
             LOS ANGELES, CA &amp; TELEHEALTH CALIFORNIA
@@ -398,16 +497,24 @@ export default function TraumaEMDRPage() {
               className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[0.94] tracking-tight font-light max-w-[900px]"
             >
               Trauma &amp; EMDR Therapy <br className="hidden sm:block" />
-              <span className="italic text-[var(--color-olive-700)] block mt-2 md:ml-6">in Los Angeles.</span>
+              <span className="italic text-[var(--color-olive-700)] block mt-2">
+                in Los Angeles.
+              </span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.9,
+                delay: 0.16,
+                ease: [0.16, 1, 0.3, 1],
+              }}
               className="mt-7 lg:mt-9 max-w-xl text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light"
             >
-              Trauma and EMDR therapy in Los Angeles with Lorne Lieberman, LMFT, for PTSD, attachment wounds, and other experiences that continue to affect how you feel, relate, and respond.
+              Trauma and EMDR therapy in Los Angeles with Lorne Lieberman, LMFT,
+              for PTSD, attachment wounds, and other experiences that continue
+              to affect how you feel, relate, and respond.
             </motion.p>
 
             <motion.div
@@ -432,7 +539,6 @@ export default function TraumaEMDRPage() {
               <span>In Person · Los Angeles</span>
               <span>Telehealth · California</span>
               <span>$250 / Session</span>
-              <span>Free 15-Min Consultation</span>
             </div>
           </div>
 
@@ -455,23 +561,36 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* Recognition */}
-      <section id="experience" data-analytics-section="recognition" className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="experience"
+        data-analytics-section="recognition"
+        className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4 flex flex-col justify-between">
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">01 — Trauma &amp; EMDR</h3>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">
+                01 — Trauma &amp; EMDR
+              </h3>
               <div className="w-24 h-px bg-[var(--color-stone-900)]/20 hidden md:block" />
             </div>
             <div className="md:col-span-8">
               <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-9">
-                Trauma &amp; EMDR Therapy for PTSD, Attachment Wounds, and Ongoing Trauma Responses
+                Trauma &amp; EMDR Therapy for PTSD, Attachment Wounds, and
+                Ongoing Trauma Responses
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
                 <p>
-                  Trauma does not always stay in the past. It can show up as hypervigilance, emotional shutdown, anxiety, relationship difficulties, shame, intrusive memories, or reactions that feel larger than the situation in front of you.
+                  Trauma does not always stay in the past. It can show up as
+                  hypervigilance, emotional shutdown, anxiety, relationship
+                  difficulties, shame, intrusive memories, or reactions that
+                  feel larger than the situation in front of you.
                 </p>
                 <p>
-                  Trauma-focused psychotherapy and EMDR can help you work with what remains emotionally or physically activated while also addressing the attachment and relational patterns that may have developed around those experiences.
+                  Trauma-focused psychotherapy and EMDR can help you work with
+                  what remains emotionally or physically activated while also
+                  addressing the attachment and relational patterns that may
+                  have developed around those experiences.
                 </p>
               </div>
               <div className="mt-10">
@@ -483,12 +602,20 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* Focus areas */}
-      <section id="focus" data-analytics-section="clinical_focus" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="focus"
+        data-analytics-section="clinical_focus"
+        className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-14">
             <div>
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">Common Reasons People Seek Trauma Therapy</h3>
-              <h2 className="font-serif text-3xl md:text-4xl font-light">Clinical Focus</h2>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">
+                Common Reasons People Seek Trauma Therapy
+              </h3>
+              <h2 className="font-serif text-3xl md:text-4xl font-light">
+                Clinical Focus
+              </h2>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
@@ -500,8 +627,12 @@ export default function TraumaEMDRPage() {
                 <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-10">
                   <span>{item.number}</span>
                 </div>
-                <h3 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">{item.title}</h3>
-                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 font-light">{item.desc}</p>
+                <h3 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">
+                  {item.title}
+                </h3>
+                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 font-light">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -509,27 +640,49 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* EMDR */}
-      <section id="emdr" data-analytics-section="emdr" className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="emdr"
+        data-analytics-section="emdr"
+        className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-xl">
-                <img src="/trauma-emdr-kintsugi.jpg" alt="Kintsugi vessel representing integration and repair" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img
+                  src="/trauma-emdr-kintsugi.jpg"
+                  alt="Kintsugi vessel representing integration and repair"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
               </div>
             </div>
             <div className="md:col-span-7 md:pl-8 lg:pl-12">
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">02 — EMDR Therapy in Los Angeles</h3>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">
+                02 — EMDR Therapy in Los Angeles
+              </h3>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-8">
-                EMDR as part of a <span className="italic text-[var(--color-olive-700)]">deeper therapeutic process.</span>
+                EMDR as part of a{" "}
+                <span className="italic text-[var(--color-olive-700)]">
+                  deeper therapeutic process.
+                </span>
               </h2>
               <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
                 <p>
-                  EMDR is a structured psychotherapy approach used to work with distressing experiences and the beliefs, emotions, and body responses connected to them.
+                  EMDR is a structured psychotherapy approach used to work with
+                  distressing experiences and the beliefs, emotions, and body
+                  responses connected to them.
                 </p>
                 <p>
-                  Lorne does not treat EMDR as a stand-alone procedure or a one-size-fits-all protocol. When it fits the work, EMDR can be integrated with relational, attachment, somatic, mindfulness-based, and depth-oriented psychotherapy so treatment addresses both the experience itself and the patterns that developed around it.
+                  Lorne does not treat EMDR as a stand-alone procedure or a
+                  one-size-fits-all protocol. When it fits the work, EMDR can be
+                  integrated with relational, attachment, somatic,
+                  mindfulness-based, and depth-oriented psychotherapy so
+                  treatment addresses both the experience itself and the
+                  patterns that developed around it.
                 </p>
-                <div className="pt-4"><ConsultationCTA location="emdr_section" compact /></div>
+                <div className="pt-4">
+                  <ConsultationCTA location="emdr_section" compact />
+                </div>
               </div>
             </div>
           </div>
@@ -537,20 +690,37 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* Modalities */}
-      <section id="modalities" data-analytics-section="treatment_approach" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="modalities"
+        data-analytics-section="treatment_approach"
+        className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-between items-end mb-14">
             <div>
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">Treatment Approach</h3>
-              <h2 className="font-serif text-3xl md:text-4xl font-light">How Trauma &amp; EMDR Therapy Is Integrated</h2>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-2">
+                Treatment Approach
+              </h3>
+              <h2 className="font-serif text-3xl md:text-4xl font-light">
+                How Trauma &amp; EMDR Therapy Is Integrated
+              </h2>
             </div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-[var(--color-stone-900)]/20">
             {modalities.map((framework) => (
-              <div key={framework.number} className="group border-b lg:border-b-0 border-[var(--color-stone-900)]/20 lg:border-r last:border-r-0 p-8 md:p-10 hover:bg-white transition-colors duration-500">
-                <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-10"><span>{framework.number}</span></div>
-                <h3 className="font-serif text-xl mb-2 group-hover:text-[var(--color-olive-700)] transition-colors">{framework.title}</h3>
-                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 font-light">{framework.desc}</p>
+              <div
+                key={framework.number}
+                className="group border-b lg:border-b-0 border-[var(--color-stone-900)]/20 lg:border-r last:border-r-0 p-8 md:p-10 hover:bg-white transition-colors duration-500"
+              >
+                <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/40 mb-10">
+                  <span>{framework.number}</span>
+                </div>
+                <h3 className="font-serif text-xl mb-2 group-hover:text-[var(--color-olive-700)] transition-colors">
+                  {framework.title}
+                </h3>
+                <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 font-light">
+                  {framework.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -558,35 +728,62 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* Process */}
-      <section id="process" data-analytics-section="process" className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="process"
+        data-analytics-section="process"
+        className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4">
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">03 — The Process</h3>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">
+                03 — The Process
+              </h3>
               <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-6">
-                How Trauma Therapy <br /><span className="italic text-[var(--color-olive-700)]">Can Work</span>
+                How Trauma Therapy <br />
+                <span className="italic text-[var(--color-olive-700)]">
+                  Can Work
+                </span>
               </h2>
-              <p className="text-sm text-[var(--color-stone-800)]/70 font-light leading-relaxed mb-8">A paced process that combines understanding, preparation, trauma processing, and integration.</p>
+              <p className="text-sm text-[var(--color-stone-800)]/70 font-light leading-relaxed mb-8">
+                A paced process that combines understanding, preparation, trauma
+                processing, and integration.
+              </p>
               <div className="w-24 h-px bg-[var(--color-stone-900)]/20 hidden md:block" />
             </div>
             <div className="md:col-span-8 space-y-10">
               {processSteps.map((step) => (
-                <div key={step.step} className="border-b border-[var(--color-stone-900)]/10 pb-8 flex flex-col sm:flex-row gap-6 sm:gap-10">
-                  <span className="font-serif text-3xl text-[var(--color-olive-700)]/80 shrink-0">{step.step}</span>
+                <div
+                  key={step.step}
+                  className="border-b border-[var(--color-stone-900)]/10 pb-8 flex flex-col sm:flex-row gap-6 sm:gap-10"
+                >
+                  <span className="font-serif text-3xl text-[var(--color-olive-700)]/80 shrink-0">
+                    {step.step}
+                  </span>
                   <div>
-                    <h3 className="font-serif text-2xl font-light mb-3">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">{step.desc}</p>
+                    <h3 className="font-serif text-2xl font-light mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
               ))}
-              <div className="pt-2"><ConsultationCTA location="process" compact /></div>
+              <div className="pt-2">
+                <ConsultationCTA location="process" compact />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Therapist */}
-      <section id="therapist" data-analytics-section="therapist" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="therapist"
+        data-analytics-section="therapist"
+        className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5 relative">
@@ -605,18 +802,40 @@ export default function TraumaEMDRPage() {
               </div>
             </div>
             <div className="md:col-span-7 md:pl-8 lg:pl-12">
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">04 — The Therapist</h3>
-              <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-8">Meet Lorne Lieberman, <span className="italic text-[var(--color-olive-700)]">LMFT</span></h2>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">
+                04 — The Therapist
+              </h3>
+              <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-8">
+                Meet Lorne Lieberman,{" "}
+                <span className="italic text-[var(--color-olive-700)]">
+                  LMFT
+                </span>
+              </h2>
               <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">
                 <p>
-                  Lorne works with adults through a depth-oriented and relational lens, integrating EMDR, attachment work, somatic awareness, and mindfulness when clinically useful.
+                  Lorne works with adults through a depth-oriented and
+                  relational lens, integrating EMDR, attachment work, somatic
+                  awareness, and mindfulness when clinically useful.
                 </p>
                 <p>
-                  Before becoming a therapist, Lorne spent many years immersed in contemplative practice as a Buddhist monk and yogi. That background continues to inform the steadiness and attention he brings to emotionally complex work.
+                  Before becoming a therapist, Lorne spent many years immersed
+                  in contemplative practice as a Buddhist monk and yogi. That
+                  background continues to inform the steadiness and attention he
+                  brings to emotionally complex work.
                 </p>
                 <div className="pt-4 flex flex-wrap items-center gap-5">
-                  <a href="#" onClick={(e) => { trackEvent("therapist_background_click", { link_location: "therapist_section" }); navigateToMain(e, "#therapist"); }} className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors">
-                    <span>Read Full Background</span><ArrowRight size={14} />
+                  <a
+                    href="#"
+                    onClick={(e) => {
+                      trackEvent("therapist_background_click", {
+                        link_location: "therapist_section",
+                      });
+                      navigateToMain(e, "#therapist");
+                    }}
+                    className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors"
+                  >
+                    <span>Read Full Background</span>
+                    <ArrowRight size={14} />
                   </a>
                   <ConsultationCTA location="therapist" compact />
                 </div>
@@ -627,26 +846,49 @@ export default function TraumaEMDRPage() {
       </section>
 
       {/* Rates */}
-      <section id="rates" data-analytics-section="rates" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="rates"
+        data-analytics-section="rates"
+        className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
             <div className="md:col-span-4">
-              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">05 — Fees &amp; Details</h3>
+              <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8">
+                05 — Fees &amp; Details
+              </h3>
               <div className="w-24 h-px bg-[var(--color-stone-900)]/20 hidden md:block" />
             </div>
             <div className="md:col-span-8">
               <div className="max-w-2xl">
-                <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-10">Trauma &amp; EMDR Therapy <span className="italic text-[var(--color-olive-700)]">Fees</span></h2>
+                <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-10">
+                  Trauma &amp; EMDR Therapy{" "}
+                  <span className="italic text-[var(--color-olive-700)]">
+                    Fees
+                  </span>
+                </h2>
                 <div className="space-y-9">
                   {ratesList.map((rate) => (
-                    <div key={rate.serviceName} className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 border-b border-[var(--color-stone-900)]/10 pb-4">
-                      <span className="text-sm tracking-wide uppercase">{rate.serviceName}</span>
+                    <div
+                      key={rate.serviceName}
+                      className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 border-b border-[var(--color-stone-900)]/10 pb-4"
+                    >
+                      <span className="text-sm tracking-wide uppercase">
+                        {rate.serviceName}
+                      </span>
                       <span className="font-serif text-2xl">{rate.price}</span>
                     </div>
                   ))}
                   <div className="text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light space-y-4">
-                    <p>Sessions are available in person in Los Angeles and by secure telehealth for clients located throughout California.</p>
-                    <p>Questions about payment and possible out-of-network reimbursement can be discussed during the consultation.</p>
+                    <p>
+                      Sessions are available in person in Los Angeles and by
+                      secure telehealth for clients located throughout
+                      California.
+                    </p>
+                    <p>
+                      Questions about payment and possible out-of-network
+                      reimbursement can be discussed during the consultation.
+                    </p>
                   </div>
                   <ConsultationCTA location="rates" compact />
                 </div>
@@ -656,13 +898,20 @@ export default function TraumaEMDRPage() {
         </div>
       </section>
 
-
       {/* FAQ */}
-      <section id="faq" data-analytics-section="faq" className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+      <section
+        id="faq"
+        data-analytics-section="faq"
+        className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10"
+      >
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14">
-            <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-4">Trauma &amp; EMDR Therapy Questions</h3>
-            <h2 className="font-serif text-4xl md:text-5xl font-light">Frequently Asked Questions</h2>
+            <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-4">
+              Trauma &amp; EMDR Therapy Questions
+            </h3>
+            <h2 className="font-serif text-4xl md:text-5xl font-light">
+              Frequently Asked Questions
+            </h2>
           </div>
           <div className="divide-y divide-[var(--color-stone-900)]/10">
             {faqs.map((faq, index) => {
@@ -681,13 +930,26 @@ export default function TraumaEMDRPage() {
                     }}
                     className="w-full flex justify-between items-center text-left py-2 group cursor-pointer"
                   >
-                    <span className="font-serif text-xl md:text-2xl font-light text-[var(--color-stone-900)] group-hover:text-[var(--color-olive-700)] transition-colors pr-6">{faq.question}</span>
-                    <ChevronDown size={20} className={`text-[var(--color-stone-800)]/50 transition-transform duration-300 shrink-0 ${isOpen ? "rotate-180 text-[var(--color-olive-700)]" : ""}`} />
+                    <span className="font-serif text-xl md:text-2xl font-light text-[var(--color-stone-900)] group-hover:text-[var(--color-olive-700)] transition-colors pr-6">
+                      {faq.question}
+                    </span>
+                    <ChevronDown
+                      size={20}
+                      className={`text-[var(--color-stone-800)]/50 transition-transform duration-300 shrink-0 ${isOpen ? "rotate-180 text-[var(--color-olive-700)]" : ""}`}
+                    />
                   </button>
                   <AnimatePresence>
                     {isOpen && (
-                      <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden">
-                        <p className="pt-4 text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light pr-6">{faq.answer}</p>
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="overflow-hidden"
+                      >
+                        <p className="pt-4 text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light pr-6">
+                          {faq.answer}
+                        </p>
                       </motion.div>
                     )}
                   </AnimatePresence>
@@ -695,17 +957,32 @@ export default function TraumaEMDRPage() {
               );
             })}
           </div>
-          <div className="mt-10 flex justify-center"><ConsultationCTA location="faq" compact /></div>
+          <div className="mt-10 flex justify-center">
+            <ConsultationCTA location="faq" compact />
+          </div>
         </div>
       </section>
 
       {/* Scheduler */}
-      <section id="schedule" data-analytics-section="schedule" className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10 scroll-mt-20">
+      <section
+        id="schedule"
+        data-analytics-section="schedule"
+        className="py-24 md:py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10 scroll-mt-20"
+      >
         <div className="max-w-4xl mx-auto flex flex-col items-center">
-          <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">Free 15-Minute Consultation</h3>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">Schedule a <span className="italic text-[var(--color-olive-700)]">Consultation</span></h2>
+          <h3 className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/50 mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">
+            Free 15-Minute Consultation
+          </h3>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
+            Schedule a{" "}
+            <span className="italic text-[var(--color-olive-700)]">
+              Consultation
+            </span>
+          </h2>
           <p className="max-w-xl mx-auto text-center text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/80 font-light mb-12">
-            Choose a time for a complimentary 15-minute phone consultation to discuss what you are looking for and whether working together feels like a fit.
+            Choose a time for a complimentary 15-minute phone consultation to
+            discuss what you are looking for and whether working together feels
+            like a fit.
           </p>
           <div className="w-full bg-white border border-[var(--color-stone-900)]/5 rounded-2xl overflow-hidden h-[750px] relative shadow-sm ring-1 ring-black/5 ring-inset">
             <div className="absolute inset-0 flex items-center justify-center -z-10">
@@ -718,7 +995,11 @@ export default function TraumaEMDRPage() {
               height="100%"
               className="w-full h-full absolute inset-0 z-10"
               title="Schedule a free consultation with Lorne Lieberman"
-              onLoad={() => trackEvent("scheduler_iframe_load", { scheduler_provider: "google_calendar" })}
+              onLoad={() =>
+                trackEvent("scheduler_iframe_load", {
+                  scheduler_provider: "google_calendar",
+                })
+              }
             />
           </div>
         </div>
@@ -728,28 +1009,51 @@ export default function TraumaEMDRPage() {
       <section className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-900)] text-[var(--color-stone-50)]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-16 items-center">
           <div>
-            <h2 className="font-serif text-5xl md:text-7xl font-light leading-tight mb-8">Looking for Trauma or EMDR Therapy? <br /><span className="italic text-[var(--color-olive-700)]/90">Schedule a free consultation.</span></h2>
-            <p className="text-sm text-[var(--color-stone-50)]/60 max-w-sm leading-relaxed mb-10">Schedule a complimentary 15-minute consultation with Lorne to discuss trauma therapy, EMDR, and whether the practice is a fit.</p>
+            <h2 className="font-serif text-5xl md:text-7xl font-light leading-tight mb-8">
+              Looking for Trauma or EMDR Therapy? <br />
+              <span className="italic text-[var(--color-olive-700)]/90">
+                Schedule a free consultation.
+              </span>
+            </h2>
+            <p className="text-sm text-[var(--color-stone-50)]/60 max-w-sm leading-relaxed mb-10">
+              Schedule a complimentary 15-minute consultation with Lorne to
+              discuss trauma therapy, EMDR, and whether the practice is a fit.
+            </p>
             <div className="flex flex-wrap items-center gap-6">
               <ConsultationCTA location="footer" light />
-              <a href="/" onClick={(e) => { trackEvent("navigation_click", { link_name: "return_main_practice", navigation_location: "footer" }); navigateToMain(e, ""); }} className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-50)]/70 hover:text-white transition-colors">Return to Main Practice</a>
+              <a
+                href="/"
+                onClick={(e) => {
+                  trackEvent("navigation_click", {
+                    link_name: "return_main_practice",
+                    navigation_location: "footer",
+                  });
+                  navigateToMain(e, "");
+                }}
+                className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-50)]/70 hover:text-white transition-colors"
+              >
+                Return to Main Practice
+              </a>
             </div>
           </div>
           <div className="flex flex-col md:items-end text-xs tracking-[0.1em] text-[var(--color-stone-50)]/60 space-y-3">
-            <p className="uppercase font-medium text-white/90">{siteContent.footerName}</p>
+            <p className="uppercase font-medium text-white/90">
+              {siteContent.footerName}
+            </p>
             <p>{siteContent.footerLicense}</p>
             <p className="text-white/80">{siteContent.footerLocation}</p>
-            <a href={`mailto:${siteContent.footerEmail}`} onClick={() => trackEvent("email_click", { link_location: "footer" })} className="hover:text-white transition-colors pt-2 inline-block text-stone-300 normal-case">{siteContent.footerEmail}</a>
+            <a
+              href={`mailto:${siteContent.footerEmail}`}
+              onClick={() =>
+                trackEvent("email_click", { link_location: "footer" })
+              }
+              className="hover:text-white transition-colors pt-2 inline-block text-stone-300 normal-case"
+            >
+              {siteContent.footerEmail}
+            </a>
           </div>
         </div>
       </section>
-
-      {/* Mobile sticky CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[var(--color-stone-900)] p-3 border-t border-white/10">
-        <button onClick={(e) => scrollToAnchor(e, "schedule", "mobile_sticky")} className="w-full bg-[var(--color-olive-700)] text-white px-5 py-4 text-[11px] tracking-[0.14em] uppercase font-medium flex items-center justify-center gap-3">
-          Free 15-Min Consultation <ArrowRight size={14} />
-        </button>
-      </div>
     </div>
   );
 }
