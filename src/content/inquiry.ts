@@ -25,11 +25,10 @@ export const inquiryConfig = {
     ackPrivatePay: '2101989631',
     ackEmergency: '442060339',
   } as Record<string, string>,
-  /** Exact checkbox text from the Google Form's two acknowledgment questions. */
+  /** Both acknowledgment questions in the Google Form have a single checkbox answer: "Acknowledged". */
   ackText: {
-    ackPrivatePay:
-      'I understand sessions booked directly are private pay ($250 individual, $300 couples, $500 90-minute extended session), and that superbills are available for out-of-network plans.',
-    ackEmergency: 'I understand this form is not monitored for emergencies. If I am in a crisis I will call or text 988, or call 911.',
+    ackPrivatePay: 'Acknowledged',
+    ackEmergency: 'Acknowledged',
   },
 };
 
