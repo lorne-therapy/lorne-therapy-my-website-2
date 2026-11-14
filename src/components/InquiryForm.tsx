@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { inquiryConfig, inquiryOptions } from '../content/inquiry';
+import { inquiryConfig, inquiryOptions, serviceFromQuery, type InquiryOption } from '../content/inquiry';
 import { trackEvent } from '../lib/analytics';
 import { site } from '../site';
 import { CrisisNotice, Scheduler } from './shared';
@@ -39,12 +39,6 @@ const EMPTY: Values = {
   company: '',
 };
 
-const SERVICE_FROM_QUERY: Record<string, string> = {
-  individual: 'Individual therapy',
-  couples: 'Couples therapy',
-  trauma: 'Trauma & EMDR',
-};
-
 const label = 'block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/80 mb-2';
 const input =
   'w-full bg-white border border-[var(--color-stone-900)]/20 rounded-lg px-4 py-3 text-base text-[var(--color-stone-900)] placeholder:text-[var(--color-stone-800)]/40 focus:outline-none focus:border-[var(--color-olive-700)] focus:ring-2 focus:ring-[var(--color-olive-700)]/20';
@@ -58,7 +52,7 @@ function Choice({
   selected = [],
 }: {
   name: string;
-  options: string[];
+  options: InquiryOption[];
   value?: string;
   onChange: (v: string) => void;
   type?: 'radio' | 'checkbox';
@@ -66,7 +60,7 @@ function Choice({
 }) {
   return (
     <div className="flex flex-wrap gap-2.5">
-      {options.map((opt) => {
+      {options.map(({ label: optLabel, value: opt }) => {
         const checked = type === 'radio' ? value === opt : selected.includes(opt);
         return (
           <label
@@ -85,7 +79,7 @@ function Choice({
               onChange={() => onChange(opt)}
               className="sr-only"
             />
-            {opt}
+            {optLabel}
           </label>
         );
       })}
@@ -115,7 +109,7 @@ export default function InquiryForm() {
 
   useEffect(() => {
     const s = new URLSearchParams(window.location.search).get('service');
-    if (s && SERVICE_FROM_QUERY[s]) setV((prev) => ({ ...prev, service: SERVICE_FROM_QUERY[s] }));
+    if (s && serviceFromQuery[s]) setV((prev) => ({ ...prev, service: serviceFromQuery[s] }));
   }, []);
 
   const set = <K extends keyof Values>(key: K, value: Values[K]) => {
@@ -159,22 +153,24 @@ export default function InquiryForm() {
       return;
     }
 
-    const values: Record<string, string> = {
-      name: v.name.trim(),
-      email: v.email.trim(),
-      phone: v.phone.trim(),
-      contactMethod: v.contactMethod,
-      service: v.service,
-      format: v.format,
-      california: v.california,
-      insurance: v.insurance.trim(),
-      availability: v.availability.join(', '),
-      source: v.source,
-      message: v.message.trim(),
-      acknowledgments: 'Private-pay fees acknowledged; not-for-emergencies acknowledged',
-    };
+    // Values for choice questions are the Google Form's exact answer texts (see content/inquiry.ts).
+    const values: [string, string][] = [
+      ['name', v.name.trim()],
+      ['email', v.email.trim()],
+      ['phone', v.phone.trim()],
+      ['contactMethod', v.contactMethod],
+      ['service', v.service],
+      ['format', v.format],
+      ['california', v.california],
+      ...v.availability.map((a): [string, string] => ['availability', a]), // checkbox question: one entry per choice
+      ['insurance', v.insurance.trim()],
+      ['source', v.source],
+      ['message', v.message.trim()],
+      ['ackPrivatePay', inquiryConfig.ackText.ackPrivatePay],
+      ['ackEmergency', inquiryConfig.ackText.ackEmergency],
+    ];
     const body = new URLSearchParams();
-    Object.entries(values).forEach(([k, val]) => {
+    values.forEach(([k, val]) => {
       const entry = inquiryConfig.entries[k];
       if (entry && val) body.append(`entry.${entry}`, val);
     });
@@ -297,9 +293,9 @@ export default function InquiryForm() {
           </label>
           <select id="inq-source" className={input} value={v.source} onChange={(e) => set('source', e.target.value)}>
             <option value="">Select…</option>
-            {inquiryOptions.source.map((s) => (
-              <option key={s} value={s}>
-                {s}
+            {inquiryOptions.source.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
               </option>
             ))}
           </select>
