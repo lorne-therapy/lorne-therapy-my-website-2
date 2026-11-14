@@ -154,8 +154,8 @@ export default function Trauma() {
             <div className="lg:col-span-5 relative h-[48vh] min-h-[390px] lg:h-[76vh] lg:min-h-[560px] w-full flex justify-center items-center">
               <div className="reveal-scale w-full max-w-[420px] h-full max-h-[610px] oval-mask overflow-hidden relative shadow-xl bg-white">
                 <img
-                  src="/trauma-hero-therapy-room.webp"
-                  alt="A warm, quiet room with a sofa, plants, and soft window light"
+                  src="/ocean-sunset.webp"
+                  alt="The sun setting over the ocean, a path of light across the water"
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover object-center"
@@ -344,7 +344,7 @@ export default function Trauma() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src={site.therapist.portrait}
+                  src="/lorne-portrait.webp"
                   alt="Lorne Lieberman, LMFT, trauma and EMDR therapist in Los Feliz, Los Angeles"
                   loading="lazy"
                   className="w-full h-full object-cover"

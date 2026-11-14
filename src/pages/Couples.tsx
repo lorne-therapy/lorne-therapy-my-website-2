@@ -189,8 +189,8 @@ export default function Couples() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/couples-therapy-seating.webp"
-                  alt="A calm, comfortable therapy room with a sofa and leather armchair"
+                  src="/office-hillhurst.webp"
+                  alt="Lorne Lieberman's therapy office on Hillhurst Avenue in Los Feliz"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
@@ -289,7 +289,7 @@ export default function Couples() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src={site.therapist.portrait}
+                  src="/lorne-headshot-black-tilt.webp"
                   alt="Lorne Lieberman, LMFT, couples therapist in Los Feliz, Los Angeles"
                   loading="lazy"
                   className="w-full h-full object-cover"
