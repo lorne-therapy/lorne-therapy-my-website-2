@@ -79,7 +79,7 @@ export const routes: RouteDef[] = [
     template: 'trauma-emdr-therapy/index.html',
     title: 'Trauma & EMDR Therapy in Los Feliz, Los Angeles | DEPTH Therapy',
     description:
-      'Trauma therapy and EMDR with Lorne Lieberman, LMFT, EMDR certified. In person in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
+      'Trauma therapy and EMDR with Lorne Lieberman, LMFT, EMDR trained through an EMDRIA-approved program. In person in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
     ogImage: '/trauma-emdr-kintsugi.jpg',
     ogImageAlt: 'Kintsugi vessel repaired with gold, representing integration and repair',
     inSitemap: true,

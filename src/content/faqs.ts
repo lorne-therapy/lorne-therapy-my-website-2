@@ -6,12 +6,12 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'What do sessions cost?',
     answer:
-      'Individual sessions are $250 for 50 minutes. Couples sessions are $300 for 55 minutes, and extended 90-minute couples sessions are $500. The first 15-minute phone consultation is free.',
+      'Individual sessions are $250 and couples sessions are $300, both 55 minutes. Extended 90-minute (double) sessions are $500 for individuals or couples. The first 15-minute phone consultation is free.',
   },
   {
     question: 'Do you take insurance?',
     answer:
-      'Sessions booked directly through DEPTH are private pay. Each month I provide a superbill, an itemized receipt with the diagnosis and service codes insurers ask for, that you can submit to your plan for out-of-network reimbursement.',
+      'Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, each month I provide a superbill, an itemized receipt with the diagnosis and service codes insurers ask for, that you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
   },
   {
     question: 'How does out-of-network reimbursement work?',
@@ -57,7 +57,7 @@ export const couplesFaqs: FaqItem[] = [
   },
   {
     question: 'How do fees and out-of-network reimbursement work?',
-    answer: `Couples sessions are $300 for 55 minutes, and extended 90-minute sessions are $500. ${site.insuranceStatement}`,
+    answer: `Couples sessions are $300 for 55 minutes, and extended 90-minute (double) sessions are $500. ${site.insuranceStatement}`,
   },
 ];
 
@@ -83,6 +83,6 @@ export const traumaFaqs: FaqItem[] = [
   },
   {
     question: 'How much is individual therapy?',
-    answer: `Individual sessions are $250 for 50 minutes. ${site.insuranceStatement} The first 15-minute consultation is free.`,
+    answer: `Individual sessions are $250 for 55 minutes. Extended 90-minute (double) sessions, which can be helpful for EMDR processing, are $500. ${site.insuranceStatement} The first 15-minute consultation is free.`,
   },
 ];

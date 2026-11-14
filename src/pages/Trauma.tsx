@@ -160,8 +160,8 @@ export default function Trauma() {
               <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-[10px] md:text-[11px] tracking-[0.14em] uppercase text-[var(--color-stone-800)]/65">
                 <span>In Person · Los Feliz</span>
                 <span>Telehealth · California</span>
-                <span>$250 / 50 min</span>
-                <span>EMDR Certified</span>
+                <span>$250 / 55 min</span>
+                <span>EMDRIA-Approved EMDR Training</span>
               </div>
             </div>
 
@@ -380,7 +380,7 @@ export default function Trauma() {
                   to emotionally complex work.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
-                  LMFT #{site.license.number} · EMDR Certified (Dec 2025) · Relational Gestalt Trained · Gottman Method
+                  LMFT #{site.license.number} · EMDR Trained (EMDRIA-Approved, Dec 2025) · Relational Gestalt Trained · Gottman Method
                   Trained
                 </p>
                 <div className="pt-2 flex flex-wrap items-center gap-5">
@@ -415,7 +415,7 @@ export default function Trauma() {
                 <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-10">
                   Trauma &amp; EMDR Therapy <span className="italic text-[var(--color-olive-700)]">Fees</span>
                 </h2>
-                <RatesTable services={['Individual Therapy', 'Initial Phone Consultation']} />
+                <RatesTable services={['Individual Therapy', 'Extended Double Session', 'Initial Phone Consultation']} />
                 <div className="mt-9 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light space-y-4">
                   <p>
                     Sessions are available in person at my Los Feliz office and by secure telehealth for clients located

@@ -113,7 +113,7 @@ export default function Couples() {
               </div>
 
               <p className="mt-8 text-[10px] md:text-[11px] tracking-[0.14em] uppercase text-[var(--color-stone-800)]/60">
-                $300 / 55 min &nbsp;·&nbsp; 90-min extended sessions &nbsp;·&nbsp; Gottman Method Trained
+                $300 / 55 min &nbsp;·&nbsp; 90-min double sessions &nbsp;·&nbsp; Gottman Method Trained
               </p>
             </div>
 
@@ -313,7 +313,7 @@ export default function Couples() {
                   deeply fulfilling.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
-                  LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained · EMDR Certified
+                  LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained · EMDR Trained (EMDRIA-Approved)
                 </p>
                 <div className="pt-2 flex flex-wrap items-center gap-6">
                   <a
@@ -360,10 +360,10 @@ export default function Couples() {
                 <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-12">
                   Session Fees &amp; <span className="italic text-[var(--color-olive-700)]">Practice Details</span>
                 </h2>
-                <RatesTable services={['Couples Therapy', 'Extended Couples Session', 'Initial Phone Consultation']} />
+                <RatesTable services={['Couples Therapy', 'Extended Double Session', 'Initial Phone Consultation']} />
                 <div className="mt-12 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light space-y-4">
                   <p>
-                    Couples sessions are 55 minutes, with 90-minute extended sessions available for deeper relational
+                    Couples sessions are 55 minutes, with 90-minute double sessions available for deeper relational
                     work. Sessions take place in person at my Los Feliz office or by secure telehealth anywhere in
                     California.
                   </p>

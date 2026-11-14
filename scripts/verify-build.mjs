@@ -45,6 +45,8 @@ for (const [file, expected] of Object.entries(pages)) {
   check(html.includes('/good-faith-estimate/'), `${file}: Good Faith Estimate link missing`);
   check(!/picsum\.photos/.test(html), `${file}: placeholder image URL found`);
   check(!/Executive Consultation/i.test(html), `${file}: Executive Consultation still present`);
+  check(!/EMDR Certified|EMDR certified/.test(html), `${file}: 'EMDR Certified' wording still present`);
+  check(!/50[- ]min/.test(body), `${file}: a 50-minute session length is still listed`);
   check(!/Emotionally Focused Therapy|\bEFT\b/.test(body), `${file}: EFT still listed`);
 
   for (const m of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {

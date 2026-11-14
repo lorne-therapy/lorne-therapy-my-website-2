@@ -37,7 +37,7 @@ export const site = {
   /** Displayed in the footer and in structured data. Edit wording here only. */
   credentials: [
     { label: 'Licensed Marriage & Family Therapist', detail: 'California LMFT #159526', category: 'license' },
-    { label: 'EMDR Certified', detail: 'December 2025', category: 'certification' },
+    { label: 'EMDR Trained', detail: 'EMDRIA-approved, Dec 2025', category: 'training' },
     { label: 'Gottman Method Trained', detail: '2025', category: 'training' },
     { label: 'Relational Gestalt Trained', detail: '', category: 'training' },
   ],
@@ -68,14 +68,14 @@ export const site = {
   gaMeasurementId: 'G-EX27PK75GX',
 
   rates: [
-    { service: 'Individual Therapy', duration: '50 min', price: '$250', priceValue: 250 },
+    { service: 'Individual Therapy', duration: '55 min', price: '$250', priceValue: 250 },
     { service: 'Couples Therapy', duration: '55 min', price: '$300', priceValue: 300 },
-    { service: 'Extended Couples Session', duration: '90 min', price: '$500', priceValue: 500 },
+    { service: 'Extended Double Session', duration: '90 min', price: '$500', priceValue: 500 },
     { service: 'Initial Phone Consultation', duration: '15 min', price: 'Complimentary', priceValue: 0 },
   ],
 
   insuranceStatement:
-    'Sessions booked directly through DEPTH are private pay. I provide monthly superbills you can submit for out-of-network reimbursement.',
+    'Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, I provide monthly superbills you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
 
   /** Confirmed wording for the contemplative background, first and third person. */
   monkSentence:
