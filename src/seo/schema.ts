@@ -81,7 +81,15 @@ export function personSchema() {
       'Buddhist psychology and mindfulness',
       'Therapy for artists and entertainment professionals',
     ],
-    hasCredential: site.credentials.map((c) => ({
+    alumniOf: site.education.map((e) => ({ '@type': 'CollegeOrUniversity', name: e.school })),
+    hasCredential: [
+      ...site.education.map((e) => ({
+        '@type': 'EducationalOccupationalCredential',
+        name: `${e.degree} (${e.year})`,
+        credentialCategory: 'degree',
+        recognizedBy: { '@type': 'CollegeOrUniversity', name: e.school },
+      })),
+      ...site.credentials.map((c) => ({
       '@type': 'EducationalOccupationalCredential',
       name: c.detail && c.category !== 'license' ? `${c.label} (${c.detail})` : c.label,
       credentialCategory: c.category,
@@ -91,7 +99,8 @@ export function personSchema() {
             recognizedBy: { '@type': 'Organization', name: site.license.board, url: site.license.boardUrl },
           }
         : {}),
-    })),
+      })),
+    ],
   };
 }
 

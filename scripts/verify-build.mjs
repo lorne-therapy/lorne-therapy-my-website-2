@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist');
 
 const pages = {
-  'index.html': 'A Sanctuary',
+  'index.html': 'think your way',
   'couples-therapy/index.html': 'Moving Beyond',
   'trauma-emdr-therapy/index.html': 'Trauma &amp; EMDR Therapy',
   'contact/index.html': 'Request a',

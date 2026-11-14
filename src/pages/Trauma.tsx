@@ -380,7 +380,7 @@ export default function Trauma() {
                   to emotionally complex work.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
-                  LMFT #{site.license.number} · EMDR Trained (EMDRIA-Approved, Dec 2025) · Relational Gestalt Trained · Gottman Method
+                  LMFT #{site.license.number} · EMDR Trained (EMDRIA-Approved, Dec 2025) · Relational Gestalt Trained (2023) · Gottman Method
                   Trained
                 </p>
                 <div className="pt-2 flex flex-wrap items-center gap-5">

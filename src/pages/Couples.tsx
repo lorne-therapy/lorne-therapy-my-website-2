@@ -313,7 +313,7 @@ export default function Couples() {
                   deeply fulfilling.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
-                  LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained · EMDR Trained (EMDRIA-Approved)
+                  LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained (2023) · EMDR Trained (EMDRIA-Approved)
                 </p>
                 <div className="pt-2 flex flex-wrap items-center gap-6">
                   <a

@@ -23,7 +23,7 @@ export function Wordmark() {
       <span className="text-[15px] md:text-[17px] tracking-[0.42em] font-medium uppercase text-[var(--color-stone-900)] leading-none">
         {site.brand}
       </span>
-      <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase text-[var(--color-stone-800)]/70 mt-1.5">
+      <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase whitespace-nowrap text-[var(--color-stone-800)]/70 mt-1.5">
         {site.brandTagline}
       </span>
     </a>
@@ -65,7 +65,7 @@ export default function SiteNav({
       >
         <Wordmark />
 
-        <div className="hidden lg:flex items-center gap-5 xl:gap-7 text-[11px] xl:text-[12px] tracking-[0.16em] uppercase font-medium text-[var(--color-stone-800)]/85">
+        <div className="hidden xl:flex items-center gap-6 2xl:gap-7 text-[11px] 2xl:text-[12px] tracking-[0.16em] uppercase font-medium whitespace-nowrap text-[var(--color-stone-800)]/85">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -81,7 +81,7 @@ export default function SiteNav({
           <a
             href={`tel:${site.phone.tel}`}
             onClick={() => trackEvent('phone_click', { link_location: 'header', page_key: current })}
-            className="hidden xl:inline-flex items-center gap-2 normal-case tracking-[0.06em] text-[13px] hover:text-[var(--color-stone-900)]"
+            className="hidden 2xl:inline-flex items-center gap-2 normal-case tracking-[0.06em] text-[13px] hover:text-[var(--color-stone-900)]"
           >
             <Phone size={13} strokeWidth={1.5} aria-hidden="true" />
             {site.phone.display}
@@ -95,7 +95,7 @@ export default function SiteNav({
           </a>
         </div>
 
-        <div className="lg:hidden flex items-center gap-5">
+        <div className="xl:hidden flex items-center gap-5">
           <a
             href={`tel:${site.phone.tel}`}
             onClick={() => trackEvent('phone_click', { link_location: 'header_mobile', page_key: current })}

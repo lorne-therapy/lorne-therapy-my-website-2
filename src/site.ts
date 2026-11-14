@@ -39,8 +39,15 @@ export const site = {
     { label: 'Licensed Marriage & Family Therapist', detail: 'California LMFT #159526', category: 'license' },
     { label: 'EMDR Trained', detail: 'EMDRIA-approved, Dec 2025', category: 'training' },
     { label: 'Gottman Method Trained', detail: '2025', category: 'training' },
-    { label: 'Relational Gestalt Trained', detail: '', category: 'training' },
+    { label: 'Relational Gestalt Trained', detail: '2023', category: 'training' },
   ],
+
+  education: [
+    { degree: 'M.A., Clinical Psychology', school: 'Antioch University Los Angeles', year: '2023' },
+    { degree: 'B.A., Psychology, Summa Cum Laude', school: 'CUNY School of Professional Studies', year: '2020' },
+  ],
+
+  experience: ['Three years as a suicide and crisis hotline counselor'],
 
   phone: { display: '(323) 505-9006', tel: '+13235059006', schema: '+1-323-505-9006' },
   email: 'lorne@depth.la',

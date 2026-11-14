@@ -1,36 +1,87 @@
 {
+  "heroEyebrow": "Depth therapy for individuals & couples · Los Feliz, Los Angeles",
+  "heroTitleLine1": "You can’t think your way",
+  "heroTitleLine2": "out of how you feel.",
+  "heroDescription": "Depth psychotherapy for creatives, entertainment professionals, and couples who already understand their patterns and are ready to actually change them. In person in Los Feliz and by telehealth across California.",
+  "heroCtaText": "Schedule a Free 15-Minute Consultation",
+  "heroCtaUrl": "/contact/",
   "heroImageUrl": "/hero-image.jpeg",
   "heroImageAlt": "A single sunlit cloud drifting in a deep blue sky.",
   "heroLocationLabel": "Los Feliz, Los Angeles • Telehealth across California",
-  "heroTitleLine1": "A Sanctuary",
-  "heroTitleLine2": "for the Mind.",
-  "heroDescription": "Depth psychotherapy and relational counseling for individuals and couples in Los Angeles. A dedicated space to face difficult realities, integrate past experience, and cultivate lasting psychological change.",
-  "heroCtaText": "Schedule a Free Consultation",
-  "heroCtaUrl": "/contact/",
-  "philosophyLabel": "01 — Philosophy",
-  "philosophyTitleLine1": "Therapy is not merely about gaining tools to cope. It is about",
-  "philosophyTitleLine2": "facing difficult realities together,",
-  "philosophyTitleLine3": "cultivating the mind to wake up to the wisdom in every experience.",
-  "philosophyDescription1": "This work is for those committed to life as a journey – not just strategies to cope, but a genuine shift in how you relate to your identity, your anxiety, your relationships, and what your life means.",
-  "philosophyDescription2": "What happens in this room is an open conversation about what you actually want — your wishes, your fears, the parts of yourself you haven’t been able to face yet. You leave with more than tools. You leave with choice.",
-  "aboutLabel": "02 — The Therapist",
-  "aboutTitleLine1": "I believe in the profound capacity for",
-  "aboutTitleLine2": "human transformation.",
-  "aboutParagraph1": "Born into a Hollywood film and television family, my early landscape was one of narratives and the complex machinery of human emotion. This background instilled in me a deep, editorial understanding of the human condition—the stories we tell ourselves and the truths we often hide.",
-  "aboutParagraph2": "Before becoming a therapist, I spent over a decade living as a renunciate Buddhist monk, immersed in contemplative yogic practice and daily meditation. That practice remains the contemplative bedrock of my clinical work, bridging ancient wisdom and modern psychological science.",
-  "aboutParagraph3": "As a licensed Marriage and Family Therapist, I provide a secure, empathetic environment where deep exploration can occur. My approach is highly individualized, recognizing that each person's path to healing and success is entirely their own.",
-  "clinicalFocusLabel": "03 — Clinical Focus",
+
+  "whoLabel": "01 — Who I Work With",
+  "whoTitle": "Self-aware, and still stuck.",
+  "whoIntro": "You’ve probably done therapy before. You can name your patterns, maybe even trace them back to where they started. And yet the same feelings keep hijacking the present, the same relationship dynamics keep repeating, and the gap between understanding and changing hasn’t closed.",
+  "whoListLabel": "People usually reach out to me when:",
+  "whoList": [
+    "The creative work that once felt alive now feels like a grind, or you’ve lost touch with why you started.",
+    "Life in a creative industry (the unpredictable work, the visibility, the rejection) has worn down your sense of who you are outside of it.",
+    "Old trauma keeps showing up in the present: in your body, your reactions, your relationships.",
+    "You keep landing in the same painful dynamic, just with different people.",
+    "You look like you have it together, and underneath you feel restless, disconnected, or tired of keeping your guard up.",
+    "As a couple, intimacy and sex have stalled, and talking about it turns into a fight or a silence.",
+    "As a couple, you’re caught in loops of defensiveness and distance where neither of you feels met."
+  ],
+
+  "fitLabel": "02 — Fit",
+  "fitTitle": "Is this the right fit?",
+  "fitYesLabel": "This is likely a good fit if:",
+  "fitYesList": [
+    "You want depth, not a quick fix or a stack of coping worksheets.",
+    "You’re ready for weekly sessions. This work unfolds over months, not weeks.",
+    "You want a therapist who is engaged and direct, and who will challenge you when it counts.",
+    "You’re curious about what’s happening in your body and in the room, not only in your story."
+  ],
+  "fitNoLabel": "It may not be the right fit if:",
+  "fitNoList": [
+    "You’re looking for coaching or short-term, skills-only work.",
+    "You want a therapist who mostly listens and nods."
+  ],
+
+  "approachLabel": "03 — How I Work",
+  "approachTitle": "Facing difficult realities together.",
+  "approachParagraph1": "Insight matters, but it’s rarely enough on its own. In our sessions we slow down and pay attention to what’s happening right now: in your body, your emotions, and the space between us. That’s where old patterns show up live, and where they can actually change.",
+  "approachParagraph2": "I’m engaged, direct, and collaborative. I won’t just nod and take notes. I’m in it with you, and I’ll challenge you when it counts, so you can break free from the old, unconscious patterns that keep running your life. With couples, I work to remove blame while preserving accountability, so each of you can see your part without the session turning into a trial.",
+  "approachPillars": ["From insight to embodied change", "Here and now", "No blame, full accountability"],
+
+  "aboutLabel": "04 — The Therapist",
+  "aboutTitleLine1": "Meet Lorne Lieberman,",
+  "aboutTitleLine2": "LMFT",
+  "aboutParagraph1": "I grew up in a Los Angeles film and television family; my late father was a film and TV director. Before becoming a therapist, I spent half my life working in the creative arts: on set and in post, from props, set dressing, and production to camera operating, editing, and directing, along with photography, graphics, and theater. I know that world from the inside: the irregular work, the visibility, the way identity and output get tangled together. Many of my clients work in music, film, and the arts, and they don’t have to explain that world to me.",
+  "aboutParagraph2": "I spent over a decade living as a renunciate Buddhist monk, immersed in contemplative yogic practice and daily meditation. That practice taught me to stay present with difficult experience without rushing to fix it, and it still shapes how I sit with every client.",
+  "aboutParagraph3": "Today my work is anchored in Relational Gestalt and relational psychoanalysis, and integrates EMDR, the Gottman Method, and attachment-informed somatic emotional processing. I see adults and couples in person at my office on Hillhurst Avenue in Los Feliz, and by secure telehealth throughout California.",
+
+  "clinicalFocusLabel": "05 — Clinical Focus",
   "service1Title": "Individual Therapy",
-  "service1Description": "Deep, exploratory work integrating EMDR, Relational Gestalt, Relational Psychoanalysis, and mindfulness-based Buddhist psychology for adults navigating anxiety, depression, and the fragmentation of modern identity.",
+  "service1Description": "Deep, exploratory work integrating EMDR, Relational Gestalt, relational psychoanalysis, and mindfulness-based Buddhist psychology for adults navigating burnout, anxiety, depression, trauma, and the fragmentation of modern identity.",
   "service2Title": "Couples Therapy",
   "service2Description": "Restoring intimacy and communication through the Gottman Method and attachment-informed somatic emotional processing, anchored in Relational Gestalt.",
   "service3Title": "Trauma & EMDR",
   "service3Description": "Trauma-focused psychotherapy and EMDR for PTSD, attachment wounds, and experiences that still shape how you feel, relate, and respond.",
-  "ratesLabel": "04 — Rates & Logistics",
+
+  "ratesLabel": "06 — Rates & Logistics",
   "ratesTitleLine1": "Transparency in the",
   "ratesTitleLine2": "therapeutic investment.",
   "ratesDescription1": "Therapy is an investment in your long-term psychological well-being. Individual and couples sessions are 55 minutes, and 90-minute extended (double) sessions are available for deeper work.",
-  "ratesDescription2": "Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, I provide monthly superbills you can submit for possible reimbursement; many clients with PPO plans receive meaningful reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.",
+  "ratesDescription2": "Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, I provide monthly superbills you can submit for possible reimbursement.",
+  "oonTitle": "Using out-of-network benefits",
+  "oonSteps": [
+    {
+      "title": "Check your benefits.",
+      "text": "Call your insurer and ask about out-of-network outpatient mental health benefits: your deductible, the reimbursement percentage, and whether pre-authorization is needed."
+    },
+    {
+      "title": "Pay for sessions directly.",
+      "text": "Each month I send you a superbill, an itemized receipt with the codes insurers require."
+    },
+    {
+      "title": "Submit it.",
+      "text": "Most insurers accept uploads through their app or website, and they reimburse you directly."
+    }
+  ],
+  "oonNote": "If your plan is one I’m in network with, we’ll talk through the right way to bill during your consultation.",
+
+  "faqLabel": "07 — Questions",
   "footerTitleLine1": "Ready to",
   "footerTitleLine2": "begin?",
   "footerDescription": "Accepting a limited number of new clients for long-term individual and couples therapy."
