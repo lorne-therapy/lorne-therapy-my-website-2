@@ -166,7 +166,7 @@ export default function Creatives() {
                 </p>
                 <p>
                   Over the years I&rsquo;ve worked with writers, directors, music producers, comedians, actors, stage
-                  performers, camera operators, and editors.
+                  performers, cinematographers, and editors.
                 </p>
               </div>
             </div>

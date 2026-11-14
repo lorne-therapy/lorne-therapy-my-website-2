@@ -29,14 +29,14 @@ export interface RouteDef {
 }
 
 const DEFAULT_OG = '/og-image.jpg';
-const DEFAULT_OG_ALT = 'DEPTH Therapy, Lorne Lieberman, LMFT. Psychotherapy in Los Feliz, Los Angeles and telehealth across California.';
+const DEFAULT_OG_ALT = 'Depth Therapy, Lorne Lieberman, LMFT. Psychotherapy in Los Feliz, Los Angeles and telehealth across California.';
 
 export const routes: RouteDef[] = [
   {
     key: 'home',
     path: '/',
     template: 'index.html',
-    title: 'DEPTH Therapy | Lorne Lieberman, LMFT | Therapist in Los Feliz, Los Angeles',
+    title: 'Depth Therapy | Lorne Lieberman, LMFT | Therapist in Los Feliz, Los Angeles',
     description:
       'Depth psychotherapy, couples therapy, and trauma & EMDR therapy with Lorne Lieberman, LMFT. In person on Hillhurst Ave. in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
     inSitemap: true,
@@ -47,7 +47,7 @@ export const routes: RouteDef[] = [
     key: 'couples',
     path: '/couples-therapy/',
     template: 'couples-therapy/index.html',
-    title: 'Couples Therapy in Los Feliz, Los Angeles | Gottman-Trained | DEPTH Therapy',
+    title: 'Couples Therapy in Los Feliz, Los Angeles | Gottman-Trained | Depth Therapy',
     description:
       'Depth-oriented couples therapy in Los Feliz with Lorne Lieberman, LMFT. Gottman Method trained, attachment-informed somatic emotional processing anchored in Relational Gestalt. In person in Los Angeles or telehealth across California.',
     ogImage: '/couples-sunset-og.jpg',
@@ -77,7 +77,7 @@ export const routes: RouteDef[] = [
     key: 'trauma',
     path: '/trauma-emdr-therapy/',
     template: 'trauma-emdr-therapy/index.html',
-    title: 'Trauma & EMDR Therapy in Los Feliz, Los Angeles | DEPTH Therapy',
+    title: 'Trauma & EMDR Therapy in Los Feliz, Los Angeles | Depth Therapy',
     description:
       'Trauma therapy and EMDR with Lorne Lieberman, LMFT, EMDR trained through an EMDRIA-approved program. In person in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
     ogImage: '/trauma-emdr-kintsugi.jpg',
@@ -107,7 +107,7 @@ export const routes: RouteDef[] = [
     key: 'creatives',
     path: '/therapy-for-creatives/',
     template: 'therapy-for-creatives/index.html',
-    title: 'Therapy for Artists, Creatives & Entertainment Professionals | Los Feliz, Los Angeles | DEPTH Therapy',
+    title: 'Therapy for Artists, Creatives & Entertainment Professionals | Los Feliz, Los Angeles | Depth Therapy',
     description:
       'Depth therapy for artists, musicians, actors, comedians, writers, directors, and crew with Lorne Lieberman, LMFT, who grew up in a Los Angeles film and TV family. In person in Los Feliz and telehealth across California.',
     ogImage: '/hollywood-hills-og.jpg',
@@ -137,7 +137,7 @@ export const routes: RouteDef[] = [
     key: 'contact',
     path: '/contact/',
     template: 'contact/index.html',
-    title: 'Contact & Free Consultation | DEPTH Therapy, Los Feliz',
+    title: 'Contact & Free Consultation | Depth Therapy, Los Feliz',
     description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Offices at 1708 and 2150 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
     inSitemap: true,
     priority: 0.8,
@@ -155,9 +155,9 @@ export const routes: RouteDef[] = [
     key: 'gfe',
     path: '/good-faith-estimate/',
     template: 'good-faith-estimate/index.html',
-    title: 'Good Faith Estimate Notice | DEPTH Therapy',
+    title: 'Good Faith Estimate Notice | Depth Therapy',
     description:
-      'Your right to a Good Faith Estimate under the No Surprises Act if you are uninsured or not using insurance for therapy with DEPTH Therapy.',
+      'Your right to a Good Faith Estimate under the No Surprises Act if you are uninsured or not using insurance for therapy with Depth Therapy.',
     inSitemap: true,
     priority: 0.3,
     jsonLd: [],
@@ -166,7 +166,7 @@ export const routes: RouteDef[] = [
     key: 'privacy',
     path: '/privacy/',
     template: 'privacy/index.html',
-    title: 'Website Privacy Notice | DEPTH Therapy',
+    title: 'Website Privacy Notice | Depth Therapy',
     description: 'How depth.la collects and uses information, including analytics, scheduling, and contact messages.',
     inSitemap: true,
     priority: 0.2,
@@ -176,7 +176,7 @@ export const routes: RouteDef[] = [
     key: 'notfound',
     path: '/404.html',
     template: '404.html',
-    title: 'Page Not Found | DEPTH Therapy',
+    title: 'Page Not Found | Depth Therapy',
     description: 'This page could not be found.',
     noindex: true,
     inSitemap: false,

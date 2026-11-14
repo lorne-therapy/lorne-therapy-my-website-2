@@ -1,5 +1,5 @@
 /**
- * New-client inquiry form → Google Form "DEPTH Therapy - New Client Inquiry" in the practice's
+ * New-client inquiry form → Google Form "Depth Therapy - New Client Inquiry" in the practice's
  * Google Workspace (covered by the Google BAA). Responses land in the linked Google Sheet.
  *
  * IMPORTANT: for choice questions, each `value` below must match the Google Form's answer text

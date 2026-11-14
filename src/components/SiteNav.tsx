@@ -21,10 +21,10 @@ export function Wordmark() {
       aria-label={`${site.brandName}, home`}
       className="flex flex-col text-left hover:opacity-80 transition-opacity"
     >
-      <span className="text-[15px] md:text-[17px] tracking-[0.42em] font-medium uppercase text-[var(--color-stone-900)] leading-none">
+      <span className="text-[13px] min-[400px]:text-[14px] sm:text-[15px] md:text-[17px] tracking-[0.24em] min-[400px]:tracking-[0.3em] md:tracking-[0.34em] font-medium uppercase whitespace-nowrap text-[var(--color-stone-900)] leading-none">
         {site.brand}
       </span>
-      <span className="text-[8.5px] sm:text-[9.5px] md:text-[10px] tracking-[0.2em] uppercase whitespace-nowrap text-[var(--color-stone-800)]/70 mt-1.5">
+      <span className="text-[8px] min-[400px]:text-[8.5px] sm:text-[9.5px] md:text-[10px] tracking-[0.12em] min-[400px]:tracking-[0.2em] uppercase whitespace-nowrap text-[var(--color-stone-800)]/70 mt-1.5">
         {site.brandTagline}
       </span>
     </a>

@@ -11,7 +11,7 @@ export const homeFaqs: FaqItem[] = [
   {
     question: 'Do you take insurance?',
     answer:
-      'Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, each month I provide a superbill, an itemized receipt with the diagnosis and service codes insurers ask for, that you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
+      'Sessions booked directly through Depth Therapy are private pay. If your plan has out-of-network benefits, each month I provide a superbill, an itemized receipt with the diagnosis and service codes insurers ask for, that you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
   },
   {
     question: 'How does out-of-network reimbursement work?',

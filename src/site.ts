@@ -8,9 +8,9 @@ export const site = {
   url: 'https://depth.la',
 
   // Brand
-  brand: 'DEPTH',
-  brandName: 'DEPTH Therapy',
-  brandTagline: 'Therapy · Lorne Lieberman, LMFT',
+  brand: 'Depth Therapy',
+  brandName: 'Depth Therapy',
+  brandTagline: 'Lorne Lieberman, LMFT · Los Feliz',
 
   // Legal identity (shown in the footer)
   legalName: 'Lorne Matthew Lieberman, LMFT',
@@ -93,7 +93,7 @@ export const site = {
   ],
 
   insuranceStatement:
-    'Sessions booked directly through DEPTH are private pay. If your plan has out-of-network benefits, I provide monthly superbills you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
+    'Sessions booked directly through Depth Therapy are private pay. If your plan has out-of-network benefits, I provide monthly superbills you can submit for possible reimbursement. If you would prefer to use insurance, we can talk through your options during the free consultation.',
 
   /** Confirmed wording for the contemplative background, first and third person. */
   monkSentence:

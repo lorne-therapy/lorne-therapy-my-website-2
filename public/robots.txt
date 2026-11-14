@@ -1,4 +1,4 @@
-# depth.la — DEPTH Therapy, Lorne Lieberman, LMFT
+# depth.la — Depth Therapy, Lorne Lieberman, LMFT
 # All search engines and AI assistants are welcome to read this site.
 
 User-agent: *
