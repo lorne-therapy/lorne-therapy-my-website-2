@@ -93,7 +93,7 @@ export default function Creatives() {
               </h1>
 
               <p className={`reveal reveal-delay-1 mt-7 lg:mt-9 max-w-xl ${body}`}>
-                Depth therapy for artists, musicians, actors, comedians, writers, directors, producers, editors, and crew,
+                Depth therapy for artists, musicians, actors, stage performers, comedians, writers, directors, producers, editors, and crew,
                 and anyone building a creative life in Los Angeles. In person in Los Feliz and by telehealth across
                 California.
               </p>
@@ -165,8 +165,8 @@ export default function Creatives() {
                   explaining how it works, so we can get straight to what&rsquo;s underneath.
                 </p>
                 <p>
-                  Over the years I&rsquo;ve worked with writers, music producers, comedians, actors, camera operators, and
-                  editors.
+                  Over the years I&rsquo;ve worked with writers, directors, music producers, comedians, actors, stage
+                  performers, camera operators, and editors.
                 </p>
               </div>
             </div>
