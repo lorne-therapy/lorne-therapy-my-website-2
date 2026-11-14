@@ -29,7 +29,7 @@ export const inquiryConfig = {
   ackText: {
     ackPrivatePay:
       'I understand sessions booked directly are private pay ($250 individual, $300 couples, $500 90-minute extended session), and that superbills are available for out-of-network plans.',
-    ackEmergency: 'I understand this form is not monitored for emergencies. If I am in crisis, I will call or text 988, or call 911.',
+    ackEmergency: 'I understand this form is not monitored for emergencies. If I am in a crisis I will call or text 988, or call 911.',
   },
 };
 
