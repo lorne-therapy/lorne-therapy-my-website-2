@@ -10,6 +10,7 @@ const NAV_LINKS: { label: string; href: string; page?: PageKey }[] = [
   { label: 'Individual', href: '/#individual' },
   { label: 'Couples', href: '/couples-therapy/', page: 'couples' },
   { label: 'Trauma & EMDR', href: '/trauma-emdr-therapy/', page: 'trauma' },
+  { label: 'Creatives', href: '/therapy-for-creatives/', page: 'creatives' },
   { label: 'Rates & FAQ', href: '/#rates' },
 ];
 

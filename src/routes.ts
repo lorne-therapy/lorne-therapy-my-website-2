@@ -1,5 +1,5 @@
 import { site } from './site';
-import { homeFaqs, couplesFaqs, traumaFaqs } from './content/faqs';
+import { homeFaqs, couplesFaqs, traumaFaqs, creativesFaqs } from './content/faqs';
 import {
   breadcrumbSchema,
   faqSchema,
@@ -10,7 +10,7 @@ import {
   websiteSchema,
 } from './seo/schema';
 
-export type PageKey = 'home' | 'couples' | 'trauma' | 'contact' | 'gfe' | 'privacy' | 'notfound';
+export type PageKey = 'home' | 'couples' | 'trauma' | 'creatives' | 'contact' | 'gfe' | 'privacy' | 'notfound';
 
 export interface RouteDef {
   key: PageKey;
@@ -100,6 +100,36 @@ export const routes: RouteDef[] = [
           { name: 'Trauma & EMDR Therapy', path: '/trauma-emdr-therapy/' },
         ]),
         faqSchema(traumaFaqs),
+      ),
+    ],
+  },
+  {
+    key: 'creatives',
+    path: '/therapy-for-creatives/',
+    template: 'therapy-for-creatives/index.html',
+    title: 'Therapy for Artists, Creatives & Entertainment Professionals | Los Feliz, Los Angeles | DEPTH Therapy',
+    description:
+      'Depth therapy for artists, musicians, actors, comedians, writers, directors, and crew with Lorne Lieberman, LMFT, who grew up in a Los Angeles film and TV family. In person in Los Feliz and telehealth across California.',
+    ogImage: '/hollywood-hills-og.jpg',
+    ogImageAlt: 'The Hollywood sign on the hills above Los Angeles at sunset',
+    inSitemap: true,
+    priority: 0.9,
+    jsonLd: [
+      graph(
+        practiceSchema(),
+        personSchema(),
+        serviceSchema({
+          name: 'Therapy for Artists, Creatives & Entertainment Professionals',
+          path: '/therapy-for-creatives/',
+          serviceType: 'Psychotherapy for artists and entertainment professionals',
+          description:
+            'Depth-oriented, existential, and relational psychotherapy for artists, performers, and entertainment-industry professionals, including identity and worth, rejection, creative block, burnout, narcissistic wounding, and relationships.',
+        }),
+        breadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Therapy for Creatives', path: '/therapy-for-creatives/' },
+        ]),
+        faqSchema(creativesFaqs),
       ),
     ],
   },

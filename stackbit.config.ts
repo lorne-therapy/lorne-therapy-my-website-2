@@ -56,6 +56,8 @@ export default defineStackbitConfig({
             { name: "service2Description", type: "text", required: true },
             { name: "service3Title", type: "string", required: true },
             { name: "service3Description", type: "text", required: true },
+            { name: "service4Title", type: "string", required: true },
+            { name: "service4Description", type: "text", required: true },
             { name: "ratesLabel", type: "string", required: true },
             { name: "ratesTitleLine1", type: "string", required: true },
             { name: "ratesTitleLine2", type: "string", required: true },

@@ -31,6 +31,14 @@ const services = [
     cta: 'Explore Trauma & EMDR',
     dedicated: true,
   },
+  {
+    id: 'creatives',
+    title: siteContent.service4Title,
+    desc: siteContent.service4Description,
+    href: '/therapy-for-creatives/',
+    cta: 'Explore Creatives',
+    dedicated: true,
+  },
 ];
 
 const bodyText = 'text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/90 font-light';
@@ -245,13 +253,13 @@ export default function Home() {
             <div className="mb-16">
               <Eyebrow>{siteContent.clinicalFocusLabel}</Eyebrow>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[var(--color-stone-900)]/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-[var(--color-stone-900)]/20 border-y border-[var(--color-stone-900)]/20">
               {services.map((service, i) => (
                 <a
                   key={service.id}
                   id={service.id}
                   href={service.href}
-                  className="group border-b md:border-b-0 md:border-r border-[var(--color-stone-900)]/20 last:border-r-0 p-8 md:p-12 hover:bg-white transition-colors duration-500 flex flex-col justify-between"
+                  className="group bg-[var(--color-stone-100)] p-8 md:p-10 hover:bg-white transition-colors duration-500 flex flex-col justify-between"
                 >
                   <div>
                     <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-16 flex items-center justify-between">

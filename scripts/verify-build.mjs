@@ -12,6 +12,7 @@ const pages = {
   'index.html': 'think your way',
   'couples-therapy/index.html': 'Moving Beyond',
   'trauma-emdr-therapy/index.html': 'Trauma &amp; EMDR Therapy',
+  'therapy-for-creatives/index.html': 'the industry to me',
   'contact/index.html': 'a good fit',
   'good-faith-estimate/index.html': 'Good Faith Estimate',
   'privacy/index.html': 'handles your information',
@@ -63,6 +64,7 @@ for (const f of ['sitemap.xml', 'robots.txt', 'llms.txt', 'favicon.svg', 'og-ima
 }
 const sitemap = fs.existsSync(path.join(dist, 'sitemap.xml')) ? fs.readFileSync(path.join(dist, 'sitemap.xml'), 'utf8') : '';
 check(sitemap.includes('https://depth.la/trauma-emdr-therapy/'), 'sitemap.xml: trauma page missing');
+check(sitemap.includes('https://depth.la/therapy-for-creatives/'), 'sitemap.xml: creatives page missing');
 
 if (errors.length) {
   console.error('Build verification failed:\n - ' + errors.join('\n - '));

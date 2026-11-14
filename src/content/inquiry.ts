@@ -85,5 +85,6 @@ export const serviceFromQuery: Record<string, string> = {
   individual: 'Individual therapy',
   couples: 'Couples therapy',
   trauma: 'Trauma focus / EMDR',
+  creatives: 'Individual therapy',
   family: 'Family therapy',
 };

@@ -8,6 +8,7 @@ const pageInputs = {
   main: 'index.html',
   couplesTherapy: 'couples-therapy/index.html',
   traumaEmdrTherapy: 'trauma-emdr-therapy/index.html',
+  creatives: 'therapy-for-creatives/index.html',
   contact: 'contact/index.html',
   goodFaithEstimate: 'good-faith-estimate/index.html',
   privacy: 'privacy/index.html',

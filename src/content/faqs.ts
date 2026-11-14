@@ -86,3 +86,35 @@ export const traumaFaqs: FaqItem[] = [
     answer: `Individual sessions are $250 for 55 minutes. Extended 90-minute (double) sessions, which can be helpful for EMDR processing, are $500. ${site.insuranceStatement} The first 15-minute consultation is free.`,
   },
 ];
+
+export const creativesFaqs: FaqItem[] = [
+  {
+    question: 'Do I have to be working in the industry, or “successful,” to work with you?',
+    answer:
+      'No. I work with emerging artists, established professionals, and people stepping away from a creative career. What matters is that your creative life matters to you.',
+  },
+  {
+    question: 'Is this coaching for creative block?',
+    answer:
+      'No. This is psychotherapy. Blocks often ease along the way, but we work on what is underneath them rather than on productivity techniques.',
+  },
+  {
+    question: 'Do you work with narcissism and narcissistic wounding?',
+    answer:
+      'Yes. I work with people who recognize narcissistic patterns in themselves and want to change them, and with people healing from growing up with, loving, or working alongside someone narcissistic. We approach it with curiosity rather than labels or blame.',
+  },
+  {
+    question: 'Can we meet by telehealth if I am shooting or touring?',
+    answer:
+      'Yes, as long as you are physically in California for the session. California law limits my practice to clients located in the state. I do my best to work around production schedules.',
+  },
+  {
+    question: 'Do you see couples where one or both partners work in entertainment?',
+    answer:
+      'Yes. Schedules, travel, visibility, and creative partnerships put particular strain on relationships, and that is familiar territory for me.',
+  },
+  {
+    question: 'What does it cost?',
+    answer: `Individual sessions are $250 for 55 minutes and couples sessions are $300 for 55 minutes. Extended 90-minute (double) sessions are $500. ${site.insuranceStatement} The first 15-minute consultation is free.`,
+  },
+];

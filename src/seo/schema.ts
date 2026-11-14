@@ -57,6 +57,7 @@ export function practiceSchema() {
       { '@type': 'MedicalTherapy', name: 'Individual psychotherapy' },
       { '@type': 'MedicalTherapy', name: 'Couples therapy', url: `${site.url}/couples-therapy/` },
       { '@type': 'MedicalTherapy', name: 'Trauma therapy and EMDR', url: `${site.url}/trauma-emdr-therapy/` },
+      { '@type': 'MedicalTherapy', name: 'Therapy for artists and entertainment professionals', url: `${site.url}/therapy-for-creatives/` },
       { '@type': 'MedicalTherapy', name: 'Telehealth psychotherapy (California)' },
     ],
     makesOffer: site.rates
