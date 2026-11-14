@@ -23,7 +23,7 @@ export const inquiryConfig = {
     source: '1165187547',
     message: '1982145974',
     ackPrivatePay: '2101989631',
-    ackEmergency: '1910770532',
+    ackEmergency: '442060339',
   } as Record<string, string>,
   /** Exact checkbox text from the Google Form's two acknowledgment questions. */
   ackText: {
