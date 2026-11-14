@@ -1,9 +1,20 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({mode}) => {
+// Every public page has its own HTML template. Keep in sync with src/routes.ts.
+const pageInputs = {
+  main: 'index.html',
+  couplesTherapy: 'couples-therapy/index.html',
+  traumaEmdrTherapy: 'trauma-emdr-therapy/index.html',
+  contact: 'contact/index.html',
+  goodFaithEstimate: 'good-faith-estimate/index.html',
+  privacy: 'privacy/index.html',
+  notFound: '404.html',
+};
+
+export default defineConfig(({ mode, isSsrBuild }) => {
   const env = loadEnv(mode, '.', '');
   return {
     base: '/',
@@ -16,18 +27,17 @@ export default defineConfig(({mode}) => {
         '@': path.resolve(__dirname, '.'),
       },
     },
-    build: {
-      rollupOptions: {
-        input: {
-          main: path.resolve(__dirname, 'index.html'),
-          couplesTherapy: path.resolve(__dirname, 'couples-therapy/index.html'),
-          traumaEmdrTherapy: path.resolve(__dirname, 'trauma-emdr-therapy/index.html'),
+    build: isSsrBuild
+      ? { copyPublicDir: false }
+      : {
+          rollupOptions: {
+            input: Object.fromEntries(
+              Object.entries(pageInputs).map(([name, file]) => [name, path.resolve(__dirname, file)]),
+            ),
+          },
         },
-      },
-    },
     server: {
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
-      // Do not modifyâfile watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',
     },
   };

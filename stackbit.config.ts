@@ -1,6 +1,8 @@
 import { defineStackbitConfig } from "@stackbit/types";
 import { GitContentSource } from "@stackbit/cms-git";
 
+// Homepage copy is editable here. Practice facts (rates, phone, address,
+// credentials, license) live in src/site.ts so every page stays consistent.
 export default defineStackbitConfig({
   stackbitVersion: "~0.6.0",
   ssgName: "custom",
@@ -16,8 +18,8 @@ export default defineStackbitConfig({
           urlPath: "/",
           filePath: "src/content/data.json",
           fields: [
-            { name: "navigationName", type: "string", required: true },
-            { name: "clientPortalUrl", type: "string", required: true },
+            { name: "heroImageUrl", type: "string", required: true },
+            { name: "heroImageAlt", type: "string", required: true },
             { name: "heroLocationLabel", type: "string", required: true },
             { name: "heroTitleLine1", type: "string", required: true },
             { name: "heroTitleLine2", type: "string", required: true },
@@ -46,28 +48,11 @@ export default defineStackbitConfig({
             { name: "ratesLabel", type: "string", required: true },
             { name: "ratesTitleLine1", type: "string", required: true },
             { name: "ratesTitleLine2", type: "string", required: true },
-            {
-              name: "ratesList",
-              type: "list",
-              items: {
-                type: "object",
-                fields: [
-                  { name: "serviceName", type: "string", required: true },
-                  { name: "price", type: "string", required: true }
-                ]
-              }
-            },
             { name: "ratesDescription1", type: "text", required: true },
             { name: "ratesDescription2", type: "text", required: true },
             { name: "footerTitleLine1", type: "string", required: true },
             { name: "footerTitleLine2", type: "string", required: true },
-            { name: "footerDescription", type: "text", required: true },
-            { name: "footerCtaText", type: "string", required: true },
-            { name: "footerCtaUrl", type: "string", required: true },
-            { name: "footerName", type: "string", required: true },
-            { name: "footerLicense", type: "string", required: true },
-            { name: "footerLocation", type: "string", required: true },
-            { name: "footerEmail", type: "string", required: true }
+            { name: "footerDescription", type: "text", required: true }
           ]
         }
       ]
