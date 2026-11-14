@@ -62,6 +62,17 @@ export const site = {
   },
   googleBusinessUrl: 'https://share.google/sbhYfsSekA7OAcVvr',
 
+  /** Second in-person location. */
+  secondOffice: {
+    name: 'Wellness Spaces Los Feliz',
+    street: '2150 Hillhurst Ave.',
+    city: 'Los Angeles',
+    region: 'CA',
+    postalCode: '90027',
+    country: 'US',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Wellness+Spaces+Los+Feliz+2150+Hillhurst+Ave+Los+Angeles+CA+90027',
+  },
+
   /** Free 15-minute consultation booking (Google Calendar appointment schedule). */
   schedulerUrl:
     'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0-BR9H8P55PMOTUWQ1EXakhptHvRCMm0JG-vjIxGP7yQtqiOYXBjulziKNF4-1TGyQcDbeCFvw?gv=true',
@@ -92,6 +103,9 @@ export const site = {
 } as const;
 
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`;
+export const secondAddress = `${site.secondOffice.street}, ${site.secondOffice.city}, ${site.secondOffice.region} ${site.secondOffice.postalCode}`;
+/** Short phrase naming both offices, for running copy. */
+export const officesPhrase = `my two Los Feliz offices on Hillhurst Avenue (1708 Hillhurst, and ${site.secondOffice.name} at 2150 Hillhurst)`;
 
 export function rate(service: string) {
   return site.rates.find((r) => r.service === service);

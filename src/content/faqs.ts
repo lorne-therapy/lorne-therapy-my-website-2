@@ -1,5 +1,5 @@
 import type { FaqItem } from '../components/shared';
-import { site, fullAddress } from '../site';
+import { site, officesPhrase } from '../site';
 
 /* Homepage FAQ: logistics only. Voice is refined in Step 2. */
 export const homeFaqs: FaqItem[] = [
@@ -20,7 +20,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: 'Do you offer in-person sessions or telehealth?',
-    answer: `Both. I see clients in person at my Los Feliz office (${fullAddress}) and by secure Zoom video for clients located anywhere in California.`,
+    answer: `Both. I see clients in person at ${officesPhrase} and by secure Zoom video for clients located anywhere in California.`,
   },
   {
     question: 'What is a Good Faith Estimate?',
@@ -53,7 +53,7 @@ export const couplesFaqs: FaqItem[] = [
   },
   {
     question: 'Are sessions held in person or online?',
-    answer: `I offer in-person couples sessions at my Los Feliz office (${fullAddress}), as well as secure telehealth sessions for couples located anywhere in California.`,
+    answer: `I offer in-person couples sessions at ${officesPhrase}, as well as secure telehealth sessions for couples located anywhere in California.`,
   },
   {
     question: 'How do fees and out-of-network reimbursement work?',
@@ -79,7 +79,7 @@ export const traumaFaqs: FaqItem[] = [
   },
   {
     question: 'Can EMDR and trauma therapy be done online?',
-    answer: `Secure telehealth is available to clients located anywhere in California, and in-person sessions are available at my Los Feliz office (${fullAddress}). Whether a particular intervention suits telehealth is something we can discuss during the consultation.`,
+    answer: `Secure telehealth is available to clients located anywhere in California, and in-person sessions are available at ${officesPhrase}. Whether a particular intervention suits telehealth is something we can discuss during the consultation.`,
   },
   {
     question: 'How much is individual therapy?',

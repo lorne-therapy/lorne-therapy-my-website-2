@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { site, fullAddress } from '../site';
+import { site, fullAddress, secondAddress } from '../site';
 import { trackEvent } from '../lib/analytics';
 import { ConsultationCTA, CrisisNotice } from './shared';
 
@@ -69,6 +69,14 @@ export default function SiteFooter({
                 className="block hover:text-white"
               >
                 {fullAddress}
+              </a>
+              <a
+                href={site.secondOffice.mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block hover:text-white"
+              >
+                {site.secondOffice.name}, {secondAddress}
               </a>
               <p>Secure telehealth throughout California</p>
               <a

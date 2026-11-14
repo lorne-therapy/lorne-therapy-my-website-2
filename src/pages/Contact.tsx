@@ -4,7 +4,7 @@ import SiteFooter from '../components/SiteFooter';
 import InquiryForm from '../components/InquiryForm';
 import { Eyebrow, Scheduler } from '../components/shared';
 import { trackEvent } from '../lib/analytics';
-import { site, fullAddress } from '../site';
+import { site, fullAddress, secondAddress } from '../site';
 
 export default function Contact() {
   return (
@@ -60,20 +60,21 @@ export default function Contact() {
                 {site.email}
               </span>
             </a>
-            <a
-              href={site.googleBusinessUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white rounded-2xl p-6 flex items-start gap-4 hover:shadow-md transition-shadow"
-            >
+            <div className="bg-white rounded-2xl p-6 flex items-start gap-4">
               <MapPin size={18} strokeWidth={1.5} className="mt-0.5 text-[var(--color-olive-700)]" aria-hidden="true" />
-              <span>
-                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70 mb-1">
-                  Office · {site.address.neighborhood}
+              <span className="space-y-3">
+                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70">
+                  Offices · {site.address.neighborhood}
                 </span>
-                {fullAddress}
+                <a href={site.googleBusinessUrl} target="_blank" rel="noopener noreferrer" className="block hover:underline">
+                  {fullAddress}
+                </a>
+                <a href={site.secondOffice.mapUrl} target="_blank" rel="noopener noreferrer" className="block hover:underline">
+                  {site.secondOffice.name}
+                  <span className="block">{secondAddress}</span>
+                </a>
               </span>
-            </a>
+            </div>
           </div>
 
           <section id="schedule" aria-label="Book a consultation directly" className="mt-20">

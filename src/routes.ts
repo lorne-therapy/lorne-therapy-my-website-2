@@ -38,7 +38,7 @@ export const routes: RouteDef[] = [
     template: 'index.html',
     title: 'DEPTH Therapy | Lorne Lieberman, LMFT | Therapist in Los Feliz, Los Angeles',
     description:
-      'Depth psychotherapy, couples therapy, and trauma & EMDR therapy with Lorne Lieberman, LMFT. In person at 1708 Hillhurst Ave. in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
+      'Depth psychotherapy, couples therapy, and trauma & EMDR therapy with Lorne Lieberman, LMFT. In person on Hillhurst Ave. in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
     inSitemap: true,
     priority: 1.0,
     jsonLd: [graph(practiceSchema(), personSchema(), websiteSchema(), faqSchema(homeFaqs))],
@@ -108,7 +108,7 @@ export const routes: RouteDef[] = [
     path: '/contact/',
     template: 'contact/index.html',
     title: 'Contact & Free Consultation | DEPTH Therapy, Los Feliz',
-    description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Office at 1708 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
+    description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Offices at 1708 and 2150 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
     inSitemap: true,
     priority: 0.8,
     jsonLd: [

@@ -31,6 +31,21 @@ export function practiceSchema() {
     currenciesAccepted: 'USD',
     address: postalAddress,
     hasMap: site.googleBusinessUrl,
+    location: [
+      { '@type': 'Place', name: `${site.brandName}, Los Feliz`, address: postalAddress },
+      {
+        '@type': 'Place',
+        name: site.secondOffice.name,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: site.secondOffice.street,
+          addressLocality: site.secondOffice.city,
+          addressRegion: site.secondOffice.region,
+          postalCode: site.secondOffice.postalCode,
+          addressCountry: site.secondOffice.country,
+        },
+      },
+    ],
     areaServed: [
       { '@type': 'Place', name: 'Los Feliz, Los Angeles, CA' },
       { '@type': 'City', name: 'Los Angeles' },
