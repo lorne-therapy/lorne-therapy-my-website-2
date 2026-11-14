@@ -20,7 +20,7 @@ export const homeFaqs: FaqItem[] = [
   },
   {
     question: 'Do you offer in-person sessions or telehealth?',
-    answer: `Both. I see clients in person at my Los Feliz office (${fullAddress}) and by secure video for clients located anywhere in California.`,
+    answer: `Both. I see clients in person at my Los Feliz office (${fullAddress}) and by secure Zoom video for clients located anywhere in California.`,
   },
   {
     question: 'What is a Good Faith Estimate?',
