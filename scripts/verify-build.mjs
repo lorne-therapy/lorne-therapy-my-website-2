@@ -10,8 +10,8 @@ const dist = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'd
 
 const pages = {
   'index.html': 'think your way',
-  'couples-therapy/index.html': 'Moving Beyond',
-  'trauma-emdr-therapy/index.html': 'Trauma &amp; EMDR Therapy',
+  'couples-therapy/index.html': 'rarely about the fight',
+  'trauma-emdr-therapy/index.html': 'still feels present',
   'therapy-for-creatives/index.html': 'the industry to me',
   'contact/index.html': 'a good fit',
   'good-faith-estimate/index.html': 'Good Faith Estimate',

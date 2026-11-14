@@ -105,7 +105,7 @@ export const site = {
 export const fullAddress = `${site.address.street}, ${site.address.city}, ${site.address.region} ${site.address.postalCode}`;
 export const secondAddress = `${site.secondOffice.street}, ${site.secondOffice.city}, ${site.secondOffice.region} ${site.secondOffice.postalCode}`;
 /** Short phrase naming both offices, for running copy. */
-export const officesPhrase = `my two Los Feliz offices on Hillhurst Avenue (1708 Hillhurst, and ${site.secondOffice.name} at 2150 Hillhurst)`;
+export const officesPhrase = 'my offices in Los Feliz';
 
 export function rate(service: string) {
   return site.rates.find((r) => r.service === service);

@@ -11,16 +11,24 @@ const commonChallenges = [
     desc: 'Getting stuck in recurring, exhausting loops where small triggers rapidly spiral into familiar gridlock and hurt feelings.',
   },
   {
-    title: 'Loss of Intimacy & Connection',
-    desc: 'Feeling more like roommates or co-parents than lovers, wondering where the mutual curiosity, warmth, and physical spark went.',
+    title: 'Unspoken Needs',
+    desc: 'Each of you expects the other to just know what you need and show up that way, without ever working it out together. When they don’t, it feels like proof they don’t care.',
+  },
+  {
+    title: 'Blame & Walking on Eggshells',
+    desc: 'Conversations turn into blame, or one partner pursues while the other shuts down. You edit yourself to avoid setting off your partner’s reactions, and resentment builds quietly.',
+  },
+  {
+    title: 'Stalled Intimacy & Sex',
+    desc: 'Feeling more like roommates or co-parents than lovers. Desire has gone quiet, or become a source of tension instead of closeness.',
+  },
+  {
+    title: 'Losing Yourself in the Relationship',
+    desc: 'Your mood rises and falls with your partner’s, you over-function or people-please to keep the peace, and your own needs keep slipping out of view.',
   },
   {
     title: 'Rebuilding Trust After Betrayal',
     desc: 'Navigating the painful aftermath of infidelity, emotional affairs, hidden behaviors, or broken promises with structured guidance.',
-  },
-  {
-    title: 'Communication Shutdowns',
-    desc: 'When one partner pursues with criticism or frustration while the other withdraws into silence, defensiveness, or stonewalling.',
   },
   {
     title: 'Major Life Transitions & Strain',
@@ -29,6 +37,33 @@ const commonChallenges = [
   {
     title: 'Deepening an Existing Partnership',
     desc: 'Proactively strengthening emotional vulnerability, communication, and shared values through premarital or enrichment therapy.',
+  },
+];
+
+const practices = [
+  {
+    title: 'Name it, don’t blame it',
+    desc: 'Saying “I’m hurt” or “I’m scared” instead of “You always…”. Naming your emotional response rather than holding your partner responsible for it.',
+  },
+  {
+    title: 'Own your reactions',
+    desc: 'Taking accountability for your own responses, even when your partner’s behavior set them off, and holding grace for the best in each other.',
+  },
+  {
+    title: 'Stay with the hard feelings',
+    desc: 'The heart of the work: learning to feel, express, and stay with the emotions you’d rather not have, without acting them out or shutting down.',
+  },
+  {
+    title: 'Drop the story, find the need',
+    desc: 'Coming back to the here and now, letting go of the narrative about who did what, and getting to the need underneath it all.',
+  },
+  {
+    title: 'Clear boundaries, open communication',
+    desc: 'Staying grounded, respectful, open, and transparent, and holding boundaries, spoken and unspoken, with yourself and each other.',
+  },
+  {
+    title: 'Advocate for yourself',
+    desc: 'Asking clearly for what you need and supporting yourself, instead of waiting to be read or losing yourself in your partner.',
   },
 ];
 
@@ -92,14 +127,14 @@ export default function Couples() {
             <div className="lg:col-span-7 flex flex-col justify-center md:pl-16 lg:pl-20 xl:pl-24">
               <Eyebrow className="mb-6 md:mb-8">Couples Therapy &amp; Relationship Counseling · Los Feliz</Eyebrow>
 
-              <h1 className="reveal font-serif text-[11vw] sm:text-5xl md:text-7xl lg:text-[90px] leading-[0.95] tracking-tight font-light">
-                Moving Beyond <br />
-                <span className="italic text-[var(--color-olive-700)] block ml-4 md:ml-6 lg:ml-8">the Surface of Conflict</span>
+              <h1 className="reveal font-serif text-[10vw] sm:text-5xl md:text-6xl lg:text-[56px] xl:text-[64px] 2xl:text-[72px] leading-[1.02] tracking-tight font-light max-w-[900px] [text-wrap:balance]">
+                When the same fight keeps happening,{' '}
+                <span className="italic text-[var(--color-olive-700)] block mt-1">it&rsquo;s rarely about the fight.</span>
               </h1>
 
               <p className="reveal reveal-delay-1 mt-8 lg:mt-10 max-w-lg text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
-                Depth-oriented couples therapy in Los Angeles for partners seeking to break repetitive conflict cycles,
-                heal attachment wounds, and cultivate intimacy, trust, and mutual understanding.
+                Couples therapy in Los Feliz for partners who want to stop circling the same arguments, find their way back
+                to each other, and build a relationship that feels safe and alive again.
               </p>
 
               <div className="reveal reveal-delay-2 mt-8 lg:mt-12 flex flex-wrap items-center gap-8">
@@ -144,14 +179,21 @@ export default function Couples() {
                 You can love each other deeply and still feel{' '}
                 <span className="italic text-[var(--color-olive-700)]">profoundly disconnected.</span>
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
-                  Most couples don&apos;t struggle because they lack love; they struggle because they get caught in
-                  entrenched defensive patterns that leave both partners feeling misunderstood, exhausted, or alone.
+                  Most couples I see don&rsquo;t lack love. They&rsquo;re caught in a loop: one of you pushes, the other
+                  pulls away, and you both end up feeling misunderstood, exhausted, or alone. The topic changes, but the
+                  dance stays the same.
                 </p>
                 <p>
-                  When the same disagreements repeat or silence replaces closeness, therapy offers a safe space to slow
-                  down, understand what is really happening beneath the reactivity, and chart a new path forward.
+                  Underneath, it&rsquo;s usually the same struggle. Each of you needs something emotionally and expects the
+                  other to simply know it and show up that way, without ever really working it out together. Needs go
+                  unspoken, blame fills the gap, and before long you&rsquo;re both walking on eggshells, trying not to set
+                  off the other&rsquo;s reactions.
+                </p>
+                <p>
+                  In our sessions we slow that loop down until you can both see what&rsquo;s actually happening underneath
+                  it: the fear, the hurt, the old protective moves. That&rsquo;s where things start to shift.
                 </p>
               </div>
             </div>
@@ -199,25 +241,29 @@ export default function Couples() {
             <div className="md:col-span-7 md:pl-12">
               <Eyebrow className="mb-8">02 — My Approach</Eyebrow>
               <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
-                A Relational, <span className="italic text-[var(--color-olive-700)]">Depth-Oriented</span> Approach
+                Your relationship as <span className="italic text-[var(--color-olive-700)]">a path to growth.</span>
               </h2>
-              <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
-                  Lasting change rarely comes from memorizing communication scripts or surface-level conflict hacks. When
-                  emotions run high, intellect takes a back seat to our nervous system and unconscious defenses.
+                  Communication scripts and conflict hacks rarely hold up when emotions run high. In the heat of the moment,
+                  your nervous system and your oldest defenses take over.
                 </p>
                 <p>
-                  In our work together, we look at the underlying attachment wounds, emotional patterns, and protective
-                  strategies that keep you stuck. My work is anchored in Relational Gestalt and informed by the Gottman
-                  Method and attachment-informed somatic emotional processing. By bringing awareness to these dynamics in
-                  real time, we create the conditions for authentic repair, mutual empathy, and enduring security.
+                  So we work with what&rsquo;s happening between you in real time. I help each of you use the relationship as
+                  support for your own growth: taking responsibility for your own reactions, becoming more patient and
+                  compassionate with each other, and holding grace for the best in the other person. We remove blame from
+                  the conversation while keeping each of you accountable for your part, because both matter.
+                </p>
+                <p>
+                  My work is anchored in Relational Gestalt and informed by the Gottman Method and attachment-informed
+                  somatic emotional processing.
                 </p>
                 <div className="pt-4">
                   <a
                     href="#schedule"
                     className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors"
                   >
-                    <span>Begin Clinical Engagement</span>
+                    <span>Schedule a free consultation</span>
                     <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -226,18 +272,44 @@ export default function Couples() {
           </div>
         </section>
 
+        {/* What we practice */}
+        <section id="practice" className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-14 max-w-2xl">
+              <Eyebrow className="mb-2">03 — What We Practice</Eyebrow>
+              <h2 className="font-serif text-3xl md:text-4xl font-light mb-5">What we practice together</h2>
+              <p className="text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+                Relational presence: coming back to the here and now, again and again, until it becomes how you meet each
+                other.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[var(--color-stone-900)]/20">
+              {practices.map((p, i) => (
+                <div
+                  key={p.title}
+                  className="group border-b border-r border-[var(--color-stone-900)]/20 p-8 md:p-10 hover:bg-white transition-colors duration-500"
+                >
+                  <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-8">0{i + 1}</div>
+                  <h3 className="font-serif text-2xl mb-3 group-hover:text-[var(--color-olive-700)] transition-colors">{p.title}</h3>
+                  <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">{p.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Modalities */}
-        <section id="modalities" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="modalities" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
-              <Eyebrow className="mb-2">Clinical Foundation</Eyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl font-light">Core Frameworks &amp; Modalities</h2>
+              <Eyebrow className="mb-2">My Training</Eyebrow>
+              <h2 className="font-serif text-3xl md:text-4xl font-light">What I draw on</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-[var(--color-stone-900)]/20">
               {modalities.map((m, i) => (
                 <div
                   key={m.title}
-                  className="group border-b lg:border-b-0 border-[var(--color-stone-900)]/20 lg:border-r last:border-r-0 p-8 md:p-10 hover:bg-white transition-colors duration-500"
+                  className="group border-b lg:border-b-0 border-[var(--color-stone-900)]/20 lg:border-r last:border-r-0 p-8 md:p-10 hover:bg-[var(--color-stone-100)] transition-colors duration-500"
                 >
                   <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-12">0{i + 1}</div>
                   <h3 className="font-serif text-xl mb-2 group-hover:text-[var(--color-olive-700)] transition-colors">
@@ -254,16 +326,16 @@ export default function Couples() {
         </section>
 
         {/* Process */}
-        <section id="process" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="process" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
             <div className="md:col-span-4">
-              <Eyebrow className="mb-8">03 — The Process</Eyebrow>
+              <Eyebrow className="mb-8">04 — The Process</Eyebrow>
               <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-6">
                 How We Work <br />
                 <span className="italic text-[var(--color-olive-700)]">Together</span>
               </h2>
               <p className="text-sm text-[var(--color-stone-800)]/80 font-light leading-relaxed mb-8">
-                A structured, clinical path from reactive conflict to collaborative, lasting intimacy.
+                What the work looks like.
               </p>
               <div className="w-24 h-[1px] bg-[var(--color-stone-900)]/20 hidden md:block" />
             </div>
@@ -284,7 +356,7 @@ export default function Couples() {
         </section>
 
         {/* Therapist */}
-        <section id="therapist" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="therapist" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
@@ -297,20 +369,19 @@ export default function Couples() {
               </div>
             </div>
             <div className="md:col-span-7 md:pl-12">
-              <Eyebrow className="mb-8">04 — The Therapist</Eyebrow>
+              <Eyebrow className="mb-8">05 — The Therapist</Eyebrow>
               <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
                 Meet Lorne Lieberman, <span className="italic text-[var(--color-olive-700)]">LMFT</span>
               </h2>
               <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
-                  I work with couples who are ready to look honestly at their dynamic and do the meaningful work of
-                  reconnecting. My approach is warm, active, and grounded, creating a supportive, non-judgmental space where
-                  both partners feel equally seen, challenged, and supported.
+                  I&rsquo;m not a therapist who sits back and nods. I&rsquo;m engaged and direct. I&rsquo;ll interrupt the
+                  loop when it starts, name what I see, and challenge old patterns that aren&rsquo;t serving either of you,
+                  without anyone becoming the villain.
                 </p>
                 <p>
-                  Whether you are in crisis, navigating a pivotal transition, or simply longing for greater emotional and
-                  physical intimacy, we will work collaboratively to build a relationship that feels secure, vital, and
-                  deeply fulfilling.
+                  Whether you&rsquo;re in crisis, navigating a big transition, or simply longing to feel close again,
+                  we&rsquo;ll work together toward a relationship that feels secure, honest, and alive.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
                   LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained (2023) · EMDR Trained (EMDRIA-Approved)
@@ -336,7 +407,7 @@ export default function Couples() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="faq" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <Eyebrow className="mb-4">Questions &amp; Clarity</Eyebrow>
@@ -349,10 +420,10 @@ export default function Couples() {
         </section>
 
         {/* Rates */}
-        <section id="rates" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="rates" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
             <div className="md:col-span-4">
-              <Eyebrow className="mb-8">05 — Investment &amp; Details</Eyebrow>
+              <Eyebrow className="mb-8">06 — Fees &amp; Details</Eyebrow>
               <div className="w-24 h-[1px] bg-[var(--color-stone-900)]/20 hidden md:block" />
             </div>
             <div className="md:col-span-8">
@@ -364,7 +435,7 @@ export default function Couples() {
                 <div className="mt-12 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light space-y-4">
                   <p>
                     Couples sessions are 55 minutes, with 90-minute double sessions available for deeper relational
-                    work. Sessions take place in person at my Los Feliz office or by secure telehealth anywhere in
+                    work. Sessions take place in person at my offices in Los Feliz or by secure telehealth anywhere in
                     California.
                   </p>
                   <p>{site.insuranceStatement}</p>
@@ -376,7 +447,7 @@ export default function Couples() {
         </section>
 
         {/* Schedule */}
-        <section id="schedule" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="schedule" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <Eyebrow className="mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">Consultation</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">

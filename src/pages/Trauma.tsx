@@ -122,14 +122,14 @@ export default function Trauma() {
             <div className="lg:col-span-7 flex flex-col justify-center md:pl-16 lg:pl-20 xl:pl-24">
               <Eyebrow className="mb-5 md:mb-7">Trauma Therapy + EMDR · Los Feliz + Telehealth California</Eyebrow>
 
-              <h1 className="reveal font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[76px] xl:text-[84px] leading-[0.94] tracking-tight font-light max-w-[900px]">
-                Trauma &amp; EMDR Therapy <br className="hidden sm:block" />
-                <span className="italic text-[var(--color-olive-700)] block mt-2">in Los Angeles.</span>
+              <h1 className="reveal font-serif text-[11vw] sm:text-6xl md:text-7xl lg:text-[72px] xl:text-[80px] leading-[0.98] tracking-tight font-light max-w-[900px] [text-wrap:balance]">
+                When the past <br className="hidden sm:block" />
+                <span className="italic text-[var(--color-olive-700)] block mt-2">still feels present.</span>
               </h1>
 
               <p className="reveal reveal-delay-1 mt-7 lg:mt-9 max-w-xl text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
-                Trauma and EMDR therapy in Los Feliz with Lorne Lieberman, LMFT, for PTSD, attachment wounds, and other
-                experiences that continue to affect how you feel, relate, and respond.
+                Trauma and EMDR therapy in Los Feliz and across California, for PTSD, attachment wounds, and experiences
+                that still shape how you feel, relate, and respond.
               </p>
 
               <div className="reveal reveal-delay-2 mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center gap-5">
@@ -179,22 +179,18 @@ export default function Trauma() {
             </div>
             <div className="md:col-span-8">
               <h2 className="font-serif text-4xl md:text-5xl leading-tight font-light mb-9">
-                Trauma &amp; EMDR Therapy for PTSD, Attachment Wounds, and Ongoing Trauma Responses
+                Trauma doesn&rsquo;t always <span className="italic text-[var(--color-olive-700)]">stay in the past.</span>
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
-                  Trauma does not always stay in the past. It can show up as hypervigilance, emotional shutdown, anxiety,
-                  relationship difficulties, shame, intrusive memories, or reactions that feel larger than the situation in
-                  front of you.
+                  It can show up as hypervigilance, shutting down, anxiety, shame, intrusive memories, or reactions that
+                  feel bigger than the moment in front of you. You might understand exactly where it comes from and still
+                  feel it in your body.
                 </p>
                 <p>
-                  Trauma-focused psychotherapy and EMDR can help you work with what remains emotionally or physically
-                  activated while also addressing the attachment and relational patterns that may have developed around
-                  those experiences.
+                  Together we work with what&rsquo;s still activated, and with the relationship patterns that grew up around
+                  it, so the past can finally settle into the past.
                 </p>
-              </div>
-              <div className="mt-10">
-                <ConsultationCTA location="recognition" href="#schedule" compact />
               </div>
             </div>
           </div>
@@ -208,8 +204,8 @@ export default function Trauma() {
         >
           <div className="max-w-7xl mx-auto">
             <div className="mb-14">
-              <Eyebrow className="mb-2">Common Reasons People Seek Trauma Therapy</Eyebrow>
-              <h2 className="font-serif text-3xl md:text-4xl font-light">Clinical Focus</h2>
+              <Eyebrow className="mb-2">Common Reasons</Eyebrow>
+              <h2 className="font-serif text-3xl md:text-4xl font-light">What brings people to trauma therapy</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-l border-[var(--color-stone-900)]/20">
               {focusAreas.map((item, i) => (
@@ -256,10 +252,9 @@ export default function Trauma() {
                   emotions, and body responses connected to them.
                 </p>
                 <p>
-                  Lorne does not treat EMDR as a stand-alone procedure or a one-size-fits-all protocol. When it fits the
-                  work, EMDR is integrated with Relational Gestalt, attachment work, somatic emotional processing,
-                  mindfulness, and depth-oriented psychotherapy, so treatment addresses both the experience itself and the
-                  patterns that developed around it.
+                  I don&rsquo;t use EMDR as a stand-alone procedure or a one-size-fits-all protocol. When it fits, I
+                  integrate it with Relational Gestalt, attachment work, somatic emotional processing, and mindfulness, so we
+                  work with both the memory itself and the patterns that formed around it.
                 </p>
                 <div className="pt-4">
                   <ConsultationCTA location="emdr_section" href="#schedule" compact />
@@ -329,7 +324,6 @@ export default function Trauma() {
                   </li>
                 ))}
               </ol>
-              <ConsultationCTA location="process" href="#schedule" compact />
             </div>
           </div>
         </section>
@@ -358,12 +352,13 @@ export default function Trauma() {
               </h2>
               <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
-                  Lorne works with adults through a depth-oriented and relational lens anchored in Relational Gestalt,
-                  integrating EMDR, attachment work, somatic emotional processing, and mindfulness when clinically useful.
+                  I work with adults through a depth-oriented, relational lens anchored in Relational Gestalt, bringing in
+                  EMDR, somatic emotional processing, and mindfulness when they help.
                 </p>
                 <p>
-                  {site.monkSentenceThirdPerson} That background continues to inform the steadiness and attention he brings
-                  to emotionally complex work.
+                  I spent three years as a suicide and crisis hotline counselor, and more than a decade living as a
+                  renunciate Buddhist monk. Both taught me to stay steady and present with people in their hardest moments,
+                  at whatever pace you need.
                 </p>
                 <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
                   LMFT #{site.license.number} · EMDR Trained (EMDRIA-Approved, Dec 2025) · Relational Gestalt Trained (2023) · Gottman Method
@@ -378,7 +373,6 @@ export default function Trauma() {
                     <span>Read Full Background</span>
                     <ArrowRight size={14} aria-hidden="true" />
                   </a>
-                  <ConsultationCTA location="therapist" href="#schedule" compact />
                 </div>
               </div>
             </div>
@@ -430,9 +424,6 @@ export default function Trauma() {
               <h2 className="font-serif text-4xl md:text-5xl font-light">Frequently Asked Questions</h2>
             </div>
             <Faq items={traumaFaqs} analyticsKey="trauma" />
-            <div className="mt-10 flex justify-center">
-              <ConsultationCTA location="faq" href="#schedule" compact />
-            </div>
           </div>
         </section>
 
