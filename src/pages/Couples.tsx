@@ -393,6 +393,13 @@ export default function Couples() {
               </a>
               .
             </p>
+            <p className="text-sm text-[var(--color-stone-800)]/80 mb-8 -mt-6">
+              Prefer to tell me a little first?{' '}
+              <a href="/contact/?service=couples" className="underline underline-offset-2">
+                Send a short inquiry
+              </a>
+              .
+            </p>
             <Scheduler title="Schedule a free couples therapy consultation with Lorne Lieberman, LMFT" />
           </div>
         </section>

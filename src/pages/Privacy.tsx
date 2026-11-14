@@ -35,8 +35,9 @@ export default function Privacy() {
           scheduling) collects the name, email, and any details you enter so the appointment can be arranged.
         </li>
         <li>
-          <strong>Contact.</strong> If you call, email, or use a contact form, the information you choose to share is
-          used only to respond to you and arrange services.
+          <strong>Contact and inquiries.</strong> If you call, email, or send the inquiry form, the information you
+          choose to share is used only to respond to you and arrange services. Inquiry form responses are stored in the
+          practice&rsquo;s Google Workspace account, which is covered by a HIPAA business associate agreement.
         </li>
       </ul>
 

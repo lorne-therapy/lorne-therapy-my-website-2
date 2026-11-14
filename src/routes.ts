@@ -107,8 +107,8 @@ export const routes: RouteDef[] = [
     key: 'contact',
     path: '/contact/',
     template: 'contact/index.html',
-    title: 'Schedule a Free Consultation | DEPTH Therapy, Los Feliz',
-    description: `Book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Office at 1708 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
+    title: 'Contact & Free Consultation | DEPTH Therapy, Los Feliz',
+    description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Office at 1708 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
     inSitemap: true,
     priority: 0.8,
     jsonLd: [

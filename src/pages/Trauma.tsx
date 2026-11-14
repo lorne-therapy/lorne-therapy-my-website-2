@@ -74,7 +74,6 @@ const processSteps = [
 
 export default function Trauma() {
   const seenSections = useRef(new Set<string>());
-  const seenDepths = useRef(new Set<number>());
 
   useEffect(() => {
     trackEvent('landing_page_view', {
@@ -97,22 +96,9 @@ export default function Trauma() {
     );
     document.querySelectorAll<HTMLElement>('[data-analytics-section]').forEach((s) => observer.observe(s));
 
-    const onScroll = () => {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollable <= 0) return;
-      const percent = Math.round((window.scrollY / scrollable) * 100);
-      [25, 50, 75, 90].forEach((t) => {
-        if (percent >= t && !seenDepths.current.has(t)) {
-          seenDepths.current.add(t);
-          trackEvent('landing_scroll_depth', { landing_page: 'trauma_emdr', percent_scrolled: t });
-        }
-      });
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
       observer.disconnect();
-      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
@@ -481,6 +467,13 @@ export default function Trauma() {
             <div className="max-w-xl w-full mb-12">
               <CrisisNotice />
             </div>
+            <p className="text-sm text-[var(--color-stone-800)]/80 mb-8 -mt-4">
+              Prefer to tell me a little first?{' '}
+              <a href="/contact/?service=trauma" className="underline underline-offset-2">
+                Send a short inquiry
+              </a>
+              .
+            </p>
             <Scheduler title="Schedule a free trauma and EMDR therapy consultation with Lorne Lieberman, LMFT" />
           </div>
         </section>

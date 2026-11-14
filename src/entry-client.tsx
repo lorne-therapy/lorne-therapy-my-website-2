@@ -2,6 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { pages } from './pages';
 import type { PageKey } from './routes';
+import { initSiteAnalytics } from './lib/analytics';
 import './index.css';
 
 const container = document.getElementById('root')!;
@@ -21,3 +22,5 @@ if (container.firstElementChild) {
 } else {
   createRoot(container).render(app);
 }
+
+initSiteAnalytics(key);

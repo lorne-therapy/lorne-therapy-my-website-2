@@ -12,7 +12,7 @@ const pages = {
   'index.html': 'think your way',
   'couples-therapy/index.html': 'Moving Beyond',
   'trauma-emdr-therapy/index.html': 'Trauma &amp; EMDR Therapy',
-  'contact/index.html': 'Request a',
+  'contact/index.html': 'a good fit',
   'good-faith-estimate/index.html': 'Good Faith Estimate',
   'privacy/index.html': 'handles your information',
   '404.html': 'be found',
