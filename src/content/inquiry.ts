@@ -29,8 +29,7 @@ export const inquiryConfig = {
   ackText: {
     ackPrivatePay:
       'I understand sessions booked directly are private pay ($250 individual, $300 couples, $500 90-minute extended session), and that superbills are available for out-of-network plans.',
-    ackEmergency:
-      "I understand this form isn’t monitored for emergencies. If I am in a crisis I'll call or text 988, or call 911.",
+    ackEmergency: 'I understand this form is not monitored for emergencies. If I am in crisis, I will call or text 988, or call 911.',
   },
 };
 
@@ -47,7 +46,7 @@ export const inquiryOptions: Record<string, InquiryOption[]> = {
     { label: 'Individual therapy', value: 'Individual therapy' },
     { label: 'Couples therapy', value: 'Couples therapy' },
     { label: 'Trauma & EMDR', value: 'Trauma focus / EMDR' },
-    { label: 'Family therapy', value: 'Family' },
+    { label: 'Family therapy', value: 'Family therapy' },
     { label: 'Not sure yet', value: 'Not sure' },
   ],
   format: [
@@ -62,7 +61,7 @@ export const inquiryOptions: Record<string, InquiryOption[]> = {
   availability: [
     { label: 'Weekdays', value: 'Weekdays' },
     { label: 'Weekends', value: 'Weekends' },
-    { label: 'Mornings', value: 'Morning' },
+    { label: 'Mornings', value: 'Mornings' },
     { label: 'Afternoons', value: 'Afternoons' },
     { label: 'Evenings', value: 'Evenings' },
   ],
@@ -80,5 +79,5 @@ export const serviceFromQuery: Record<string, string> = {
   individual: 'Individual therapy',
   couples: 'Couples therapy',
   trauma: 'Trauma focus / EMDR',
-  family: 'Family',
+  family: 'Family therapy',
 };

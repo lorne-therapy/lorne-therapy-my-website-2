@@ -338,8 +338,8 @@ export default function InquiryForm() {
             onChange={(e) => set('ackEmergency', e.target.checked)}
           />
           <span>
-            I understand this form isn&rsquo;t monitored for emergencies. If I&rsquo;m in crisis I&rsquo;ll call or text
-            988, or call 911. <span className="text-[var(--color-olive-700)]">*</span>
+            I understand this form is not monitored for emergencies. If I am in crisis, I will call or text 988, or call
+            911. <span className="text-[var(--color-olive-700)]">*</span>
           </span>
         </label>
         {err('acknowledgments') && <p className={errText}>Please check both boxes to continue.</p>}
