@@ -25,7 +25,7 @@ export const inquiryConfig = {
     ackPrivatePay: '2101989631',
     ackEmergency: '1910770532',
   } as Record<string, string>,
-  /** Exact checkbox text from the Google Form's two acknowledgment questions. */
+  /** Acknowledgment text. Fees = checkbox (exact match required); emergency = Short answer question in the Google Form. */
   ackText: {
     ackPrivatePay:
       'I understand sessions booked directly are private pay ($250 individual, $300 couples, $500 90-minute extended session), and that superbills are available for out-of-network plans.',
@@ -65,13 +65,21 @@ export const inquiryOptions: Record<string, InquiryOption[]> = {
     { label: 'Afternoons', value: 'Afternoons' },
     { label: 'Evenings', value: 'Evenings' },
   ],
+  // "How did you hear about me?" is a Short answer question in the Google Form, so these can change freely.
   source: [
-    { label: 'Google search', value: 'Google search' },
-    { label: 'Psychology Today', value: 'Psychology Today' },
-    { label: 'Word of mouth (friend or family)', value: 'Word of mouth' },
-    { label: 'Professional referral', value: 'Professional referral' },
-    { label: 'Other', value: 'Other' },
-  ],
+    'Google search',
+    'Google Maps',
+    'ChatGPT or another AI assistant',
+    'Instagram',
+    'YouTube',
+    'TikTok',
+    'Psychology Today',
+    'Podcast, article, or interview',
+    'Word of mouth (friend or family)',
+    'Referral from a therapist or doctor',
+    'Industry referral (guild, union, agent, studio)',
+    'Other',
+  ].map((s) => ({ label: s, value: s })),
 };
 
 /** ?service=… on /contact/ preselects a service (used by the landing pages). */
