@@ -25,7 +25,7 @@ export const inquiryConfig = {
     ackPrivatePay: '2101989631',
     ackEmergency: '1910770532',
   } as Record<string, string>,
-  /** Acknowledgment text. Fees = checkbox (exact match required); emergency = Short answer question in the Google Form. */
+  /** Exact checkbox text from the Google Form's two acknowledgment questions. */
   ackText: {
     ackPrivatePay:
       'I understand sessions booked directly are private pay ($250 individual, $300 couples, $500 90-minute extended session), and that superbills are available for out-of-network plans.',
@@ -65,21 +65,21 @@ export const inquiryOptions: Record<string, InquiryOption[]> = {
     { label: 'Afternoons', value: 'Afternoons' },
     { label: 'Evenings', value: 'Evenings' },
   ],
-  // "How did you hear about me?" is a Short answer question in the Google Form, so these can change freely.
+  // "How did you hear about me?" is a dropdown in the Google Form: each value must exist there EXACTLY.
   source: [
-    'Google search',
-    'Google Maps',
-    'ChatGPT or another AI assistant',
-    'Instagram',
-    'YouTube',
-    'TikTok',
-    'Psychology Today',
-    'Podcast, article, or interview',
-    'Word of mouth (friend or family)',
-    'Referral from a therapist or doctor',
-    'Industry referral (guild, union, agent, studio)',
-    'Other',
-  ].map((s) => ({ label: s, value: s })),
+    { label: 'Google search', value: 'Google search' },
+    { label: 'Google Maps', value: 'Google Maps' },
+    { label: 'ChatGPT or another AI assistant', value: 'ChatGPT or another AI assistant' },
+    { label: 'Instagram', value: 'Instagram' },
+    { label: 'YouTube', value: 'YouTube' },
+    { label: 'TikTok', value: 'TikTok' },
+    { label: 'Psychology Today', value: 'Psychology Today' },
+    { label: 'Podcast, article, or interview', value: 'Podcast, article, or interview' },
+    { label: 'Word of mouth (friend or family)', value: 'Word of mouth' },
+    { label: 'Referral from a therapist or doctor', value: 'Professional referral' },
+    { label: 'Industry referral (guild, union, agent, studio)', value: 'Industry referral (guild, union, agent, studio)' },
+    { label: 'Other', value: 'Other' },
+  ],
 };
 
 /** ?service=… on /contact/ preselects a service (used by the landing pages). */
