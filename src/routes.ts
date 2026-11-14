@@ -50,8 +50,8 @@ export const routes: RouteDef[] = [
     title: 'Couples Therapy in Los Feliz, Los Angeles | Gottman-Trained | DEPTH Therapy',
     description:
       'Depth-oriented couples therapy in Los Feliz with Lorne Lieberman, LMFT. Gottman Method trained, attachment-informed somatic emotional processing anchored in Relational Gestalt. In person in Los Angeles or telehealth across California.',
-    ogImage: '/couples-heart-hands.jpeg',
-    ogImageAlt: 'Two silhouettes facing each other in warm window light',
+    ogImage: '/couples-sunset-og.jpg',
+    ogImageAlt: 'A couple sitting side by side on the shore at sunset',
     inSitemap: true,
     priority: 0.9,
     jsonLd: [

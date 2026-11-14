@@ -120,8 +120,8 @@ export default function Couples() {
             <div className="lg:col-span-5 relative h-[45vh] lg:h-[80vh] w-full flex justify-center items-center">
               <div className="reveal-scale w-full max-w-[360px] sm:max-w-[420px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl">
                 <img
-                  src="/couples-heart-hands.webp"
-                  alt="Two silhouettes facing each other in warm window light"
+                  src="/couples-sunset.webp"
+                  alt="A couple sitting side by side on the shore, watching the sun set over the ocean"
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover object-center"
