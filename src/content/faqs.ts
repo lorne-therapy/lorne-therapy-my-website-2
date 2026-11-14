@@ -52,6 +52,11 @@ export const couplesFaqs: FaqItem[] = [
       'Yes. Rebuilding after betrayal is challenging, but structured couples therapy provides a contained, secure space to process grief and hurt, establish transparency, understand what made the relationship vulnerable, and gradually restore trust.',
   },
   {
+    question: 'Do you work with couples who are separating?',
+    answer:
+      'Yes. I offer conscious decoupling for partners who are growing in different directions and want to part with integrity, love, and respect. We work through grief, resentment, and unfinished business so you can each move forward with clarity, leaving things in better condition than you found them.',
+  },
+  {
     question: 'Are sessions held in person or online?',
     answer: `I offer in-person couples sessions at ${officesPhrase}, as well as secure telehealth sessions for couples located anywhere in California.`,
   },

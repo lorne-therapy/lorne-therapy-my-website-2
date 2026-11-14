@@ -298,8 +298,35 @@ export default function Couples() {
           </div>
         </section>
 
+        {/* Conscious decoupling */}
+        <section id="decoupling" className="py-20 md:py-24 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16">
+            <div className="md:col-span-4">
+              <Eyebrow className="mb-6">Conscious Decoupling</Eyebrow>
+              <div className="w-24 h-[1px] bg-[var(--color-stone-900)]/20 hidden md:block" />
+            </div>
+            <div className="md:col-span-8">
+              <h2 className="font-serif text-3xl md:text-4xl leading-tight font-light mb-8">
+                When it&rsquo;s time to part, <span className="italic text-[var(--color-olive-700)]">part well.</span>
+              </h2>
+              <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+                <p>
+                  Sometimes two people grow into new phases of life that take them in different directions. Conscious
+                  decoupling is for partners who want to separate with integrity, continuing to grow in love and respect
+                  even as the relationship changes shape.
+                </p>
+                <p>
+                  Together we work through the grief, the resentment, and the unfinished business, so you can each move
+                  forward with clarity. The aim is to leave things in better condition than you found them, with
+                  gratitude and love.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Modalities */}
-        <section id="modalities" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="modalities" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto">
             <div className="mb-16">
               <Eyebrow className="mb-2">My Training</Eyebrow>
@@ -326,7 +353,7 @@ export default function Couples() {
         </section>
 
         {/* Process */}
-        <section id="process" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="process" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
             <div className="md:col-span-4">
               <Eyebrow className="mb-8">04 — The Process</Eyebrow>
@@ -356,7 +383,7 @@ export default function Couples() {
         </section>
 
         {/* Therapist */}
-        <section id="therapist" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="therapist" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
@@ -407,7 +434,7 @@ export default function Couples() {
         </section>
 
         {/* FAQ */}
-        <section id="faq" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="faq" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
               <Eyebrow className="mb-4">Questions &amp; Clarity</Eyebrow>
@@ -420,7 +447,7 @@ export default function Couples() {
         </section>
 
         {/* Rates */}
-        <section id="rates" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
+        <section id="rates" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16">
             <div className="md:col-span-4">
               <Eyebrow className="mb-8">06 — Fees &amp; Details</Eyebrow>
@@ -447,7 +474,7 @@ export default function Couples() {
         </section>
 
         {/* Schedule */}
-        <section id="schedule" className="py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10">
+        <section id="schedule" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
           <div className="max-w-4xl mx-auto flex flex-col items-center">
             <Eyebrow className="mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">Consultation</Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
