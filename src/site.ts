@@ -22,7 +22,7 @@ export const site = {
     fullName: 'Lorne Matthew Lieberman',
     credential: 'LMFT',
     jobTitle: 'Licensed Marriage and Family Therapist',
-    portrait: '/lorne-portrait.jpeg',
+    portrait: '/lorne-portrait.webp',
   },
 
   license: {

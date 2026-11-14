@@ -120,7 +120,7 @@ export default function Couples() {
             <div className="lg:col-span-5 relative h-[45vh] lg:h-[80vh] w-full flex justify-center items-center">
               <div className="reveal-scale w-full max-w-[360px] sm:max-w-[420px] h-full max-h-[580px] aspect-[2/3] oval-mask vertical-ellipse-mask overflow-hidden relative shadow-2xl">
                 <img
-                  src="/couples-heart-hands.jpeg"
+                  src="/couples-heart-hands.webp"
                   alt="Two silhouettes facing each other in warm window light"
                   loading="eager"
                   fetchPriority="high"
@@ -189,7 +189,7 @@ export default function Couples() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/couples-therapy-seating.jpeg"
+                  src="/couples-therapy-seating.webp"
                   alt="A calm, comfortable therapy room with a sofa and leather armchair"
                   loading="lazy"
                   className="w-full h-full object-cover"

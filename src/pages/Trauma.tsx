@@ -154,7 +154,7 @@ export default function Trauma() {
             <div className="lg:col-span-5 relative h-[48vh] min-h-[390px] lg:h-[76vh] lg:min-h-[560px] w-full flex justify-center items-center">
               <div className="reveal-scale w-full max-w-[420px] h-full max-h-[610px] oval-mask overflow-hidden relative shadow-xl bg-white">
                 <img
-                  src="/trauma-hero-therapy-room.jpg"
+                  src="/trauma-hero-therapy-room.webp"
                   alt="A warm, quiet room with a sofa, plants, and soft window light"
                   loading="eager"
                   fetchPriority="high"
@@ -238,7 +238,7 @@ export default function Trauma() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/trauma-emdr-kintsugi.jpg"
+                  src="/trauma-emdr-kintsugi.webp"
                   alt="Kintsugi vessel repaired with gold, representing integration and repair"
                   loading="lazy"
                   className="w-full h-full object-cover"
