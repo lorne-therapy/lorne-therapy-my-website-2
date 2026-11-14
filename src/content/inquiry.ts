@@ -68,6 +68,7 @@ export const inquiryOptions: Record<string, InquiryOption[]> = {
   // "How did you hear about me?" is a dropdown in the Google Form: each value must exist there EXACTLY.
   source: [
     { label: 'Google search', value: 'Google search' },
+    { label: 'Google Maps', value: 'Google Maps' },
     { label: 'Psychology Today', value: 'Psychology Today' },
     { label: 'Word of mouth (friend or family)', value: 'Word of mouth (friend or family)' },
     { label: 'Referral from a therapist or doctor', value: 'Referral from a therapist or doctor' },
