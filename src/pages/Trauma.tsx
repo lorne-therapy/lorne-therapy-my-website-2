@@ -234,8 +234,8 @@ export default function Trauma() {
             <div className="md:col-span-5 relative">
               <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-xl">
                 <img
-                  src="/trauma-emdr-kintsugi.webp"
-                  alt="Kintsugi vessel repaired with gold, representing integration and repair"
+                  src="/kintsugi-bowl.webp"
+                  alt="Close-up of a white ceramic bowl repaired with gold kintsugi lines"
                   loading="lazy"
                   className="w-full h-full object-cover"
                 />
