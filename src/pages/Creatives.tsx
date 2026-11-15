@@ -69,7 +69,7 @@ export default function Creatives() {
 
   return (
     <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
-      <SiteNav current="creatives" consultHref="#schedule" />
+      <SiteNav current="creatives" consultHref="/contact/?service=creatives" />
 
       <main>
         {/* Hero */}
@@ -99,7 +99,7 @@ export default function Creatives() {
               </p>
 
               <div className="reveal reveal-delay-2 mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center gap-5">
-                <ConsultationCTA location="hero" href="#schedule" />
+                <ConsultationCTA location="hero" href="/contact/?service=creatives" />
                 <a
                   href="#inside"
                   className="self-start sm:self-auto text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 hover:text-[var(--color-stone-900)] transition-colors border-b border-[var(--color-stone-900)]/15 pb-1"
@@ -271,7 +271,7 @@ export default function Creatives() {
                 ))}
               </div>
               <div className="mt-10">
-                <ConsultationCTA location="approach" href="#schedule" compact />
+                <ConsultationCTA location="approach" href="/contact/?service=creatives" compact />
               </div>
             </div>
           </div>
@@ -329,7 +329,7 @@ export default function Creatives() {
                   <GoodFaithLine />
                 </div>
                 <div className="mt-9 flex flex-wrap items-center gap-6">
-                  <ConsultationCTA location="rates" href="#schedule" compact />
+                  <ConsultationCTA location="rates" href="/contact/?service=creatives" compact />
                   <a
                     href="/#about"
                     className="group inline-flex items-center gap-3 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors"
@@ -399,7 +399,7 @@ export default function Creatives() {
       </main>
 
       <SiteFooter
-        consultHref="#schedule"
+        consultHref="/contact/?service=creatives"
         showHomeLink
         ctaTitle={
           <>

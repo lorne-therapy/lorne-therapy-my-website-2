@@ -36,7 +36,7 @@ export default function SiteNav({
   consultHref = '/contact/',
 }: {
   current: PageKey;
-  /** Where the "Free Consultation" button points (an in-page #schedule on landing pages). */
+  /** Where the "Free Consultation" button points (the contact form, with the service preselected on landing pages). */
   consultHref?: string;
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
