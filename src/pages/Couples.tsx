@@ -312,12 +312,27 @@ export default function Couples() {
               <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
                   Sometimes two people grow into new phases of life that take them in different directions. Conscious
-                  decoupling is for partners who want to separate with integrity, continuing to grow in love and respect
-                  even as the relationship changes shape.
+                  decoupling, sometimes called conscious uncoupling, is for partners who want to end their romantic
+                  relationship with integrity, continuing to grow in love and respect even as the relationship changes
+                  shape. Instead of blame and resentment, we focus on:
                 </p>
+                <ul className="space-y-2 pl-1">
+                  {[
+                    'Honest, open conversations',
+                    'Owning your emotional responses',
+                    'Clear, healthy boundaries',
+                    'A co-parenting plan, if you share children',
+                    'Room for each of you to grieve, heal, and grow',
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-[0.6em] w-1.5 h-1.5 rounded-full bg-[var(--color-olive-700)] shrink-0" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
                 <p>
-                  Together we work through the grief, the resentment, and the unfinished business, so you can each move
-                  forward with clarity. The aim is to leave things in better condition than you found them, with
+                  The goal isn&rsquo;t to skip the pain of separating. It&rsquo;s to move through it in a way that teaches
+                  you something about yourself, and to leave things in better condition than you found them, with
                   gratitude and love.
                 </p>
               </div>

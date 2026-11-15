@@ -49,7 +49,7 @@ export const routes: RouteDef[] = [
     template: 'couples-therapy/index.html',
     title: 'Couples Therapy in Los Feliz, Los Angeles | Gottman-Trained | Depth Therapy',
     description:
-      'Depth-oriented couples therapy in Los Feliz with Lorne Lieberman, LMFT. Gottman Method trained, attachment-informed somatic emotional processing anchored in Relational Gestalt. In person in Los Angeles or telehealth across California.',
+      'Depth-oriented couples therapy in Los Feliz with Lorne Lieberman, LMFT: Gottman Method trained and anchored in Relational Gestalt, including conscious uncoupling for partners who are separating. In person in Los Angeles or telehealth across California.',
     ogImage: '/couples-sunset-og.jpg',
     ogImageAlt: 'A couple sitting side by side on the shore at sunset',
     inSitemap: true,
@@ -80,8 +80,8 @@ export const routes: RouteDef[] = [
     title: 'Trauma & EMDR Therapy in Los Feliz, Los Angeles | Depth Therapy',
     description:
       'Trauma therapy and EMDR with Lorne Lieberman, LMFT, EMDR trained through an EMDRIA-approved program. In person in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
-    ogImage: '/trauma-emdr-kintsugi.jpg',
-    ogImageAlt: 'Kintsugi vessel repaired with gold, representing integration and repair',
+    ogImage: '/trauma-storm-og.jpg',
+    ogImageAlt: 'Storm clouds over the ocean with the setting sun glowing beneath them',
     inSitemap: true,
     priority: 0.9,
     jsonLd: [

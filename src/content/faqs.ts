@@ -54,7 +54,7 @@ export const couplesFaqs: FaqItem[] = [
   {
     question: 'Do you work with couples who are separating?',
     answer:
-      'Yes. I offer conscious decoupling for partners who are growing in different directions and want to part with integrity, love, and respect. We work through grief, resentment, and unfinished business so you can each move forward with clarity, leaving things in better condition than you found them.',
+      'Yes. I offer conscious decoupling (also called conscious uncoupling) for partners who are growing in different directions and want to end their romantic relationship with integrity, love, and respect. We focus on honest communication, emotional accountability, healthy boundaries, and co-parenting if you share children, so you can each move forward with clarity, leaving things in better condition than you found them.',
   },
   {
     question: 'Are sessions held in person or online?',

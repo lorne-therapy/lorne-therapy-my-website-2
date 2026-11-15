@@ -154,8 +154,8 @@ export default function Trauma() {
             <div className="lg:col-span-5 relative h-[48vh] min-h-[390px] lg:h-[76vh] lg:min-h-[560px] w-full flex justify-center items-center">
               <div className="reveal-scale w-full max-w-[420px] h-full max-h-[610px] oval-mask overflow-hidden relative shadow-xl bg-white">
                 <img
-                  src="/ocean-sunset.webp"
-                  alt="The sun setting over the ocean, a path of light across the water"
+                  src="/trauma-storm.webp"
+                  alt="Dark storm clouds over the ocean, with the setting sun glowing beneath them at the horizon"
                   loading="eager"
                   fetchPriority="high"
                   className="w-full h-full object-cover object-center"
