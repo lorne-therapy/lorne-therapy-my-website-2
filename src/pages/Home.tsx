@@ -41,7 +41,7 @@ const services = [
   },
 ];
 
-const bodyText = 'text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/90 font-light';
+const bodyText = 'text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]';
 
 export default function Home() {
   return (
@@ -52,7 +52,7 @@ export default function Home() {
         {/* Hero */}
         <section className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden">
           <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
-            <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
+            <div className="vertical-text text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70">
               {siteContent.heroLocationLabel}
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function Home() {
                 <span className="italic text-[var(--color-olive-700)] block">{siteContent.heroTitleLine2}</span>
               </h1>
 
-              <p className="reveal reveal-delay-1 mt-8 lg:mt-10 max-w-lg text-base md:text-lg leading-relaxed text-[var(--color-stone-800)]/90 font-light">
+              <p className="reveal reveal-delay-1 mt-8 lg:mt-10 max-w-lg text-[17px] md:text-lg leading-relaxed text-[var(--color-stone-800)]">
                 {siteContent.heroDescription}
               </p>
 
@@ -73,7 +73,7 @@ export default function Home() {
                 <ConsultationCTA location="hero" href={siteContent.heroCtaUrl} label={siteContent.heroCtaText} />
                 <a
                   href={`tel:${site.phone.tel}`}
-                  className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/75 hover:text-[var(--color-stone-900)] border-b border-[var(--color-stone-900)]/15 pb-1 self-start sm:self-auto"
+                  className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 hover:text-[var(--color-stone-900)] border-b border-[var(--color-stone-900)]/15 pb-1 self-start sm:self-auto"
                 >
                   Or call {site.phone.display}
                 </a>
@@ -176,7 +176,7 @@ export default function Home() {
                     key={pillar}
                     className="py-6 sm:pr-6 border-b sm:border-b-0 border-[var(--color-stone-900)]/10 font-serif text-xl md:text-2xl font-light"
                   >
-                    <span className="block text-[10px] font-sans tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-3">0{i + 1}</span>
+                    <span className="block text-[11px] font-sans tracking-[0.2em] text-[var(--color-stone-800)]/70 mb-3">0{i + 1}</span>
                     {pillar}
                   </li>
                 ))}
@@ -215,7 +215,7 @@ export default function Home() {
                   <h3 className="text-xs tracking-[0.18em] uppercase text-[var(--color-olive-700)] font-medium mb-4">
                     License &amp; Training
                   </h3>
-                  <ul className="space-y-2 text-sm leading-relaxed text-[var(--color-stone-800)]/90 list-none p-0 m-0">
+                  <ul className="space-y-2 text-[15.5px] leading-relaxed text-[var(--color-stone-800)] list-none p-0 m-0">
                     {site.credentials.map((c) => (
                       <li key={c.label}>
                         {c.label}
@@ -228,7 +228,7 @@ export default function Home() {
                   <h3 className="text-xs tracking-[0.18em] uppercase text-[var(--color-olive-700)] font-medium mb-4">
                     Education &amp; Experience
                   </h3>
-                  <ul className="space-y-2 text-sm leading-relaxed text-[var(--color-stone-800)]/90 list-none p-0 m-0">
+                  <ul className="space-y-2 text-[15.5px] leading-relaxed text-[var(--color-stone-800)] list-none p-0 m-0">
                     {site.education.map((e) => (
                       <li key={e.degree}>
                         {e.degree}
@@ -262,10 +262,10 @@ export default function Home() {
                   className="group bg-[var(--color-stone-100)] p-8 md:p-10 hover:bg-white transition-colors duration-500 flex flex-col justify-between"
                 >
                   <div>
-                    <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-16 flex items-center justify-between">
+                    <div className="text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70 mb-16 flex items-center justify-between">
                       <span>0{i + 1}</span>
                       {service.dedicated && (
-                        <span className="text-[9px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] font-medium">
+                        <span className="text-[10.5px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] font-medium">
                           Dedicated Page
                         </span>
                       )}
@@ -273,7 +273,7 @@ export default function Home() {
                     <h3 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">
                       {service.title}
                     </h3>
-                    <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/85">{service.desc}</p>
+                    <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">{service.desc}</p>
                   </div>
                   <div className="mt-8 pt-4 border-t border-[var(--color-stone-900)]/10 flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-[var(--color-olive-700)] group-hover:translate-x-1 transition-all">
                     <span>{service.cta}</span>
@@ -317,7 +317,7 @@ export default function Home() {
                       </li>
                     ))}
                   </ol>
-                  <p className="mt-8 text-sm leading-relaxed text-[var(--color-stone-800)]/80">{siteContent.oonNote}</p>
+                  <p className="mt-8 text-[15.5px] leading-relaxed text-[var(--color-stone-800)]/90">{siteContent.oonNote}</p>
                 </div>
 
                 <div className="mt-8">

@@ -65,7 +65,7 @@ export default function Creatives() {
     return () => observer.disconnect();
   }, []);
 
-  const body = 'text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/90 font-light';
+  const body = 'text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]';
 
   return (
     <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
@@ -78,7 +78,7 @@ export default function Creatives() {
           className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-28 md:pt-32 pb-16 overflow-hidden"
         >
           <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
-            <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
+            <div className="vertical-text text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70">
               Los Feliz, Los Angeles &amp; Telehealth California
             </div>
           </div>
@@ -102,13 +102,13 @@ export default function Creatives() {
                 <ConsultationCTA location="hero" href="#schedule" />
                 <a
                   href="#inside"
-                  className="self-start sm:self-auto text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70 hover:text-[var(--color-stone-900)] transition-colors border-b border-[var(--color-stone-900)]/15 pb-1"
+                  className="self-start sm:self-auto text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 hover:text-[var(--color-stone-900)] transition-colors border-b border-[var(--color-stone-900)]/15 pb-1"
                 >
                   About my background
                 </a>
               </div>
 
-              <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-[10px] md:text-[11px] tracking-[0.14em] uppercase text-[var(--color-stone-800)]/65">
+              <div className="mt-9 flex flex-wrap gap-x-7 gap-y-3 text-[12px] tracking-[0.12em] uppercase font-medium text-[var(--color-stone-800)]/80">
                 <span>In Person · Los Feliz</span>
                 <span>Telehealth · California</span>
                 <span>$250 / 55 min</span>
@@ -190,11 +190,11 @@ export default function Creatives() {
                   key={item.title}
                   className="group border-b border-r border-[var(--color-stone-900)]/20 p-8 md:p-10 hover:bg-white transition-colors duration-500"
                 >
-                  <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-10">0{i + 1}</div>
+                  <div className="text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70 mb-10">0{i + 1}</div>
                   <h3 className="font-serif text-2xl mb-4 group-hover:text-[var(--color-olive-700)] transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">{item.desc}</p>
+                  <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -266,7 +266,7 @@ export default function Creatives() {
                 {pillars.map((p) => (
                   <div key={p.title} className="bg-[var(--color-stone-100)] py-6 sm:px-6 first:sm:pl-0">
                     <h3 className="font-serif text-xl mb-1">{p.title}</h3>
-                    <p className="text-sm text-[var(--color-stone-800)]/80 font-light">{p.desc}</p>
+                    <p className="text-[15.5px] text-[var(--color-stone-800)]/90">{p.desc}</p>
                   </div>
                 ))}
               </div>
@@ -371,7 +371,7 @@ export default function Creatives() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
               Let&rsquo;s talk about what&rsquo;s <span className="italic text-[var(--color-olive-700)]">underneath the work.</span>
             </h2>
-            <p className="max-w-xl mx-auto text-center text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light mb-6">
+            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-6">
               Choose a time for a complimentary 15-minute phone consultation to talk about what you&rsquo;re looking for
               and whether working together feels like a fit.
             </p>

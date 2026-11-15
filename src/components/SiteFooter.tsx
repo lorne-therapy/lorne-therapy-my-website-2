@@ -27,7 +27,7 @@ export default function SiteFooter({
                 </>
               )}
             </h2>
-            <p className="text-sm md:text-base text-[var(--color-stone-50)]/75 max-w-md leading-relaxed mb-10">
+            <p className="text-[16px] md:text-[17px] text-[var(--color-stone-50)]/85 max-w-md leading-relaxed mb-10">
               {ctaDescription}
             </p>
             <div className="flex flex-wrap items-center gap-6">
@@ -102,7 +102,7 @@ export default function SiteFooter({
         <div className="max-w-7xl mx-auto border-t border-[var(--color-stone-50)]/15 pt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <CrisisNotice tone="dark" />
 
-          <div className="text-xs leading-relaxed text-[var(--color-stone-50)]/65 space-y-2 md:text-right">
+          <div className="text-[13px] leading-relaxed text-[var(--color-stone-50)]/80 space-y-2 md:text-right">
             <p>
               {site.brandName} · {site.legalName} · {site.license.state} License {site.license.type} #
               {site.license.number} (

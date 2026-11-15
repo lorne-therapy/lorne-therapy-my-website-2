@@ -202,7 +202,7 @@ export default function InquiryForm() {
         <h2 className="font-serif text-3xl md:text-5xl font-light leading-tight mb-6">
           Thank you{firstName ? `, ${firstName}` : ''}. <span className="italic text-[var(--color-olive-700)]">Next, pick a time.</span>
         </h2>
-        <p className="text-base leading-relaxed text-[var(--color-stone-800)]/90 font-light max-w-2xl mb-10">
+        <p className="text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] max-w-2xl mb-10">
           I&rsquo;ll read your note before we speak. Choose a time below for your free 15-minute phone consultation. If
           none of the times work, I&rsquo;ll follow up using your preferred contact method.
         </p>
@@ -317,7 +317,7 @@ export default function InquiryForm() {
       </div>
 
       <div id="field-acknowledgments" className="space-y-4">
-        <label className="flex items-start gap-3 text-sm md:text-[15px] leading-relaxed text-[var(--color-stone-800)] cursor-pointer">
+        <label className="flex items-start gap-3 text-[15.5px] md:text-[16px] leading-relaxed text-[var(--color-stone-800)] cursor-pointer">
           <input
             type="checkbox"
             className="mt-1 h-4 w-4 accent-[var(--color-olive-700)]"
@@ -330,7 +330,7 @@ export default function InquiryForm() {
             <span className="text-[var(--color-olive-700)]">*</span>
           </span>
         </label>
-        <label className="flex items-start gap-3 text-sm md:text-[15px] leading-relaxed text-[var(--color-stone-800)] cursor-pointer">
+        <label className="flex items-start gap-3 text-[15.5px] md:text-[16px] leading-relaxed text-[var(--color-stone-800)] cursor-pointer">
           <input
             type="checkbox"
             className="mt-1 h-4 w-4 accent-[var(--color-olive-700)]"
@@ -373,7 +373,7 @@ export default function InquiryForm() {
           {status === 'sending' ? 'Sending…' : 'Send & choose a consultation time'}
           <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
         </button>
-        <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/70 max-w-sm">
+        <p className="text-[13px] leading-relaxed text-[var(--color-stone-800)]/85 max-w-sm">
           Your answers go securely to my practice account and are never shared. See the{' '}
           <a href="/privacy/" className="underline">
             privacy notice

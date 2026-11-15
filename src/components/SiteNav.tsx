@@ -173,7 +173,7 @@ export default function SiteNav({
                   href={site.clientPortalUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-50)]/60 hover:text-white"
+                  className="text-xs tracking-[0.2em] uppercase text-[var(--color-stone-50)]/75 hover:text-white"
                 >
                   Client Portal (existing clients)
                 </a>

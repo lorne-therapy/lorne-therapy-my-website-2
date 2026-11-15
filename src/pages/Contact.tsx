@@ -18,7 +18,7 @@ export default function Contact() {
             <h1 className="reveal font-serif text-4xl md:text-6xl font-light leading-tight mb-6">
               Let&rsquo;s see if we&rsquo;re <span className="italic text-[var(--color-olive-700)]">a good fit.</span>
             </h1>
-            <p className="max-w-2xl mx-auto text-base md:text-lg leading-relaxed text-[var(--color-stone-800)]/90 font-light">
+            <p className="max-w-2xl mx-auto text-[17px] md:text-lg leading-relaxed text-[var(--color-stone-800)]">
               Tell me a little about what you&rsquo;re looking for, then choose a time for a free 15-minute phone
               consultation. It takes about two minutes.
             </p>
@@ -45,7 +45,7 @@ export default function Contact() {
             >
               <Phone size={18} strokeWidth={1.5} className="mt-0.5 text-[var(--color-olive-700)]" aria-hidden="true" />
               <span>
-                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70 mb-1">Call</span>
+                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 mb-1">Call</span>
                 {site.phone.display}
               </span>
             </a>
@@ -56,14 +56,14 @@ export default function Contact() {
             >
               <Mail size={18} strokeWidth={1.5} className="mt-0.5 text-[var(--color-olive-700)]" aria-hidden="true" />
               <span>
-                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70 mb-1">Email</span>
+                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 mb-1">Email</span>
                 {site.email}
               </span>
             </a>
             <div className="bg-white rounded-2xl p-6 flex items-start gap-4">
               <MapPin size={18} strokeWidth={1.5} className="mt-0.5 text-[var(--color-olive-700)]" aria-hidden="true" />
               <span className="space-y-3">
-                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70">
+                <span className="block text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85">
                   Offices · {site.address.neighborhood}
                 </span>
                 <a href={site.googleBusinessUrl} target="_blank" rel="noopener noreferrer" className="block hover:underline">

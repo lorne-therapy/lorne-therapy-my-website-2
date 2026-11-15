@@ -123,7 +123,7 @@ export default function Couples() {
         {/* Hero */}
         <section className="relative min-h-[100dvh] w-full flex flex-col justify-center px-6 md:px-12 pt-32 pb-16 lg:pt-0 lg:pb-0 overflow-hidden">
           <div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 hidden md:block z-10">
-            <div className="vertical-text text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/60">
+            <div className="vertical-text text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70">
               Los Feliz, Los Angeles &amp; Telehealth California
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function Couples() {
                 <span className="italic text-[var(--color-olive-700)] block mt-1">it&rsquo;s rarely about the fight.</span>
               </h1>
 
-              <p className="reveal reveal-delay-1 mt-8 lg:mt-10 max-w-lg text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <p className="reveal reveal-delay-1 mt-8 lg:mt-10 max-w-lg text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
                 Couples therapy in Los Feliz for partners who want to stop circling the same arguments, find their way back
                 to each other, and build a relationship that feels safe and alive again.
               </p>
@@ -146,13 +146,13 @@ export default function Couples() {
                 <ConsultationCTA location="couples_hero" href="#schedule" label="Request a Free Consultation" />
                 <a
                   href="#approach"
-                  className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/70 hover:text-[var(--color-stone-900)] transition-colors"
+                  className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 hover:text-[var(--color-stone-900)] transition-colors"
                 >
                   Explore My Approach
                 </a>
               </div>
 
-              <p className="mt-8 text-[10px] md:text-[11px] tracking-[0.14em] uppercase text-[var(--color-stone-800)]/60">
+              <p className="mt-8 text-[12px] tracking-[0.12em] uppercase font-medium text-[var(--color-stone-800)]/80">
                 $300 / 55 min &nbsp;·&nbsp; 90-min double sessions &nbsp;·&nbsp; Gottman Method Trained
               </p>
             </div>
@@ -184,7 +184,7 @@ export default function Couples() {
                 You can love each other deeply and still feel{' '}
                 <span className="italic text-[var(--color-olive-700)]">profoundly disconnected.</span>
               </h2>
-              <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 max-w-2xl text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
                 <p>
                   Most couples I see don&rsquo;t lack love. They&rsquo;re caught in a loop: one of you pushes, the other
                   pulls away, and you both end up feeling misunderstood, exhausted, or alone. The topic changes, but the
@@ -220,7 +220,7 @@ export default function Couples() {
                     <h3 className="font-serif text-xl lg:text-[22px] font-medium text-[var(--color-stone-900)] leading-snug">
                       {c.title}
                     </h3>
-                    <p className="text-sm md:text-[14.5px] leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+                    <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">
                       {c.desc}
                     </p>
                   </div>
@@ -248,7 +248,7 @@ export default function Couples() {
               <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
                 Your relationship as <span className="italic text-[var(--color-olive-700)]">a path to growth.</span>
               </h2>
-              <div className="space-y-6 text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
                 <p>
                   Communication scripts and conflict hacks rarely hold up when emotions run high. In the heat of the moment,
                   your nervous system and your oldest defenses take over.
@@ -283,7 +283,7 @@ export default function Couples() {
             <div className="mb-14 max-w-2xl">
               <Eyebrow className="mb-2">03 — What We Practice</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl font-light mb-5">What we practice together</h2>
-              <p className="text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <p className="text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
                 Relational presence: coming back to the here and now, again and again, until it becomes how you meet each
                 other.
               </p>
@@ -294,9 +294,9 @@ export default function Couples() {
                   key={p.title}
                   className="group border-b border-r border-[var(--color-stone-900)]/20 p-8 md:p-10 hover:bg-white transition-colors duration-500"
                 >
-                  <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-8">0{i + 1}</div>
+                  <div className="text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70 mb-8">0{i + 1}</div>
                   <h3 className="font-serif text-2xl mb-3 group-hover:text-[var(--color-olive-700)] transition-colors">{p.title}</h3>
-                  <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">{p.desc}</p>
+                  <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">{p.desc}</p>
                 </div>
               ))}
             </div>
@@ -314,7 +314,7 @@ export default function Couples() {
               <h2 className="font-serif text-3xl md:text-4xl leading-tight font-light mb-8">
                 When it&rsquo;s time to part, <span className="italic text-[var(--color-olive-700)]">part well.</span>
               </h2>
-              <div className="space-y-6 max-w-2xl text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 max-w-2xl text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
                 <p>
                   Sometimes two people grow into new phases of life that take them in different directions. Conscious
                   decoupling, sometimes called conscious uncoupling, is for partners who want to end their romantic
@@ -358,14 +358,14 @@ export default function Couples() {
                   key={m.title}
                   className="group border-b border-r border-[var(--color-stone-900)]/20 p-8 xl:p-7 hover:bg-white transition-colors duration-500"
                 >
-                  <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-12">0{i + 1}</div>
+                  <div className="text-[11px] tracking-[0.2em] text-[var(--color-stone-800)]/70 mb-12">0{i + 1}</div>
                   <h3 className="font-serif text-xl mb-2 group-hover:text-[var(--color-olive-700)] transition-colors">
                     {m.title}
                   </h3>
                   <p className="text-[11px] tracking-[0.1em] uppercase text-[var(--color-olive-700)] font-medium mb-4">
                     {m.tagline}
                   </p>
-                  <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/80 font-light">{m.desc}</p>
+                  <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]/90">{m.desc}</p>
                 </div>
               ))}
             </div>
@@ -381,7 +381,7 @@ export default function Couples() {
                 How We Work <br />
                 <span className="italic text-[var(--color-olive-700)]">Together</span>
               </h2>
-              <p className="text-sm text-[var(--color-stone-800)]/80 font-light leading-relaxed mb-8">
+              <p className="text-[15.5px] text-[var(--color-stone-800)]/90 leading-relaxed mb-8">
                 What the work looks like.
               </p>
               <div className="w-24 h-[1px] bg-[var(--color-stone-900)]/20 hidden md:block" />
@@ -394,7 +394,7 @@ export default function Couples() {
                   </span>
                   <div>
                     <h3 className="font-serif text-2xl font-light mb-3">{step.title}</h3>
-                    <p className="text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">{step.desc}</p>
+                    <p className="text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">{step.desc}</p>
                   </div>
                 </li>
               ))}
@@ -420,7 +420,7 @@ export default function Couples() {
               <h2 className="font-serif text-3xl md:text-5xl leading-tight font-light mb-8">
                 Meet Lorne Lieberman, <span className="italic text-[var(--color-olive-700)]">LMFT</span>
               </h2>
-              <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
+              <div className="space-y-6 text-[15.5px] leading-relaxed text-[var(--color-stone-800)]">
                 <p>
                   I&rsquo;m not a therapist who sits back and nods. I&rsquo;m engaged and direct. I&rsquo;ll interrupt the
                   loop when it starts, name what I see, and challenge old patterns that aren&rsquo;t serving either of you,
@@ -430,7 +430,7 @@ export default function Couples() {
                   Whether you&rsquo;re in crisis, navigating a big transition, or simply longing to feel close again,
                   we&rsquo;ll work together toward a relationship that feels secure, honest, and alive.
                 </p>
-                <p className="text-[11px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/75">
+                <p className="text-[12px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/85">
                   LMFT #{site.license.number} · Gottman Method Trained (2025) · Relational Gestalt Trained (2023) · EMDR Trained (EMDRIA-Approved)
                 </p>
                 <div className="pt-2 flex flex-wrap items-center gap-6">
@@ -479,7 +479,7 @@ export default function Couples() {
                   Session Fees &amp; <span className="italic text-[var(--color-olive-700)]">Practice Details</span>
                 </h2>
                 <RatesTable services={['Couples Therapy', 'Extended Double Session', 'Initial Phone Consultation']} />
-                <div className="mt-12 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light space-y-4">
+                <div className="mt-12 text-[15.5px] leading-relaxed text-[var(--color-stone-800)] space-y-4">
                   <p>
                     Couples sessions are 55 minutes, with 90-minute double sessions available for deeper relational
                     work. Sessions take place in person at my offices in Los Feliz or by secure telehealth anywhere in
@@ -500,7 +500,7 @@ export default function Couples() {
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
               Request a <span className="italic text-[var(--color-olive-700)]">Consultation</span>
             </h2>
-            <p className="max-w-xl mx-auto text-center text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light mb-6">
+            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-6">
               Select a time for a complimentary 15-minute phone consultation to discuss what you and your partner are
               experiencing and whether working together is the right fit.
             </p>

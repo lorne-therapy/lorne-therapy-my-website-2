@@ -23,7 +23,7 @@ export default function TextPage({
         <article className="max-w-3xl mx-auto bg-white rounded-2xl p-8 md:p-14 shadow-sm">
           <Eyebrow className="mb-6">{eyebrow}</Eyebrow>
           <h1 className="font-serif text-4xl md:text-5xl font-light leading-tight mb-10">{title}</h1>
-          <div className="prose-depth space-y-5 text-[15px] md:text-base leading-relaxed text-[var(--color-stone-800)]">
+          <div className="prose-depth space-y-5 text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)]">
             {children}
           </div>
         </article>

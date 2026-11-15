@@ -10,7 +10,7 @@ export function CrisisNotice({ tone = 'light' }: { tone?: 'light' | 'dark' }) {
   return (
     <aside
       aria-label="Crisis support"
-      className={`text-sm leading-relaxed border-l-2 pl-4 ${
+      className={`text-[15.5px] leading-relaxed border-l-2 pl-4 ${
         dark
           ? 'border-[var(--color-stone-50)]/40 text-[var(--color-stone-50)]/85'
           : 'border-[var(--color-olive-700)] text-[var(--color-stone-800)]'
@@ -107,7 +107,7 @@ export function RatesTable({ services }: { services?: string[] }) {
 
 export function GoodFaithLine() {
   return (
-    <p className="text-xs leading-relaxed text-[var(--color-stone-800)]/75">
+    <p className="text-[13px] leading-relaxed text-[var(--color-stone-800)]/85">
       If you&rsquo;re not using insurance, you have the right to receive a{' '}
       <a href="/good-faith-estimate/" className="underline underline-offset-2 hover:text-[var(--color-stone-900)]">
         Good Faith Estimate
@@ -145,7 +145,7 @@ export function Faq({ items, analyticsKey }: { items: FaqItem[]; analyticsKey?: 
               className="text-[var(--color-stone-800)]/50 transition-transform duration-300 shrink-0 group-open:rotate-180 group-open:text-[var(--color-olive-700)]"
             />
           </summary>
-          <p className="pt-4 text-sm md:text-base leading-relaxed text-[var(--color-stone-800)]/85 font-light pr-6">
+          <p className="pt-4 text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] pr-6">
             {faq.answer}
             {faq.link && (
               <>
@@ -166,6 +166,6 @@ export function Faq({ items, analyticsKey }: { items: FaqItem[]; analyticsKey?: 
 
 export function Eyebrow({ children, className = '' }: { children: ReactNode; className?: string }) {
   return (
-    <p className={`text-xs tracking-[0.2em] uppercase text-[var(--color-stone-800)]/60 ${className}`}>{children}</p>
+    <p className={`text-[12.5px] tracking-[0.18em] uppercase font-medium text-[var(--color-stone-800)]/80 ${className}`}>{children}</p>
   );
 }
