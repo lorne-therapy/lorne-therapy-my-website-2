@@ -74,6 +74,11 @@ const modalities = [
     desc: 'Grounds the work in what is happening between you in the moment, bringing unspoken patterns into the room where they can be seen, felt, and changed.',
   },
   {
+    title: 'Relational Mindfulness',
+    tagline: 'Present-Moment Awareness, Together',
+    desc: 'Staying present and noting what is arising, dropping the narrative, stepping out of interpretation, and checking your assumptions about each other.',
+  },
+  {
     title: 'The Gottman Method',
     tagline: 'Research-Based De-escalation',
     desc: 'Disarms harmful conflict styles (criticism, contempt, defensiveness, stonewalling) while systematically building friendship and shared meaning.',
@@ -255,8 +260,8 @@ export default function Couples() {
                   the conversation while keeping each of you accountable for your part, because both matter.
                 </p>
                 <p>
-                  My work is anchored in Relational Gestalt and informed by the Gottman Method and attachment-informed
-                  somatic emotional processing.
+                  My work is anchored in Relational Gestalt and informed by relational mindfulness, the Gottman Method, and
+                  attachment-informed somatic emotional processing.
                 </p>
                 <div className="pt-4">
                   <a
@@ -347,11 +352,11 @@ export default function Couples() {
               <Eyebrow className="mb-2">My Training</Eyebrow>
               <h2 className="font-serif text-3xl md:text-4xl font-light">What I draw on</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-[var(--color-stone-900)]/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-t border-l border-[var(--color-stone-900)]/20">
               {modalities.map((m, i) => (
                 <div
                   key={m.title}
-                  className="group border-b lg:border-b-0 border-[var(--color-stone-900)]/20 lg:border-r last:border-r-0 p-8 md:p-10 hover:bg-[var(--color-stone-100)] transition-colors duration-500"
+                  className="group border-b border-r border-[var(--color-stone-900)]/20 p-8 xl:p-7 hover:bg-white transition-colors duration-500"
                 >
                   <div className="text-[10px] tracking-[0.2em] text-[var(--color-stone-800)]/50 mb-12">0{i + 1}</div>
                   <h3 className="font-serif text-xl mb-2 group-hover:text-[var(--color-olive-700)] transition-colors">

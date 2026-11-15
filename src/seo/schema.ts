@@ -94,6 +94,7 @@ export function personSchema() {
       'Couples therapy',
       'Gottman Method',
       'Attachment-informed somatic emotional processing',
+      'Relational mindfulness',
       'Buddhist psychology and mindfulness',
       'Therapy for artists and entertainment professionals',
     ],

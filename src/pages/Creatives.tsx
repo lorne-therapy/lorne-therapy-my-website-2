@@ -256,7 +256,8 @@ export default function Creatives() {
                 <p>
                   In our work we go beneath the story, into your body, your emotions, and what happens between us in the
                   room. That&rsquo;s where change actually takes hold. I draw on Relational Gestalt, relational
-                  psychoanalysis, EMDR, and attachment-informed somatic emotional processing, along with more than a decade
+                  psychoanalysis, relational mindfulness, EMDR, and attachment-informed somatic emotional processing, along
+                  with more than a decade
                   of contemplative practice as a Buddhist monk. That practice taught me to stay steady with whatever arises,
                   including the parts of you that never make it into the work.
                 </p>

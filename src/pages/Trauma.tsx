@@ -253,7 +253,7 @@ export default function Trauma() {
                 </p>
                 <p>
                   I don&rsquo;t use EMDR as a stand-alone procedure or a one-size-fits-all protocol. When it fits, I
-                  integrate it with Relational Gestalt, attachment work, somatic emotional processing, and mindfulness, so we
+                  integrate it with Relational Gestalt, attachment work, somatic emotional processing, and relational mindfulness, so we
                   work with both the memory itself and the patterns that formed around it.
                 </p>
                 <div className="pt-4">
@@ -353,7 +353,7 @@ export default function Trauma() {
               <div className="space-y-6 text-sm leading-relaxed text-[var(--color-stone-800)]/85 font-light">
                 <p>
                   I work with adults through a depth-oriented, relational lens anchored in Relational Gestalt, bringing in
-                  EMDR, somatic emotional processing, and mindfulness when they help.
+                  EMDR, somatic emotional processing, and relational mindfulness when they help.
                 </p>
                 <p>
                   I spent three years as a suicide and crisis hotline counselor, and more than a decade living as a
