@@ -1,0 +1,46 @@
+name: Build check (preview)
+
+# Builds every pull request and every push to a non-main branch, verifies the
+# prerendered pages, and uploads the finished site as a downloadable artifact.
+# Nothing here deploys; deploy.yml only runs on main/master.
+on:
+  pull_request:
+  push:
+    branches-ignore: ["main", "master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Type check
+        run: npm run lint
+
+      - name: Build (client + prerender)
+        run: npm run build
+
+      - name: Verify prerendered pages, structured data, and SEO files
+        run: npm run verify
+
+      - name: Upload site preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-preview
+          path: dist
+          retention-days: 14
