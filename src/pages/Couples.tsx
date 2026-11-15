@@ -117,7 +117,7 @@ const processSteps = [
 export default function Couples() {
   return (
     <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
-      <SiteNav current="couples" consultHref="#schedule" />
+      <SiteNav current="couples" consultHref="/contact/?service=couples" />
 
       <main>
         {/* Hero */}
@@ -143,7 +143,7 @@ export default function Couples() {
               </p>
 
               <div className="reveal reveal-delay-2 mt-8 lg:mt-12 flex flex-wrap items-center gap-8">
-                <ConsultationCTA location="couples_hero" href="#schedule" label="Request a Free Consultation" />
+                <ConsultationCTA location="couples_hero" href="/contact/?service=couples" label="Request a Free Consultation" />
                 <a
                   href="#approach"
                   className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-800)]/85 hover:text-[var(--color-stone-900)] transition-colors"
@@ -265,7 +265,7 @@ export default function Couples() {
                 </p>
                 <div className="pt-4">
                   <a
-                    href="#schedule"
+                    href="/contact/?service=couples"
                     className="group inline-flex items-center gap-4 text-xs tracking-[0.15em] uppercase border-b border-[var(--color-stone-900)]/20 pb-2 hover:border-[var(--color-stone-900)] transition-colors"
                   >
                     <span>Schedule a free consultation</span>
@@ -442,7 +442,7 @@ export default function Couples() {
                     <ArrowRight size={14} aria-hidden="true" className="group-hover:translate-x-1 transition-transform" />
                   </a>
                   <a
-                    href="#schedule"
+                    href="/contact/?service=couples"
                     className="text-xs tracking-[0.15em] uppercase text-[var(--color-olive-700)] font-medium hover:underline"
                   >
                     Schedule Consultation
@@ -523,7 +523,7 @@ export default function Couples() {
         </section>
       </main>
 
-      <SiteFooter consultHref="#schedule" showHomeLink />
+      <SiteFooter consultHref="/contact/?service=couples" showHomeLink />
     </div>
   );
 }

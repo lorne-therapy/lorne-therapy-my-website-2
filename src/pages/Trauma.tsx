@@ -104,7 +104,7 @@ export default function Trauma() {
 
   return (
     <div className="min-h-screen bg-[var(--color-stone-100)] text-[var(--color-stone-900)] selection:bg-[var(--color-olive-700)] selection:text-white">
-      <SiteNav current="trauma" consultHref="#schedule" />
+      <SiteNav current="trauma" consultHref="/contact/?service=trauma" />
 
       <main>
         {/* Hero */}
@@ -133,7 +133,7 @@ export default function Trauma() {
               </p>
 
               <div className="reveal reveal-delay-2 mt-8 lg:mt-10 flex flex-col sm:flex-row sm:items-center gap-5">
-                <ConsultationCTA location="hero" href="#schedule" />
+                <ConsultationCTA location="hero" href="/contact/?service=trauma" />
                 <a
                   href="#emdr"
                   onClick={() => trackEvent('emdr_approach_click', { cta_location: 'hero' })}
@@ -265,7 +265,7 @@ export default function Trauma() {
                   work with both the memory itself and the patterns that formed around it.
                 </p>
                 <div className="pt-4">
-                  <ConsultationCTA location="emdr_section" href="#schedule" compact />
+                  <ConsultationCTA location="emdr_section" href="/contact/?service=trauma" compact />
                 </div>
               </div>
             </div>
@@ -413,7 +413,7 @@ export default function Trauma() {
                   <GoodFaithLine />
                 </div>
                 <div className="mt-9">
-                  <ConsultationCTA location="rates" href="#schedule" compact />
+                  <ConsultationCTA location="rates" href="/contact/?service=trauma" compact />
                 </div>
               </div>
             </div>
@@ -479,7 +479,7 @@ export default function Trauma() {
       </main>
 
       <SiteFooter
-        consultHref="#schedule"
+        consultHref="/contact/?service=trauma"
         showHomeLink
         ctaTitle={
           <>
