@@ -232,14 +232,22 @@ export default function Trauma() {
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-5 relative">
-              <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-xl">
-                <img
-                  src="/kintsugi-bowl.webp"
-                  alt="Close-up of a white ceramic bowl repaired with gold kintsugi lines"
-                  loading="lazy"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              <figure className="m-0">
+                <div className="aspect-[4/5] w-full overflow-hidden rounded-2xl shadow-xl">
+                  <img
+                    src="/kintsugi-bowl.webp"
+                    alt="Close-up of a white tea bowl repaired with gold kintsugi, inscribed with verses from Sen no Rikyū’s One Hundred Poems on the Way of Tea"
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption className="mt-5 max-w-[34rem] font-serif italic text-[17px] md:text-lg leading-snug text-[var(--color-stone-800)]/85">
+                  &ldquo;Only through practicing and observing can a thing be truly known.&rdquo;
+                  <span className="block mt-2 not-italic font-sans text-[12px] tracking-[0.12em] uppercase text-[var(--color-stone-800)]/70">
+                    Sen no Rikyū, inscribed on this kintsugi tea bowl
+                  </span>
+                </figcaption>
+              </figure>
             </div>
             <div className="md:col-span-7 md:pl-8 lg:pl-12">
               <Eyebrow className="mb-8">02 — EMDR Therapy in Los Angeles</Eyebrow>
