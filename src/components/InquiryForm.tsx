@@ -183,7 +183,7 @@ export default function InquiryForm() {
         body,
       });
       setStatus('sent');
-      trackEvent('generate_lead', { lead_source: 'inquiry_form', service_interest: v.service || 'unspecified', session_format: v.format });
+      trackEvent('generate_lead', { lead_source: 'inquiry_form' }); // no service or other answers: health-related choices never go to analytics
       setTimeout(() => topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
     } catch {
       setStatus('error');

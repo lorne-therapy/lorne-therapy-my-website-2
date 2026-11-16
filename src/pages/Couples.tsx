@@ -1,7 +1,8 @@
 import { ArrowRight } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
-import { ConsultationCTA, Eyebrow, Faq, GoodFaithLine, RatesTable, Scheduler } from '../components/shared';
+import { ConsultationCTA, CrisisNotice, Eyebrow, Faq, GoodFaithLine, RatesTable } from '../components/shared';
 import { couplesFaqs } from '../content/faqs';
 import { site } from '../site';
 
@@ -495,30 +496,32 @@ export default function Couples() {
 
         {/* Schedule */}
         <section id="schedule" className="py-32 px-6 md:px-12 bg-white border-t border-[var(--color-stone-900)]/10">
-          <div className="max-w-4xl mx-auto flex flex-col items-center">
-            <Eyebrow className="mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">Consultation</Eyebrow>
+<div className="max-w-4xl mx-auto flex flex-col items-center text-center">
+            <Eyebrow className="mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">
+              Free 15-Minute Consultation
+            </Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
               Request a <span className="italic text-[var(--color-olive-700)]">Consultation</span>
             </h2>
-            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-6">
-              Select a time for a complimentary 15-minute phone consultation to discuss what you and your partner are
-              experiencing and whether working together is the right fit.
+            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-9">
+              Start with a short inquiry. It takes about two minutes, and then you can choose a time for a free
+              15-minute phone consultation.
             </p>
-            <p className="text-sm text-[var(--color-stone-800)]/80 mb-12">
+            <ConsultationCTA location="couples_schedule" href="/contact/?service=couples" label="Start with a quick inquiry" />
+            <p className="text-[15px] text-[var(--color-stone-800)]/85 mt-8 mb-10">
               Prefer to talk first? Call{' '}
-              <a href={`tel:${site.phone.tel}`} className="underline underline-offset-2">
+              <a
+                href={`tel:${site.phone.tel}`}
+                onClick={() => trackEvent('phone_click', { link_location: 'schedule_section' })}
+                className="underline underline-offset-2"
+              >
                 {site.phone.display}
               </a>
               .
             </p>
-            <p className="text-sm text-[var(--color-stone-800)]/80 mb-8 -mt-6">
-              Prefer to tell me a little first?{' '}
-              <a href="/contact/?service=couples" className="underline underline-offset-2">
-                Send a short inquiry
-              </a>
-              .
-            </p>
-            <Scheduler title="Schedule a free couples therapy consultation with Lorne Lieberman, LMFT" />
+            <div className="max-w-xl w-full text-left">
+              <CrisisNotice />
+            </div>
           </div>
         </section>
       </main>

@@ -37,7 +37,7 @@ export default function SiteFooter({
                   href="/"
                   className="text-xs tracking-[0.15em] uppercase text-[var(--color-stone-50)]/75 hover:text-white transition-colors"
                 >
-                  Return to Main Practice
+                  Back to home
                 </a>
               )}
             </div>

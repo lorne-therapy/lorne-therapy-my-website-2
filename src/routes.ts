@@ -36,9 +36,9 @@ export const routes: RouteDef[] = [
     key: 'home',
     path: '/',
     template: 'index.html',
-    title: 'Depth Therapy | Lorne Lieberman, LMFT | Therapist in Los Feliz, Los Angeles',
+    title: 'Depth Therapy | Lorne Lieberman, LMFT | Los Feliz Therapist',
     description:
-      'Depth psychotherapy, couples therapy, and trauma & EMDR therapy with Lorne Lieberman, LMFT. In person on Hillhurst Ave. in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
+      'Individual, couples, and trauma & EMDR therapy with Lorne Lieberman, LMFT, in Los Feliz and by telehealth across California. Free 15-minute consultation.',
     inSitemap: true,
     priority: 1.0,
     jsonLd: [graph(practiceSchema(), personSchema(), websiteSchema(), faqSchema(homeFaqs))],
@@ -47,9 +47,9 @@ export const routes: RouteDef[] = [
     key: 'couples',
     path: '/couples-therapy/',
     template: 'couples-therapy/index.html',
-    title: 'Couples Therapy in Los Feliz, Los Angeles | Gottman-Trained | Depth Therapy',
+    title: 'Couples Therapy in Los Feliz, Los Angeles | Depth Therapy',
     description:
-      'Depth-oriented couples therapy in Los Feliz with Lorne Lieberman, LMFT: Gottman Method trained and anchored in Relational Gestalt, including conscious uncoupling for partners who are separating. In person in Los Angeles or telehealth across California.',
+      'Gottman-trained couples therapy in Los Feliz with Lorne Lieberman, LMFT, including conscious uncoupling. In person or by telehealth across California.',
     ogImage: '/couples-sunset-og.jpg',
     ogImageAlt: 'A couple sitting side by side on the shore at sunset',
     inSitemap: true,
@@ -79,7 +79,7 @@ export const routes: RouteDef[] = [
     template: 'trauma-emdr-therapy/index.html',
     title: 'Trauma & EMDR Therapy in Los Feliz, Los Angeles | Depth Therapy',
     description:
-      'Trauma therapy and EMDR with Lorne Lieberman, LMFT, EMDR trained through an EMDRIA-approved program. In person in Los Feliz, Los Angeles, and secure telehealth across California. Free 15-minute consultation.',
+      'Trauma therapy and EMDR in Los Feliz with Lorne Lieberman, LMFT (EMDRIA-approved training). In person or telehealth across California. Free consultation.',
     ogImage: '/trauma-storm-og.jpg',
     ogImageAlt: 'Storm clouds over the ocean with the setting sun glowing beneath them',
     inSitemap: true,
@@ -107,9 +107,9 @@ export const routes: RouteDef[] = [
     key: 'creatives',
     path: '/therapy-for-creatives/',
     template: 'therapy-for-creatives/index.html',
-    title: 'Therapy for Artists, Creatives & Entertainment Professionals | Los Feliz, Los Angeles | Depth Therapy',
+    title: 'Therapy for Creatives & Entertainment Professionals | Los Feliz',
     description:
-      'Depth therapy for artists, musicians, actors, comedians, writers, directors, and crew with Lorne Lieberman, LMFT, who grew up in a Los Angeles film and TV family. In person in Los Feliz and telehealth across California.',
+      'Therapy for artists, musicians, actors, writers, comedians, and crew with Lorne Lieberman, LMFT, raised in an LA film and TV family. Los Feliz and telehealth.',
     ogImage: '/hollywood-hills-og.jpg',
     ogImageAlt: 'The Hollywood sign on the hills above Los Angeles at sunset',
     inSitemap: true,
@@ -138,7 +138,7 @@ export const routes: RouteDef[] = [
     path: '/contact/',
     template: 'contact/index.html',
     title: 'Contact & Free Consultation | Depth Therapy, Los Feliz',
-    description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Offices at 1708 and 2150 Hillhurst Ave., Los Feliz, Los Angeles; telehealth across California.`,
+    description: `Send a short inquiry and book a free 15-minute phone consultation with Lorne Lieberman, LMFT, or call ${site.phone.display}. Los Feliz offices and telehealth.`,
     inSitemap: true,
     priority: 0.8,
     jsonLd: [
