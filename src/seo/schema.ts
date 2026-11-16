@@ -88,7 +88,7 @@ export function personSchema() {
     knowsAbout: [
       'Depth psychotherapy',
       'Relational Gestalt therapy',
-      'Relational psychoanalysis',
+      'Relational psychodynamic therapy',
       'EMDR therapy',
       'Trauma therapy',
       'Couples therapy',

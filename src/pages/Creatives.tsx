@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
 import SiteNav from '../components/SiteNav';
 import SiteFooter from '../components/SiteFooter';
-import { ConsultationCTA, CrisisNotice, Eyebrow, Faq, GoodFaithLine, RatesTable, Scheduler } from '../components/shared';
+import { ConsultationCTA, CrisisNotice, Eyebrow, Faq, GoodFaithLine, RatesTable } from '../components/shared';
 import { creativesFaqs } from '../content/faqs';
 import { trackEvent } from '../lib/analytics';
 import { site } from '../site';
@@ -56,7 +56,6 @@ export default function Creatives() {
           if (!name || seenSections.current.has(name)) return;
           seenSections.current.add(name);
           trackEvent('section_view', { landing_page: 'creatives', section_name: name });
-          if (name === 'schedule') trackEvent('scheduler_view', { scheduler_provider: 'google_calendar' });
         });
       },
       { threshold: 0.3 },
@@ -256,7 +255,7 @@ export default function Creatives() {
                 <p>
                   In our work we go beneath the story, into your body, your emotions, and what happens between us in the
                   room. That&rsquo;s where change actually takes hold. I draw on Relational Gestalt, relational
-                  psychoanalysis, relational mindfulness, EMDR, and attachment-informed somatic emotional processing, along
+                  psychodynamic therapy, relational mindfulness, EMDR, and attachment-informed somatic emotional processing, along
                   with more than a decade
                   of contemplative practice as a Buddhist monk. That practice taught me to stay steady with whatever arises,
                   including the parts of you that never make it into the work.
@@ -358,24 +357,25 @@ export default function Creatives() {
           </div>
         </section>
 
-        {/* Scheduler */}
+        {/* Start with an inquiry */}
         <section
           id="schedule"
           data-analytics-section="schedule"
           className="py-24 md:py-32 px-6 md:px-12 bg-[var(--color-stone-100)] border-t border-[var(--color-stone-900)]/10"
         >
-          <div className="max-w-4xl mx-auto flex flex-col items-center">
+<div className="max-w-4xl mx-auto flex flex-col items-center text-center">
             <Eyebrow className="mb-8 border-b border-[var(--color-stone-900)]/10 pb-4 inline-block px-8">
               Free 15-Minute Consultation
             </Eyebrow>
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-6 text-center leading-tight">
               Let&rsquo;s talk about what&rsquo;s <span className="italic text-[var(--color-olive-700)]">underneath the work.</span>
             </h2>
-            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-6">
-              Choose a time for a complimentary 15-minute phone consultation to talk about what you&rsquo;re looking for
-              and whether working together feels like a fit.
+            <p className="max-w-xl mx-auto text-center text-[16.5px] md:text-[17px] leading-relaxed text-[var(--color-stone-800)] mb-9">
+              Start with a short inquiry. It takes about two minutes, and then you can choose a time for a free
+              15-minute phone consultation.
             </p>
-            <p className="text-sm text-[var(--color-stone-800)]/80 mb-8 text-center">
+            <ConsultationCTA location="schedule" href="/contact/?service=creatives" label="Start with a quick inquiry" />
+            <p className="text-[15px] text-[var(--color-stone-800)]/85 mt-8 mb-10">
               Prefer to talk first? Call{' '}
               <a
                 href={`tel:${site.phone.tel}`}
@@ -384,16 +384,11 @@ export default function Creatives() {
               >
                 {site.phone.display}
               </a>
-              , or{' '}
-              <a href="/contact/?service=creatives" className="underline underline-offset-2">
-                send a short inquiry
-              </a>
               .
             </p>
-            <div className="max-w-xl w-full mb-12">
+            <div className="max-w-xl w-full text-left">
               <CrisisNotice />
             </div>
-            <Scheduler title="Schedule a free consultation with Lorne Lieberman, LMFT" />
           </div>
         </section>
       </main>
